@@ -1,16 +1,26 @@
-<h2>Forgot your password?</h2>
+<div class="row col-sm-offset-3 col-sm-6 col-sm-offset-3">
+  <h2 class="heading text-center">パスワードをお忘れの方</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "customers/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-group row">
+    <%= f.label :"メールアドレス", class: "col-sm-4" %>
+    <div class="col-sm-8">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "パスワード再発行メールを送信", class: "btn btn-success btn-block" %>
   </div>
-<% end %>
 
-<%= render "customers/shared/links" %>
+  <% end %>
+
+  <br>
+  <div class="pull-right">
+    <%= link_to "ログイン画面に戻る", new_customer_session_path %>
+  </div>
+
+</div>
+

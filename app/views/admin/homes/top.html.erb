@@ -1,3 +1,13 @@
-<h1>総会員数</h1>
+<div class="row">
+  <h2 class="heading text-center">管理者トップ</h2>
 
-<h1>総投稿数</h1>
+  <div class="col-sm-6 text-center">
+    <h1>総会員数</h1>
+    <h1><strong><%= link_to Customer.count, admin_customers_path %></strong></h1>
+  </div>
+  <div class="col-sm-6 text-center">
+    <h1>総投稿数</h1>
+    <h1><strong>100</strong></h1>
+  </div>
+
+</div>

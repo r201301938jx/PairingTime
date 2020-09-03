@@ -14,13 +14,15 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'homes#top'
+    resources :customers, only: [:index, :show, :edit, :update]
   end
 
   #Customer
 
   devise_for :customers, controllers: {
     registrations: 'customers/registrations',
-    sessions: 'customers/sessions'
+    sessions: 'customers/sessions',
+    passwords: 'customers/passwords'
   }
 
   root 'customer/homes#top'

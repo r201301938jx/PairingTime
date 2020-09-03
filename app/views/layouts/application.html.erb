@@ -26,7 +26,7 @@
             <li class="btn"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
           <% elsif admin_signed_in? %>
             <li class="btn"><%= link_to "トップ", admin_root_path %></li>
-            <li class="btn"><%= link_to "会員一覧", "#" %></li>
+            <li class="btn"><%= link_to "会員一覧", admin_customers_path %></li>
             <li class="btn"><%= link_to "投稿一覧", "#" %></li>
             <li class="btn"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
           <% else %>

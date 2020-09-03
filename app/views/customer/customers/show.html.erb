@@ -1,15 +1,20 @@
 <div class="row">
   <h2 class="heading text-center">会員詳細</h2>
-</div>
 
-<div class="col-sm-2">
-  <h3>会員情報</h3>
-  <%= attachment_image_tag @customer, :profile_image, :fill, 120, 120, fallback: "no_customer_image.png", size: "120x120", class: "profile-image"  %><br>
-  <%= @customer.nickname %>
-  <div class="row">
-    <%= link_to "登録情報編集", edit_customer_path(@customer), class: "btn btn-success" %>
+  <div class="col-sm-2">
+    <h3>会員情報</h3>
+    <%= attachment_image_tag @customer, :profile_image, :fill, 120, 120, fallback: "no_customer_image.png", size: "120x120", class: "profile-image"  %><br>
+    <p><%= @customer.nickname %></p>
+    <div class="col-sm-12">
+      <%= link_to "登録情報編集", edit_customer_path(@customer), class: "btn btn-success" %>
+    </div>
+    <div class="col-sm-12">
+      <%= link_to "パスワード変更", edit_customer_registration_path(@customer), class: "btn btn-primary" %>
+    </div>
   </div>
-</div>
-<div class="col-sm-10">
-  <h3>投稿</h3>
+
+  <div class="col-sm-10">
+    <h3>投稿</h3>
+  </div>
+
 </div>
