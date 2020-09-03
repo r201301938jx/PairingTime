@@ -1,0 +1,2 @@
+module Customer::PairsHelper
+end

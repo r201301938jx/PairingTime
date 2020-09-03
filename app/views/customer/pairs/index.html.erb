@@ -1,0 +1,12 @@
+<div class="row">
+  <h2 class="heading text-center">投稿一覧（全<%= Pair.count %>件）</h2>
+
+  <% @pairs.each do |pair| %>
+    <div class=col-sm-3>
+      <%= attachment_image_tag pair, :image, :fill, 200, 200, fallback: "no_image.png", size: "200x200", class: "pair-image"  %>
+      <h5><%= pair.title %></h5>
+    </div>
+
+  <% end %>
+
+</div>

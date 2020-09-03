@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
+    resources :pairs, only: [:index, :show, :destroy]
   end
 
   #Customer
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
         patch 'withdraw'
       end
     end
+    resources :pairs
   end
 
 end
