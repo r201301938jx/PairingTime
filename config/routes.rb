@@ -1,4 +1,38 @@
 Rails.application.routes.draw do
-  devise_for :customers
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #Admin
+
+  devise_for :admins,
+    path: '',
+    path_names: {
+      sign_in: 'admin/sign_in',
+      sign_out: 'admin/sign_out'
+    },
+    controllers: {
+      sessions: 'admins/sessions'
+    }
+
+  namespace :admin do
+    root 'homes#top'
+  end
+
+  #Customer
+
+  devise_for :customers, controllers: {
+    registrations: 'customers/registrations',
+    sessions: 'customers/sessions'
+  }
+
+  root 'customer/homes#top'
+  get 'about' => 'customer/homes#about'
+
+  scope module: :customer do
+    resources :customers, only: [:show, :edit, :update] do
+      member do
+        get 'quit'
+        patch 'withdraw'
+      end
+    end
+  end
+
 end

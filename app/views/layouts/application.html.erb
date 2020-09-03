@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PairingTime</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>PairingTime</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <nav class="nav navbar-nav navbar-left">
+        <!-- 後程ロゴと差し替え予定 -->
+        <h2><%= link_to "PairingTime", root_path %></h2>
+      </nav>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <% if customer_signed_in? %>
+            <li class="btn"><%= link_to "マイページ", customer_path(current_customer) %></li>
+            <li class="btn"><%= link_to "投稿一覧", "#" %></li>
+            <li class="btn"><%= link_to "新規投稿", "#" %></li>
+            <li class="btn"><%= link_to "通知一覧", "#" %></li>
+            <li class="btn"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+          <% elsif admin_signed_in? %>
+            <li class="btn"><%= link_to "トップ", admin_root_path %></li>
+            <li class="btn"><%= link_to "会員一覧", "#" %></li>
+            <li class="btn"><%= link_to "投稿一覧", "#" %></li>
+            <li class="btn"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+          <% else %>
+            <li class="btn"><%= link_to "概要", about_path %></li>
+            <li class="btn"><%= link_to "投稿一覧", "#" %></li>
+            <li class="btn"><%= link_to "新規登録", new_customer_registration_path %></li>
+            <li class="btn"><%= link_to "ログイン", new_customer_session_path %></li>
+            <!-- 一時的 -->
+            <li class="btn"><%= link_to "管理者ログイン", new_admin_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
     <%= yield %>
-  </body>
+  </div>
+  <footer></footer>
+</body>
 </html>
