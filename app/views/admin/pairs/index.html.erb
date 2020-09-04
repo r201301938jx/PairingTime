@@ -1,4 +1,29 @@
 <div class="row">
   <h2 class="heading text-center">投稿一覧</h2>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>投稿ID</th>
+        <th>タイトル</th>
+        <th>投稿日</th>
+        <th>投稿者</th>
+        <th>お気に入り追加数</th>
+        <th>コメント数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pairs.each do |pair| %>
+        <tr>
+          <td><%= pair.id %></td>
+          <td><%= link_to pair.title, admin_pair_path(pair) %></td>
+          <td><%= pair.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= link_to pair.customer.nickname, admin_customer_path(pair.customer) %></td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>

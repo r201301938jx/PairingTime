@@ -10,16 +10,16 @@
 </head>
 
 <body>
-  <header class="navbar navbar-default navbar-fixed-top">
+  <header class="navbar navbar-fixed-top">
     <div class="container">
       <nav class="nav navbar-nav navbar-left">
         <!-- 後程ロゴと差し替え予定 -->
-        <h2><%= link_to "PairingTime", root_path %></h2>
+        <h2><strong><%= link_to "PairingTime", root_path %></strong></h2>
       </nav>
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <% if customer_signed_in? %>
-            <li class="badge badge-orange login-message"><%= current_customer.nickname %>さん</li>
+            <li class="badge badge-success login-message"><%= current_customer.nickname %>さん</li>
             <li class="btn"><%= link_to "マイページ", customer_path(current_customer) %></li>
             <li class="btn"><%= link_to "投稿一覧", pairs_path %></li>
             <li class="btn"><%= link_to "新規投稿", new_pair_path %></li>

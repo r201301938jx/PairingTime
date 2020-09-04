@@ -4,8 +4,8 @@
   <% @pairs.each do |pair| %>
     <div class=col-sm-3>
       <%= link_to pair_path(pair) do %>
-        <%= attachment_image_tag pair, :image, :fill, 270, 270, fallback: "no_image.jpg", size: "230x230", class: "pair-image" %>
-        <h5><%= pair.title %></h5>
+        <%= attachment_image_tag pair, :image, :fill, 260, 260, fallback: "no_image.jpg", size: "260x260", class: "pair-image" %>
+        <h5 class="text-center"><%= pair.title %></h5>
       <% end %>
     </div>
   <% end %>

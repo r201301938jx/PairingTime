@@ -2,7 +2,7 @@
   <h2 class="heading text-center">投稿詳細</h2>
 
   <div class="col-sm-4">
-    <%= attachment_image_tag @pair, :image, :fill, 230, 230, fallback: "no_image.jpg", size: "230x230", class: "pair-image"  %>
+    <%= attachment_image_tag @pair, :image, :fill, 260, 260, fallback: "no_image.jpg", size: "260x260", class: "pair-image"  %>
   </div>
 
   <div class="col-sm-8">
@@ -23,6 +23,10 @@
         <tr>
           <td>投稿日</td>
           <td><%= @pair.created_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+        <tr>
+          <td>投稿者</td>
+          <td><%= link_to @pair.customer.nickname, customer_path(@pair.customer) %></td>
         </tr>
       </tbody>
     </table>

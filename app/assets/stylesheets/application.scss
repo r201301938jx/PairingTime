@@ -15,15 +15,22 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
   padding-top: 70px;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #FFE4C4;
 }
 
 /* ヘッダー */
 
+header {
+  background-color: #DEB887;
+}
+
 .login-message {
-  margin-top: 25px;
+  margin: 25px 25px 0 0;
 }
 
 /* フラッシュメッセージ */
@@ -40,12 +47,6 @@ body {
   color: red;
 }
 
-/* タイトル */
-.heading {
-  margin-bottom: 50px;
-  font-weight: bold;
-}
-
 /* フォーム */
 .form-group {
   margin: 20px 0;
@@ -56,6 +57,12 @@ body {
 }
 
 /* 画像 */
+.about-image {
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 30px 0;
+}
+
 .profile-image {
   border-radius: 50%;
   border: 2px solid black;
@@ -77,6 +84,20 @@ body {
   background-color: green;
 }
 
-.badge-orange {
-  background-color: orange;
+/* トップ */
+
+.top-heading {
+  margin: 30px 0;
+}
+
+.top-title {
+  font-size: 85px;
+}
+
+.top-description {
+  font-size: 26px;
+}
+
+.link-button {
+  margin-top: 30px;
 }
