@@ -20,6 +20,12 @@ body {
   padding-top: 70px;
 }
 
+/* ヘッダー */
+
+.login-message {
+  margin-top: 25px;
+}
+
 /* フラッシュメッセージ */
 
 #notice {
@@ -69,4 +75,8 @@ body {
 
 .badge-success {
   background-color: green;
+}
+
+.badge-orange {
+  background-color: orange;
 }
