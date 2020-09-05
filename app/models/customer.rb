@@ -9,6 +9,11 @@ class Customer < ApplicationRecord
   has_many :like_pairs, through: :likes, source: 'pair'
   has_many :comments
 
+  has_many :follower, class_name: "Relationship", foreign_key: "follower_id"
+  has_many :followed, class_name: "Relationship", foreign_key: "followed_id"
+  has_many :following_customer, through: :follower, source: :followed
+  has_many :follower_customer, through: :followed, source: :follower
+
   validates :last_name, :first_name, :last_name_kana,
             :first_name_kana, :phone_number, :nickname,
             presence: true
@@ -25,4 +30,17 @@ class Customer < ApplicationRecord
   def active_for_authentication?
     super && (is_deleted == false)
   end
+
+  def follow(customer_id)
+    follower.create(followed_id: customer_id)
+  end
+
+  def unfollow(customer_id)
+    follower.find_by(followed_id: customer_id).destroy
+  end
+
+  def following?(customer)
+    following_customer.include?(customer)
+  end
+
 end

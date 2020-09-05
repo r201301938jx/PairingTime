@@ -1,0 +1,31 @@
+<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
+  <h2 class="heading text-center">フォローユーザー一覧</h2>
+
+  <% if @customers.count > 0 %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ニックネーム</th>
+        <th>投稿数</th>
+        <th>フォロー数</th>
+        <th>フォロワー数</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= link_to customer.nickname, customer_path(customer) %></td>
+          <td><%= customer.pairs.count %></td>
+          <td><%= customer.follower.count %></td>
+          <td><%= customer.followed.count %></td>
+          <td><%= link_to "フォローをやめる", customer_relationships_path(customer.id), method: :DELETE, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <h4>フォローユーザーはいません</h4>
+  <% end %>
+
+</div>

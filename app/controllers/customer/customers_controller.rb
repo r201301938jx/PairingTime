@@ -29,6 +29,12 @@ class Customer::CustomersController < ApplicationController
     redirect_to root_path
   end
 
+  def follows
+  end
+
+  def followers
+  end
+
   private
 
   def customer_params

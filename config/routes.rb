@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # Admin
 
   devise_for :admins,
@@ -35,6 +36,9 @@ Rails.application.routes.draw do
         get 'quit'
         patch 'withdraw'
       end
+      resource :relationships, only: [:create, :destroy]
+      get 'follows' => 'relationships#follower', as: 'follows'
+      get 'followers' => 'relationships#followed', as: 'followers'
     end
     resources :pairs do
       resource :likes, only: [:create, :destroy]

@@ -3,8 +3,22 @@
 
   <div class="col-sm-2 text-center">
     <h3>会員情報</h3>
-    <%= attachment_image_tag @customer, :profile_image, :fill, 160, 160, fallback: "no_customer_image.jpg", size: "160x160", class: "profile-image"  %><br>
-    <p><strong><%= @customer.nickname %></strong></p>
+
+    <table class="table table-borderless">
+      <tr>
+        <%= attachment_image_tag @customer, :profile_image, :fill, 160, 160, fallback: "no_customer_image.jpg", size: "160x160", class: "profile-image"  %>
+      </tr>
+      <tr>
+        <th class="text-center"><p><strong><%= @customer.nickname %></strong></p></th>
+      </tr>
+      <tr>
+        <th class="text-center">フォロー数：<%= link_to @customer.follower.count, customer_follows_path(@customer) %></th>
+      </tr>
+      <tr>
+        <th class="text-center">フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></th>
+      </tr>
+    </table>
+
     <% if @customer == current_customer %>
     <div class="link-button">
       <%= link_to "お気に入り一覧", like_pairs_path, class: "btn btn-warning btn-lg btn-block" %>
@@ -15,6 +29,12 @@
     <div class="link-button">
       <%= link_to "パスワード変更", edit_customer_registration_path(@customer), class: "btn btn-primary btn-lg btn-block" %>
     </div>
+    <% else %>
+    <% if current_customer.following?(@customer) %>
+      <%= link_to "フォローをやめる", customer_relationships_path(@customer.id), method: :DELETE, class: "btn btn-danger btn-lg btn-block" %>
+    <% else %>
+      <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :POST, class: "btn btn-success btn-lg btn-block" %>
+    <% end %>
     <% end %>
   </div>
 
