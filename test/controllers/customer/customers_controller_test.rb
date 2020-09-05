@@ -25,5 +25,4 @@ class Customer::CustomersControllerTest < ActionDispatch::IntegrationTest
     get customer_customers_withdraw_url
     assert_response :success
   end
-
 end

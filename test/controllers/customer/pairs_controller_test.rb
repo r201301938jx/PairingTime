@@ -20,5 +20,4 @@ class Customer::PairsControllerTest < ActionDispatch::IntegrationTest
     get customer_pairs_edit_url
     assert_response :success
   end
-
 end

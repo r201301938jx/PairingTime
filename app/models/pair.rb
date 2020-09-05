@@ -1,5 +1,4 @@
 class Pair < ApplicationRecord
-
   belongs_to :customer
 
   has_many :likes, dependent: :destroy
@@ -12,5 +11,4 @@ class Pair < ApplicationRecord
   def liked_by?(customer)
     likes.where(customer_id: customer.id).exists?
   end
-
 end

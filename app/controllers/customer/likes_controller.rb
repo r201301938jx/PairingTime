@@ -1,5 +1,4 @@
 class Customer::LikesController < ApplicationController
-
   before_action :authenticate_customer!
 
   def create
@@ -21,5 +20,4 @@ class Customer::LikesController < ApplicationController
   def index
     @like_pairs = current_customer.like_pairs
   end
-
 end

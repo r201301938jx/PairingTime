@@ -1,5 +1,4 @@
 class Admin::HomesController < ApplicationController
-
   before_action :authenticate_admin!
 
   def top
@@ -8,5 +7,4 @@ class Admin::HomesController < ApplicationController
     @today_likes = Like.where(created_at: Time.zone.now.all_day)
     @today_comments = Comment.where(created_at: Time.zone.now.all_day)
   end
-
 end

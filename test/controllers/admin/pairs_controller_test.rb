@@ -10,5 +10,4 @@ class Admin::PairsControllerTest < ActionDispatch::IntegrationTest
     get admin_pairs_show_url
     assert_response :success
   end
-
 end

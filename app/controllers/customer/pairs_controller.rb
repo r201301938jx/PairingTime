@@ -1,5 +1,4 @@
 class Customer::PairsController < ApplicationController
-
   before_action :authenticate_customer!, except: [:index]
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
@@ -55,5 +54,4 @@ class Customer::PairsController < ApplicationController
       redirect_to pairs_path
     end
   end
-
 end
