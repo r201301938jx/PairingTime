@@ -7,6 +7,7 @@ class Customer < ApplicationRecord
   has_many :pairs
   has_many :likes
   has_many :like_pairs, through: :likes, source: 'pair'
+  has_many :comments
 
   validates :last_name, :first_name, :last_name_kana,
             :first_name_kana, :phone_number, :nickname,

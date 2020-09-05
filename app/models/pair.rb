@@ -2,7 +2,8 @@ class Pair < ApplicationRecord
 
   belongs_to :customer
 
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :customer_id, :title, :image, presence: true
 

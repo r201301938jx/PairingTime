@@ -8,6 +8,7 @@ class Admin::PairsController < ApplicationController
 
   def show
     @pair = Pair.find(params[:id])
+    @comments = @pair.comments
   end
 
   def destroy

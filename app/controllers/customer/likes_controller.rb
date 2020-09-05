@@ -1,5 +1,7 @@
 class Customer::LikesController < ApplicationController
 
+  before_action :authenticate_customer!
+
   def create
     @pair = Pair.find(params[:pair_id])
     like = current_customer.likes.new(pair_id: @pair.id)

@@ -77,13 +77,13 @@ footer {
 .profile-image {
   border-radius: 50%;
   border: 2px solid black;
-  margin: 30px 0;
+  margin-top: 25px;
 }
 
 .pair-image {
   border-radius: 50%;
   border: 2px solid black;
-  margin: 30px 0;
+  margin-top: 25px
 }
 
 /* バッジ */
@@ -116,4 +116,10 @@ footer {
 
 .link-button {
   margin-top: 30px;
+}
+
+/* コメント*/
+
+.comment-section {
+  padding-top: 40px;
 }

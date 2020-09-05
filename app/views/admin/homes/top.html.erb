@@ -29,4 +29,14 @@
     <h1 class="panel-body"><strong><%= @today_likes.count %></strong></h1>
   </div>
 
+  <div class="col-sm-6 text-center panel panel-info">
+    <h1 class="panel-heading"><strong>総コメント数</strong></h1>
+    <h1 class="panel-body"><strong><%= Comment.count %></strong></h1>
+  </div>
+
+  <div class="col-sm-6 text-center panel panel-danger">
+    <h1 class="panel-heading"><strong>今日の新規コメント数</strong></h1>
+    <h1 class="panel-body"><strong><%= @today_comments.count %></strong></h1>
+  </div>
+
 </div>

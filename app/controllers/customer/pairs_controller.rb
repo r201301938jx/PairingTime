@@ -9,6 +9,8 @@ class Customer::PairsController < ApplicationController
 
   def show
     @pair = Pair.find(params[:id])
+    @comment = Comment.new
+    @comments = @pair.comments
   end
 
   def new
