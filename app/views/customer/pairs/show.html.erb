@@ -18,7 +18,11 @@
         </tr>
         <tr>
           <td>タグ</td>
-          <td><%= @pair.tag_list %></td>
+          <td>
+            <% @pair.tags.each do |tag| %>
+              <span class="badge"><%= tag.name %></span>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <td>投稿日</td>
@@ -46,7 +50,7 @@
 
     <div class="comment-form col-sm-9">
       <%= form_for [@pair, @comment] do |f| %>
-        <%= f.text_area :text, size: "70x7" %>
+        <%= f.text_area :text, size: "70x7", placeholder: "コメントを入力してください" %>
         <%= f.submit "送信", class: "btn-sm btn-primary" %>
       <% end %>
     </div>

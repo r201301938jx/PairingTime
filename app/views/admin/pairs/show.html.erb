@@ -18,7 +18,15 @@
         </tr>
         <tr>
           <td>タグ</td>
-          <td><%= @pair.tag_list %></td>
+          <td>
+            <% @pair.tags.each do |tag| %>
+              <span class="badge"><%= tag.name %></span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>投稿者</td>
+          <td><%= link_to @pair.customer.nickname, admin_customer_path(@pair.customer) %></td>
         </tr>
         <tr>
           <td>投稿日</td>
@@ -36,7 +44,7 @@
   </div>
 
   <div class="col-sm-12 comment-section">
-    <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4 panel panel-primary">
+    <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3 panel panel-primary">
       <h3 class="panel-heading text-center">コメント一覧</h3>
       <h4 class="panel-body text-center">コメント数：<%= @pair.comments.count %></h4>
     </div>

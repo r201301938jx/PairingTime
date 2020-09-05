@@ -19,20 +19,31 @@ class Customer::PairsController < ApplicationController
   def create
     @pair = Pair.new(pair_params)
     @pair.customer_id = current_customer.id
-    @pair.save
-    flash[:notice] = "投稿の作成が完了しました"
-    redirect_to pair_path(@pair)
+    tag_list = params[:pair][:tag_ids].split(',')
+    if @pair.save
+      @pair.save_tags(tag_list)
+      flash[:notice] = "投稿の作成が完了しました"
+      redirect_to pair_path(@pair)
+    else
+      render :new
+    end
   end
 
   def edit
     @pair = Pair.find(params[:id])
+    @tag_list = @pair.tags.pluck(:name).join(',')
   end
 
   def update
     @pair = Pair.find(params[:id])
-    @pair.update(pair_params)
-    flash[:notice] = "投稿の編集が完了しました"
-    redirect_to pair_path(@pair)
+    tag_list = params[:pair][:tag_ids].split(',')
+    if @pair.update(pair_params)
+      @pair.save_tags(tag_list)
+      flash[:notice] = "投稿の編集が完了しました"
+      redirect_to pair_path(@pair)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -45,7 +56,7 @@ class Customer::PairsController < ApplicationController
   private
 
   def pair_params
-    params.require(:pair).permit(:title, :image, :caption, :tag_list)
+    params.require(:pair).permit(:title, :image, :caption, tag_ids: [])
   end
 
   def ensure_correct_customer
