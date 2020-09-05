@@ -20,7 +20,7 @@
           <td>タグ</td>
           <td>
             <% @pair.tags.each do |tag| %>
-              <span class="badge"><%= tag.name %></span>
+              <span class="label label-info"><%= link_to tag.name, tag_pairs_path(tag_id: tag.id) %></span>
             <% end %>
           </td>
         </tr>
@@ -43,14 +43,13 @@
   </div>
 
   <div class="col-sm-12 comment-section">
-    <div class="col-sm-3 panel panel-primary">
-      <h3 class="panel-heading">コメント</h3>
-      <h4 class="panel-body">コメント数：<%= @pair.comments.count %></h4>
+    <div class="col-sm-3 label label-primary">
+      <h3 class="comment-title">コメント<span class="badge comment-badge"><%= @pair.comments.count %></span></h3>
     </div>
 
     <div class="comment-form col-sm-9">
       <%= form_for [@pair, @comment] do |f| %>
-        <%= f.text_area :text, size: "70x7", placeholder: "コメントを入力してください" %>
+        <%= f.text_area :text, size: "70x3", placeholder: "コメントを入力してください" %>
         <%= f.submit "送信", class: "btn-sm btn-primary" %>
       <% end %>
     </div>
