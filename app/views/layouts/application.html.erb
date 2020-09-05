@@ -7,10 +7,11 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://kit.fontawesome.com/0daeb9e6e6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header class="navbar navbar-fixed-top">
+  <header class="header navbar navbar-fixed-top">
     <div class="container">
       <nav class="nav navbar-nav navbar-left">
         <!-- 後程ロゴと差し替え予定 -->
@@ -35,7 +36,6 @@
             <li class="btn"><%= link_to "投稿一覧", pairs_path %></li>
             <li class="btn"><%= link_to "新規登録", new_customer_registration_path %></li>
             <li class="btn"><%= link_to "ログイン", new_customer_session_path %></li>
-            <!-- 一時的 -->
             <li class="btn"><%= link_to "管理者ログイン", new_admin_session_path %></li>
           <% end %>
         </ul>
@@ -46,6 +46,14 @@
     <p id="notice"><%= notice %></p>
     <%= yield %>
   </div>
-  <footer></footer>
+  <footer class="footer navbar navbar-fixed-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="pull-right">
+          <p>© All rights reserved by Yoshida Inc.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

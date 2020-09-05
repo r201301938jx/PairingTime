@@ -1,5 +1,7 @@
 class Admin::PairsController < ApplicationController
 
+  before_action :authenticate_admin!
+
   def index
     @pairs = Pair.all
   end

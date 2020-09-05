@@ -18,7 +18,7 @@
  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  padding-top: 70px;
+  padding: 70px;
   font-family: 'Noto Sans JP', sans-serif;
   background-color: #FFE4C4;
 }
@@ -32,6 +32,17 @@ header {
 .login-message {
   margin: 25px 25px 0 0;
 }
+
+/* フッター */
+
+footer {
+  background-color: #DEB887;
+  p {
+    margin-top: 15px;
+  }
+}
+
+
 
 /* フラッシュメッセージ */
 
@@ -84,10 +95,15 @@ header {
   background-color: green;
 }
 
+/* タイトル */
+.heading {
+  margin-bottom: 30px;
+}
+
 /* トップ */
 
 .top-heading {
-  margin: 30px 0;
+  margin: 5px;
 }
 
 .top-title {

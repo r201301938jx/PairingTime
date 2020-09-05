@@ -1,5 +1,8 @@
 class Customer::PairsController < ApplicationController
 
+  before_action :authenticate_customer!, except: [:index]
+  before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
+
   def index
     @pairs = Pair.all
   end
@@ -42,6 +45,13 @@ class Customer::PairsController < ApplicationController
 
   def pair_params
     params.require(:pair).permit(:title, :image, :caption, :tag_list)
+  end
+
+  def ensure_correct_customer
+    @pair = Pair.find(params[:id])
+    unless @pair.customer == current_customer
+      redirect_to pairs_path
+    end
   end
 
 end

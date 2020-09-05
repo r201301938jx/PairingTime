@@ -6,7 +6,7 @@
   <div class="col-sm-4">
     <div class="form-group row text-center">
       <%= f.label :"画像" %><br>
-      <%= attachment_image_tag @pair, :image, :fill, 260, 260, fallback: "no_image.jpg", size: "260x260", class: "pair-image"  %>
+      <%= attachment_image_tag @pair, :image, :fill, 240, 240, fallback: "no_image.jpg", size: "240x240", class: "pair-image"  %>
       <%= f.attachment_field :image %>
     </div>
   </div>

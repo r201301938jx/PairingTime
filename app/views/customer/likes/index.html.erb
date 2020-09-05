@@ -1,7 +1,7 @@
 <div class="row">
-  <h2 class="heading text-center">投稿一覧（全<%= Pair.count %>件）</h2>
+  <h2 class="heading text-center">いいね一覧（全<%= @like_pairs.count %>件）</h2>
 
-  <% @pairs.each do |pair| %>
+  <% @like_pairs.each do |pair| %>
   <div class=col-sm-3>
     <%= link_to pair_path(pair) do %>
     <%= attachment_image_tag pair, :image, :fill, 240, 240, fallback: "no_image.jpg", size: "240x240", class: "pair-image" %>

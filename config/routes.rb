@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   root 'customer/homes#top'
   get 'about' => 'customer/homes#about'
+  get 'like_pairs' => 'customer/likes#index'
 
   scope module: :customer do
     resources :customers, only: [:show, :edit, :update] do
@@ -36,7 +37,9 @@ Rails.application.routes.draw do
         patch 'withdraw'
       end
     end
-    resources :pairs
+    resources :pairs do
+      resource :likes, only: [:create, :destroy]
+    end
   end
 
 end

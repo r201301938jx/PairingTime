@@ -2,7 +2,7 @@
   <h2 class="heading text-center">投稿詳細</h2>
 
   <div class="col-sm-4">
-    <%= attachment_image_tag @pair, :image, :fill, 260, 260, fallback: "no_image.jpg", size: "260x260", class: "pair-image"  %>
+    <%= attachment_image_tag @pair, :image, :fill, 240, 240, fallback: "no_image.jpg", size: "240x240", class: "pair-image"  %>
   </div>
 
   <div class="col-sm-8">
@@ -30,10 +30,12 @@
         </tr>
       </tbody>
     </table>
-    <div class="text-center">
-      <%= link_to "編集", edit_pair_path(@pair), class: "btn btn-success btn-block" %>
-      <%= link_to "削除", pair_path(@pair), method: :DELETE, class: "btn btn-danger btn-block" %>
-    </div>
+    <% if @pair.customer == current_customer %>
+      <div class="text-center">
+        <%= link_to "編集", edit_pair_path(@pair), class: "btn btn-success btn-block" %>
+        <%= link_to "削除", pair_path(@pair), method: :DELETE, class: "btn btn-danger btn-block" %>
+      </div>
+    <% end %>
   </div>
 
 </div>

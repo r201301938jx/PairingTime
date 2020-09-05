@@ -19,7 +19,7 @@
           <td><%= link_to pair.title, admin_pair_path(pair) %></td>
           <td><%= pair.created_at.strftime('%Y/%m/%d') %></td>
           <td><%= link_to pair.customer.nickname, admin_customer_path(pair.customer) %></td>
-          <td>0</td>
+          <td><%= pair.likes.count %></td>
           <td>0</td>
         </tr>
       <% end %>
