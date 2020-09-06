@@ -11,13 +11,13 @@ class Customer::RelationshipsController < ApplicationController
   end
 
   def follower
-    customer = Customer.find(params[:customer_id])
-    @customers = customer.following_customer
+    @customer = Customer.find(params[:customer_id])
+    @customers = @customer.following_customer
   end
 
   def followed
-    customer = Customer.find(params[:customer_id])
-    @customers = customer.follower_customer
+    @customer = Customer.find(params[:customer_id])
+    @customers = @customer.follower_customer
   end
 
 end

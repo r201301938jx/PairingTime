@@ -14,6 +14,10 @@ class Customer < ApplicationRecord
   has_many :following_customer, through: :follower, source: :followed
   has_many :follower_customer, through: :followed, source: :follower
 
+  has_many :customer_rooms
+  has_many :chats
+  has_many :rooms, through: :customer_rooms
+
   validates :last_name, :first_name, :last_name_kana,
             :first_name_kana, :phone_number, :nickname,
             presence: true

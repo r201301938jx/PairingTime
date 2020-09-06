@@ -30,11 +30,16 @@
       <%= link_to "パスワード変更", edit_customer_registration_path(@customer), class: "btn btn-primary btn-lg btn-block" %>
     </div>
     <% else %>
-    <% if current_customer.following?(@customer) %>
+    <div class="link-button">
+      <% if current_customer.following?(@customer) %>
       <%= link_to "フォローをやめる", customer_relationships_path(@customer.id), method: :DELETE, class: "btn btn-danger btn-lg btn-block" %>
-    <% else %>
+      <% else %>
       <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :POST, class: "btn btn-success btn-lg btn-block" %>
-    <% end %>
+      <% end %>
+    </div>
+    <div class="link-button">
+      <%= link_to "チャットを始める", chat_path(@customer.id), class: "btn btn-primary btn-lg btn-block" %>
+    </div>
     <% end %>
   </div>
 

@@ -26,11 +26,11 @@ Rails.application.routes.draw do
     passwords: 'customers/passwords',
   }
 
-  root 'customer/homes#top'
-  get 'about' => 'customer/homes#about'
-  get 'like_pairs' => 'customer/likes#index'
-
   scope module: :customer do
+    root 'homes#top'
+    get 'about' => 'homes#about'
+    get 'like_pairs' => 'likes#index'
+    get 'chat/:id' => 'chats#show', as: 'chat'
     resources :customers, only: [:show, :edit, :update] do
       member do
         get 'quit'
@@ -47,5 +47,6 @@ Rails.application.routes.draw do
     resources :tags do
       get 'pairs' => 'pairs#search'
     end
+    resources :chats, only: [:create]
   end
 end
