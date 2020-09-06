@@ -2,7 +2,7 @@
   <h2 class="heading text-center">会員詳細</h2>
 
   <div class="col-sm-2 text-center">
-    <h3>会員情報</h3>
+    <h4><strong>会員情報</strong></h4>
 
     <table class="table table-borderless">
       <tr>
@@ -44,8 +44,6 @@
   </div>
 
   <div class="col-sm-offset-1 col-sm-9">
-    <h3>投稿</h3>
-
     <% @customer.pairs.each do |pair| %>
     <div class=col-sm-4>
       <%= link_to pair_path(pair) do %>
@@ -55,11 +53,11 @@
       <div class="text-center">
         <% if pair.liked_by?(current_customer) %>
         <%= link_to pair_likes_path(pair), method: :DELETE do %>
-        <i class="fas fa-star"><%= pair.likes.count %></i>
+        <i class="fas fa-heart red-heart"><span><%= pair.likes.count %></span></i>
         <% end %>
         <% else %>
         <%= link_to pair_likes_path(pair), method: :POST do %>
-        <i class="far fa-star"><%= pair.likes.count %></i>
+        <i class="far fa-heart"><%= pair.likes.count %></i>
         <% end %>
         <% end %>
         <span>/ コメント数：<%= pair.comments.count %></span>

@@ -18,7 +18,7 @@
  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  padding: 70px;
+  padding: 65px;
   font-family: 'Noto Sans JP', sans-serif;
   background-color: #FFE4C4;
 }
@@ -51,7 +51,15 @@ footer {
   }
 }
 
+/* 検索フォーム */
 
+.search-content {
+  padding-right: 0px;
+}
+
+.form-group-btn {
+  padding-top: 20px;
+}
 
 /* フラッシュメッセージ */
 
@@ -86,13 +94,13 @@ footer {
 .profile-image {
   border-radius: 50%;
   border: 2px solid black;
-  margin-top: 25px;
+  margin-top: 5px;
 }
 
 .pair-image {
   border-radius: 50%;
   border: 2px solid black;
-  margin-top: 25px
+  margin-top: 10px
 }
 
 /* バッジ */
@@ -104,16 +112,25 @@ footer {
   background-color: green;
 }
 
+/* お気に入り */
+
+.red-heart {
+  color: red;
+  span {
+    color: black
+  }
+}
+
 /* タイトル */
 .heading {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
 /* トップ */
 
 .top-heading {
-  margin: 5px;
+  margin-bottom: 5px;
 }
 
 .top-title {

@@ -1,11 +1,26 @@
+<div class="row">
+  <div class="search-form col-sm-4 pull-right">
+    <%= form_tag(search_path, method: :GET) do %>
+    <div class="form-group col-sm-10 search-content">
+      <%= text_field_tag 'search[content]', "", class: "form-control", placeholder: "タイトルで検索" %>
+    </div>
+    <div class="form-group-btn">
+      <%= button_tag type: "submit", class: "btn btn-primary col-sm-2" do %>
+      <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
   <h2 class="heading text-center">投稿詳細</h2>
 
-  <div class="col-sm-4">
-    <%= attachment_image_tag @pair, :image, :fill, 240, 240, fallback: "no_image.jpg", size: "240x240", class: "pair-image"  %>
+  <div class="col-sm-5">
+    <%= attachment_image_tag @pair, :image, :fill, 350, 350, fallback: "no_image.jpg", size: "350x350", class: "pair-image"  %>
   </div>
 
-  <div class="col-sm-8">
+  <div class="col-sm-7">
     <table class="table table-borderless">
       <tbody>
         <tr>
@@ -31,6 +46,20 @@
         <tr>
           <td>投稿者</td>
           <td><%= link_to @pair.customer.nickname, customer_path(@pair.customer) %></td>
+        </tr>
+        <tr>
+          <td>お気に入り追加数</td>
+          <td>
+            <% if @pair.liked_by?(current_customer) %>
+      <%= link_to pair_likes_path(@pair), method: :DELETE do %>
+      <i class="fas fa-heart fa-lg red-heart"><span><%= @pair.likes.count %></span></i>
+      <% end %>
+      <% else %>
+      <%= link_to pair_likes_path(@pair), method: :POST do %>
+      <i class="far fa-heart fa-lg"><%= @pair.likes.count %></i>
+      <% end %>
+      <% end %>
+          </td>
         </tr>
       </tbody>
     </table>

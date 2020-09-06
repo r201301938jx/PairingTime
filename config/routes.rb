@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'homes#top'
+    get '/search' => 'search#search'
     resources :customers, only: [:index, :show, :edit, :update]
     resources :pairs, only: [:index, :show, :destroy]
   end
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about'
     get 'like_pairs' => 'likes#index'
     get 'chat/:id' => 'chats#show', as: 'chat'
+    get '/search' => 'search#search'
     resources :customers, only: [:show, :edit, :update] do
       member do
         get 'quit'

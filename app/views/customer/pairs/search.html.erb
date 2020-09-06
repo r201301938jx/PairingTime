@@ -16,11 +16,11 @@
     <div class="text-center">
       <% if pair.liked_by?(current_customer) %>
       <%= link_to pair_likes_path(pair), method: :DELETE do %>
-      <i class="fas fa-star"><%= pair.likes.count %></i>
+      <i class="fas fa-heart red-heart"><span><%= pair.likes.count %></span></i>
       <% end %>
       <% else %>
       <%= link_to pair_likes_path(pair), method: :POST do %>
-      <i class="far fa-star"><%= pair.likes.count %></i>
+      <i class="far fa-heart"><%= pair.likes.count %></i>
       <% end %>
       <% end %>
       <span>/ コメント数：<%= pair.comments.count %></span>

@@ -1,0 +1,6 @@
+<div class="row">
+  <h2 class="heading text-center">「<%= @content %>」と一致した投稿一覧（全<%= @records.count %>件）</h2>
+
+  <%= render 'admin/pairs/index', pairs: @records %>
+
+</div>
