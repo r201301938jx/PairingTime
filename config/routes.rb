@@ -50,5 +50,6 @@ Rails.application.routes.draw do
       get 'pairs' => 'pairs#search'
     end
     resources :chats, only: [:create]
+    resources :contacts, only: [:new, :create]
   end
 end
