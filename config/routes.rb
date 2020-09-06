@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     root 'homes#top'
     get '/search' => 'search#search'
     resources :customers, only: [:index, :show, :edit, :update]
-    resources :pairs, only: [:index, :show, :destroy]
+    resources :pairs, only: [:index, :show, :destroy] do
+      collection do
+        get '/sort' => 'pairs#sort'
+      end
+    end
   end
 
   # Customer
@@ -45,6 +49,9 @@ Rails.application.routes.draw do
     resources :pairs do
       resource :likes, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
+      collection do
+        get '/sort' => 'pairs#sort'
+      end
     end
     resources :tags do
       get 'pairs' => 'pairs#search'

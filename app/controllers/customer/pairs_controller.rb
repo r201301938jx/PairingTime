@@ -3,7 +3,7 @@ class Customer::PairsController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def index
-    @pairs = Pair.all
+    @pairs = Pair.all.order(created_at: :DESC)
   end
 
   def show
@@ -57,6 +57,11 @@ class Customer::PairsController < ApplicationController
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
     @pairs = @tag.pairs.all
+  end
+
+  def sort
+    selection = params[:keyward]
+    @pairs = Pair.sort(selection)
   end
 
   private

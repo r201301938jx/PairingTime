@@ -16,4 +16,10 @@ class Admin::PairsController < ApplicationController
     flash[:notice] = "投稿の削除が完了しました"
     redirect_to admin_pairs_path
   end
+
+  def sort
+    selection = params[:keyward]
+    @pairs = Pair.sort(selection)
+  end
+
 end

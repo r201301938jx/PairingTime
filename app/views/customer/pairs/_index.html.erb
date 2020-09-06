@@ -1,10 +1,10 @@
 <% pairs.each do |pair| %>
-<div class=col-sm-3>
+<div class="col-sm-3 text-center">
   <%= link_to pair_path(pair) do %>
   <%= attachment_image_tag pair, :image, :fill, 240, 240, fallback: "no_image.jpg", size: "240x240", class: "pair-image" %>
-  <h5 class="text-center"><%= pair.title %></h5>
+  <h5><%= pair.title %></h5>
   <% if customer_signed_in? %>
-  <div class="text-center">
+  <div>
     <% if pair.liked_by?(current_customer) %>
     <%= link_to pair_likes_path(pair), method: :DELETE do %>
     <i class="fas fa-heart red-heart"><span><%= pair.likes.count %></span></i>
