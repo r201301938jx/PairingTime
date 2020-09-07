@@ -20,7 +20,7 @@
 body {
   padding: 65px;
   font-family: 'Noto Sans JP', sans-serif;
-  background-color: #FFE4C4;
+  background-color: #F5DEB3;
 }
 
 a {
@@ -36,6 +36,10 @@ a:hover {
 
 header {
   background-color: #DEB887;
+}
+
+.logo {
+  height: 60px;
 }
 
 .login-message {

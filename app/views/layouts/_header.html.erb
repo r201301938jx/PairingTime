@@ -2,7 +2,9 @@
   <div class="container">
     <nav class="nav navbar-nav navbar-left">
       <!-- 後程ロゴと差し替え予定 -->
-      <h2><strong><%= link_to "PairingTime", root_path %></strong></h2>
+      <%= link_to root_path do %>
+        <img alt="logo" src="/assets/logo.png" class="logo">
+      <% end %>
     </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
