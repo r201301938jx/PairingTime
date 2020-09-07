@@ -4,7 +4,7 @@ class Customer::PairsController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def index
-    @pairs = Pair.all.order(created_at: :desc)
+    @pairs = Pair.all.order(created_at: :DESC)
   end
 
   def show

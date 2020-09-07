@@ -28,6 +28,11 @@ class Admin::CustomersController < ApplicationController
     @records = search_for(@content)
   end
 
+  def sort
+    selection = params[:keyward]
+    @customers = Customer.sort(selection)
+  end
+
   private
 
   def customer_params

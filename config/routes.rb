@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update] do
       collection do
         get '/search' => 'customers#search'
+        get '/sort' => 'customers#sort'
       end
     end
     resources :pairs, only: [:index, :show, :destroy] do

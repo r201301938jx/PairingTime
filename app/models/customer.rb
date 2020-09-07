@@ -50,6 +50,22 @@ class Customer < ApplicationRecord
     following_customer.include?(customer)
   end
 
+  #並び替え機能
+  def self.sort(selection)
+    case selection
+    when 'new'
+      return all.order(created_at: :DESC)
+    when 'old'
+      return all.order(created_at: :ASC)
+    when 'active'
+      return where(is_deleted: false)
+    when 'inactive'
+      return where(is_deleted: true)
+    when 'nickname'
+      return all.order(:nickname)
+    end
+  end
+
   #通知機能
   def create_notification_follow!(current_customer)
     temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ?", current_customer.id, id, "follow"])

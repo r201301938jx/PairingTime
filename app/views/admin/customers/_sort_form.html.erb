@@ -1,0 +1,17 @@
+<div class="sort-form col-sm-4 pull-left">
+  <%= form_with(url: sort_admin_customers_path, method: :GET, local: true) do |f| %>
+  <div class="input-group">
+    <%= f.select :keyward, [
+      ['登録日が新しい順', 'new'],
+      ['登録日が古い順', 'old'],
+      ['有効会員', 'active'],
+      ['退会済み会員', 'inactive'],
+      ['ニックネーム五十音順', 'nickname']
+    ],
+    {}, class: "form-control" %>
+    <span class="input-group-btn">
+      <%= f.submit "並び替え", class: "btn btn-warning" %>
+    </span>
+  </div>
+  <% end %>
+</div>
