@@ -6,6 +6,7 @@ class Customer::LikesController < ApplicationController
     like = current_customer.likes.new(pair_id: @pair.id)
     like.save
     flash[:notice] = "お気に入りに追加しました"
+    @pair.create_notification_like!(current_customer)
     redirect_to request.referer
   end
 

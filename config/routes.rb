@@ -58,5 +58,10 @@ Rails.application.routes.draw do
     end
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]
+    resources :notifications, only: [:index, :destroy] do
+      collection do
+        delete "/" => "notifications#destroy_all"
+      end
+    end
   end
 end

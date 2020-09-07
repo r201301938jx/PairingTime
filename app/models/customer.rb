@@ -18,6 +18,9 @@ class Customer < ApplicationRecord
   has_many :chats
   has_many :rooms, through: :customer_rooms
 
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id"
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id"
+
   validates :last_name, :first_name, :last_name_kana,
             :first_name_kana, :phone_number, :nickname,
             presence: true
@@ -45,6 +48,18 @@ class Customer < ApplicationRecord
 
   def following?(customer)
     following_customer.include?(customer)
+  end
+
+  #通知機能
+  def create_notification_follow!(current_customer)
+    temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ?", current_customer.id, id, "follow"])
+    if temp.blank?
+      notification = current_customer.active_notifications.new(
+        visited_id: id,
+        action: "follow"
+      )
+      notification.save if notification.valid?
+    end
   end
 
 end

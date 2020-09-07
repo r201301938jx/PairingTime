@@ -39,7 +39,7 @@ header {
 }
 
 .login-message {
-  margin: 25px 25px 0 0;
+  margin: 20px 25px 0 0;
 }
 
 /* フッター */
@@ -149,4 +149,20 @@ footer {
   background-color: #fff;
   color: black;
   margin-left: 10px;
+}
+
+/* 通知 */
+
+.notification-box {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.notification-message {
+  padding-top: 20px;
+}
+
+.notification-circle {
+  position: absolute;
+  padding-top: 20px;
 }

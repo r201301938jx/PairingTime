@@ -7,6 +7,7 @@ class Customer::CommentsController < ApplicationController
     @comment.pair_id = @pair.id
     if @comment.save
       flash[:notice] = "投稿にコメントしました"
+      @pair.create_notification_comment!(current_customer, @comment.id)
     end
     redirect_to request.referer
   end

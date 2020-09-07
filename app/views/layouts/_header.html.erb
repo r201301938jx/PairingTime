@@ -8,22 +8,24 @@
       <ul class="nav navbar-nav navbar-right">
         <% if customer_signed_in? %>
         <li class="badge badge-success login-message"><%= current_customer.nickname %>さん</li>
-        <li class="btn"><%= link_to "マイページ", customer_path(current_customer) %></li>
-        <li class="btn"><%= link_to "投稿一覧", pairs_path %></li>
-        <li class="btn"><%= link_to "新規投稿", new_pair_path %></li>
-        <li class="btn"><%= link_to "通知一覧", "#" %></li>
-        <li class="btn"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+        <li><%= link_to "マイページ", customer_path(current_customer), class:"btn" %></li>
+        <li><%= link_to "投稿一覧", pairs_path, class:"btn" %></li>
+        <li><%= link_to "新規投稿", new_pair_path, class:"btn" %></li>
+        <li>
+          <%= link_to "通知一覧", notifications_path, class:"btn" %>
+        </li>
+        <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"btn" %></li>
         <% elsif admin_signed_in? %>
-        <li class="btn"><%= link_to "トップ", admin_root_path %></li>
-        <li class="btn"><%= link_to "会員一覧", admin_customers_path %></li>
-        <li class="btn"><%= link_to "投稿一覧", admin_pairs_path %></li>
-        <li class="btn"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+        <li><%= link_to "トップ", admin_root_path, class:"btn" %></li>
+        <li><%= link_to "会員一覧", admin_customers_path, class:"btn" %></li>
+        <li><%= link_to "投稿一覧", admin_pairs_path, class:"btn" %></li>
+        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn" %></li>
         <% else %>
-        <li class="btn"><%= link_to "概要", about_path %></li>
-        <li class="btn"><%= link_to "投稿一覧", pairs_path %></li>
-        <li class="btn"><%= link_to "新規登録", new_customer_registration_path %></li>
-        <li class="btn"><%= link_to "ログイン", new_customer_session_path %></li>
-        <li class="btn"><%= link_to "管理者ログイン", new_admin_session_path %></li>
+        <li><%= link_to "概要", about_path, class:"btn" %></li>
+        <li><%= link_to "投稿一覧", pairs_path, class:"btn" %></li>
+        <li><%= link_to "新規登録", new_customer_registration_path, class:"btn" %></li>
+        <li><%= link_to "ログイン", new_customer_session_path, class:"btn" %></li>
+        <li><%= link_to "管理者ログイン", new_admin_session_path, class:"btn" %></li>
         <% end %>
       </ul>
     </nav>
