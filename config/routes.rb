@@ -14,10 +14,14 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'homes#top'
-    get '/search' => 'search#search'
-    resources :customers, only: [:index, :show, :edit, :update]
+    resources :customers, only: [:index, :show, :edit, :update] do
+      collection do
+        get '/search' => 'customers#search'
+      end
+    end
     resources :pairs, only: [:index, :show, :destroy] do
       collection do
+        get '/search' => 'pairs#search'
         get '/sort' => 'pairs#sort'
       end
     end
@@ -34,9 +38,8 @@ Rails.application.routes.draw do
   scope module: :customer do
     root 'homes#top'
     get 'about' => 'homes#about'
-    get 'like_pairs' => 'likes#index'
     get 'chat/:id' => 'chats#show', as: 'chat'
-    get '/search' => 'search#search'
+    get 'like_pairs' => 'likes#index'
     resources :customers, only: [:show, :edit, :update] do
       member do
         get 'quit'
@@ -50,11 +53,12 @@ Rails.application.routes.draw do
       resource :likes, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
       collection do
+        get '/search' => 'pairs#search'
         get '/sort' => 'pairs#sort'
       end
     end
     resources :tags do
-      get 'pairs' => 'pairs#search'
+      get 'pairs' => 'pairs#tag_search'
     end
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]

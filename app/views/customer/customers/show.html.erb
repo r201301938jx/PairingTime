@@ -44,7 +44,7 @@
   </div>
 
   <div class="col-sm-offset-1 col-sm-9">
-    <% @customer.pairs.each do |pair| %>
+    <% @pairs.each do |pair| %>
     <div class=col-sm-4>
       <%= link_to pair_path(pair) do %>
       <%= attachment_image_tag pair, :image, :fill, 260, 260, fallback: "no_image.jpg", size: "260x260", class: "pair-image" %>

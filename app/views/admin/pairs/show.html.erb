@@ -1,15 +1,4 @@
-<div class="search-form col-sm-4 pull-right">
-  <%= form_tag(admin_search_path, method: :GET) do %>
-  <div class="input-group">
-    <%= text_field_tag 'search[content]', "", class: "form-control", placeholder: "タイトルで検索" %>
-    <span class="input-group-btn">
-      <%= button_tag type: "submit", class: "btn btn-primary" do %>
-      <i class="fas fa-search"></i>
-      <% end %>
-    </span>
-  </div>
-  <% end %>
-</div>
+<%= render 'search_form' %>
 
 <div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
   <h2 class="heading text-center">投稿詳細</h2>

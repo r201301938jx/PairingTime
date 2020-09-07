@@ -4,6 +4,7 @@ class Customer::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @pairs = @customer.pairs.order(created_at: :DESC)
   end
 
   def edit

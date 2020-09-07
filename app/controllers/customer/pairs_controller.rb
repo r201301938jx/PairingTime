@@ -1,9 +1,10 @@
 class Customer::PairsController < ApplicationController
+
   before_action :authenticate_customer!, except: [:index]
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
   def index
-    @pairs = Pair.all.order(created_at: :DESC)
+    @pairs = Pair.all.order(created_at: :desc)
   end
 
   def show
@@ -53,12 +54,20 @@ class Customer::PairsController < ApplicationController
     redirect_to pairs_path
   end
 
+  #タイトル、説明検索
   def search
+    @content = params["search"]["content"]
+    @records = search_for(@content)
+  end
+
+  #タグ検索
+  def tag_search
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
     @pairs = @tag.pairs.all
   end
 
+  #並び替え
   def sort
     selection = params[:keyward]
     @pairs = Pair.sort(selection)
@@ -76,4 +85,9 @@ class Customer::PairsController < ApplicationController
       redirect_to pairs_path
     end
   end
+
+  def search_for(content)
+    Pair.where('title LIKE ?', '%'+content+'%')
+  end
+
 end

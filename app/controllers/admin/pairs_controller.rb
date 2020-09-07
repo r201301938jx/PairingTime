@@ -22,4 +22,15 @@ class Admin::PairsController < ApplicationController
     @pairs = Pair.sort(selection)
   end
 
+  def search
+    @content = params[:search][:content]
+    @records = search_for(@content)
+  end
+
+  private
+
+  def search_for(content)
+    Pair.where('title LIKE ? OR caption LIKE ?', '%'+content+'%', '%'+content+'%')
+  end
+
 end

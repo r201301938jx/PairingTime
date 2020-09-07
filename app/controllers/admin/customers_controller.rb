@@ -23,9 +23,19 @@ class Admin::CustomersController < ApplicationController
     end
   end
 
+  def search
+    @content = params[:search][:content]
+    @records = search_for(@content)
+  end
+
   private
 
   def customer_params
     params.require(:customer).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :phone_number, :email, :nickname, :profile_image, :is_deleted)
   end
+
+  def search_for(content)
+    Customer.where(['last_name LIKE ? OR first_name LIKE ? OR last_name_kana LIKE ? OR first_name_kana LIKE ? OR nickname LIKE ? OR email LIKE ?', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%'])
+  end
+
 end
