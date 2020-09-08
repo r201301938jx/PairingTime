@@ -9,6 +9,8 @@ class Pair < ApplicationRecord
   has_many :notifications, dependent: :destroy
 
   validates :customer_id, :title, :image, presence: true
+  validates :title, length: {maximum: 30}
+  validates :caption, length: {maximum: 200}
 
   attachment :image
 

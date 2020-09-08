@@ -8,8 +8,11 @@ class Customer::CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = "投稿にコメントしました"
       @pair.create_notification_comment!(current_customer, @comment.id)
+      redirect_to request.referer
+    else
+      flash[:error] = "1~50文字のコメントを入力してください"
+      redirect_to request.referer
     end
-    redirect_to request.referer
   end
 
   def destroy

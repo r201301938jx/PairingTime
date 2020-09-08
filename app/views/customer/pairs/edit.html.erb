@@ -3,6 +3,8 @@
 
   <%= form_for(@pair, url: pair_path(@pair), method: :PUT) do |f| %>
 
+  <%= render 'layouts/errors', obj: @pair %>
+
   <div class="col-sm-4">
     <div class="form-group row text-center">
       <%= f.label :"画像" %><br>

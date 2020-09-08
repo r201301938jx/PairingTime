@@ -9,26 +9,32 @@ class Customer < ApplicationRecord
   has_many :like_pairs, through: :likes, source: 'pair'
   has_many :comments
 
+  #フォロー機能
   has_many :follower, class_name: "Relationship", foreign_key: "follower_id"
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id"
   has_many :following_customer, through: :follower, source: :followed
   has_many :follower_customer, through: :followed, source: :follower
 
+  #チャット機能
   has_many :customer_rooms
   has_many :chats
   has_many :rooms, through: :customer_rooms
 
+  #通知機能
   has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id"
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id"
 
   validates :last_name, :first_name, :last_name_kana,
-            :first_name_kana, :phone_number, :nickname,
+            :first_name_kana, :phone_number, :email, :nickname,
             presence: true
+  validates :email, :nickname, uniqueness: true
   validates :phone_number, numericality: { only_integer: true }
+  validates :last_name, :first_name, :last_name_kana, :first_name_kana, length: {maximum: 10, minimum: 2}
+  validates :nickname, length: {maximum: 20, minimum: 2}
   validates :last_name_kana, :first_name_kana,
             format: {
               with: /\A[\p{katakana}\p{blank}ー－]+\z/,
-              message: "カタカナで入力して下さい。",
+              message: "はカタカナで入力してください。"
             }
 
   attachment :profile_image
