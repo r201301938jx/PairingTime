@@ -21,6 +21,20 @@
       <%= link_to "投稿をもっと見る", pairs_path, class: "btn btn-lg  btn-success col-sm-12" %>
     </div>
   </div>
+
+  <% if customer_signed_in? %>
+
+  <div class="row">
+    <h2 class="text-center ranking-title"><strong><u>お気に入り追加数ランキング</u></strong></h2>
+    <%= render 'customer/pairs/ranking_index', pairs: @like_ranks %>
+  </div>
+
+  <div class="row">
+    <h2 class="text-center ranking-title"><strong><u>フォロワー数ランキング</u></strong></h2>
+    <%= render 'customer/customers/ranking_index', customers: @follower_ranks %>
+  </div>
+
+  <% end %>
 </div>
 
 

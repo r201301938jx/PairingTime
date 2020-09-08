@@ -19,23 +19,18 @@ ja:
             last_name:
               blank: "が入力されていません。"
               too_long: "は%{count}文字以下で入力してください。"
-              too_short: "は%{count}文字以上で入力してください。"
             first_name:
               blank: "が入力されていません。"
               too_long: "は%{count}文字以下で入力してください。"
-              too_short: "は%{count}文字以上で入力してください。"
             last_name_kana:
               blank: "が入力されていません。"
               too_long: "は%{count}文字以下で入力してください。"
-              too_short: "は%{count}文字以上で入力してください。"
             first_name_kana:
               blank: "が入力されていません。"
               too_long: "は%{count}文字以下で入力してください。"
-              too_short: "は%{count}文字以上で入力してください。"
             nickname:
               blank: "が入力されていません。"
               too_long: "は%{count}文字以下で入力してください。"
-              too_short: "は%{count}文字以上で入力してください。"
             phone_number:
               blank: "が入力されていません。"
               not_a_number: "は数字で入力してください"

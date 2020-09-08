@@ -29,8 +29,8 @@ class Customer < ApplicationRecord
             presence: true
   validates :email, :nickname, uniqueness: true
   validates :phone_number, numericality: { only_integer: true }
-  validates :last_name, :first_name, :last_name_kana, :first_name_kana, length: {maximum: 10, minimum: 2}
-  validates :nickname, length: {maximum: 20, minimum: 2}
+  validates :last_name, :first_name, :last_name_kana, :first_name_kana, length: {maximum: 10}
+  validates :nickname, length: {maximum: 20}
   validates :last_name_kana, :first_name_kana,
             format: {
               with: /\A[\p{katakana}\p{blank}ー－]+\z/,
