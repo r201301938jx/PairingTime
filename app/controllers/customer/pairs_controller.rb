@@ -20,7 +20,7 @@ class Customer::PairsController < ApplicationController
   def create
     @pair = Pair.new(pair_params)
     @pair.customer_id = current_customer.id
-    tag_list = params[:pair][:tag_ids].split(',')
+    tag_list = params[:pair][:tag_ids].delete(" ").split(',')
     if @pair.save
       @pair.save_tags(tag_list)
       flash[:notice] = "投稿の作成が完了しました"
@@ -37,7 +37,7 @@ class Customer::PairsController < ApplicationController
 
   def update
     @pair = Pair.find(params[:id])
-    tag_list = params[:pair][:tag_ids].split(',')
+    tag_list = params[:pair][:tag_ids].delete(" ").split(',')
     if @pair.update(pair_params)
       @pair.save_tags(tag_list)
       flash[:notice] = "投稿の編集が完了しました"
