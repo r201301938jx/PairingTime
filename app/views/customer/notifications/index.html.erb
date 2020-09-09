@@ -9,6 +9,7 @@
   <div>
     <%= render @notifications %>
   </div>
+  <div class="text-center col-sm-12"><%= paginate @notifications  %></div>
   <% else %>
   <h4>通知はありません</h4>
   <% end %>

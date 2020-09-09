@@ -7,6 +7,7 @@ class Customer::CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @pairs = @customer.pairs.order(created_at: :DESC)
+    @pairs = @pairs.page(params[:page]).per(9)
   end
 
   def edit

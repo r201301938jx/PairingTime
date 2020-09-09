@@ -142,7 +142,7 @@ footer {
 .ranking-title {
   margin: 25px 0;
   border: 3px solid black;
-  border-radius: 3%;
+  border-radius: 10px;
   background-color: orange;
 }
 
@@ -180,4 +180,14 @@ footer {
 .notification-circle {
   position: absolute;
   padding-top: 20px;
+}
+
+/* ページング */
+
+.pagination>li>a {
+  color: black;
+}
+
+.pagination>.active>a {
+  background: orange;
 }

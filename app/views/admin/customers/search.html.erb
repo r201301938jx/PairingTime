@@ -6,5 +6,6 @@
   <h2 class="heading text-center">「<%= @content %>」と一致した会員一覧（全<%= @records.count %>件）</h2>
 
   <%= render 'index', customers: @records %>
+  <div class="text-center col-sm-12"><%= paginate @records %></div>
 
 </div>

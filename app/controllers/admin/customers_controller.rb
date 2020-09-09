@@ -1,8 +1,9 @@
 class Admin::CustomersController < ApplicationController
+
   before_action :authenticate_admin!
 
   def index
-    @customers = Customer.all
+    @customers = Customer.all.page(params[:page]).per(10)
   end
 
   def show
@@ -30,7 +31,7 @@ class Admin::CustomersController < ApplicationController
 
   def sort
     selection = params[:keyward]
-    @customers = Customer.sort(selection)
+    @customers = Customer.sort(selection).page(params[:page]).per(10)
   end
 
   private
@@ -40,7 +41,7 @@ class Admin::CustomersController < ApplicationController
   end
 
   def search_for(content)
-    Customer.where(['last_name LIKE ? OR first_name LIKE ? OR last_name_kana LIKE ? OR first_name_kana LIKE ? OR nickname LIKE ? OR email LIKE ?', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%'])
+    Customer.where(['last_name LIKE ? OR first_name LIKE ? OR last_name_kana LIKE ? OR first_name_kana LIKE ? OR nickname LIKE ? OR email LIKE ?', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%', '%'+content+'%']).page(params[:page]).per(10)
   end
 
 end
