@@ -1,13 +1,19 @@
 <div class="row">
   <h2 class="heading text-center">退会</h2>
 
-  <div class="col-sm-12 text-center">
-    <h3><strong>本当に退会してもよろしいでしょうか？</strong></h3><br>
-    <p>退会した場合、こちらのアカウントに今後ログインすることができなくなります。</p>
-    <p>それでも退会をご希望される場合には、「退会する」をクリックしてください。</p>
+  <div class="col-sm-12">
+    <h3 class="col-sm-12 text-center"><strong>本当に退会してもよろしいでしょうか？</strong></h3><br>
+    <h4 class="col-sm-12 text-center">退会した場合、投稿を含めて下記の情報が全て削除され、<br>こちらのアカウントに今後ログインすることができなくなります。</h4>
+    <ul class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+      <li>こちらのアカウントの投稿</li>
+      <li>こちらのアカウントが追加したお気に入り</li>
+      <li>こちらのアカウントのフォローユーザー</li>
+      <li>こちらのアカウントのフォロワー</li>
+    </ul>
+    <h4 class="col-sm-12 text-center">それでも退会をご希望される場合には、下記右の「退会する」をクリックしてください。</h4>
   </div>
 
-  <div class="text-center col-sm-offset-1 col-sm-10 col-sm-offset-1">
+  <div class="text-center col-sm-offset-1 col-sm-10 col-sm-offset-1 link-button">
     <div class="col-sm-6">
       <%= link_to "引き続き利用する", customer_path(@customer), class: "btn btn-lg btn-block btn-primary" %>
     </div>

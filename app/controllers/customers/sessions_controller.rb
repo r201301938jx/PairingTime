@@ -25,7 +25,7 @@ class Customers::SessionsController < Devise::SessionsController
     @customer = Customer.find_by(email: params[:customer][:email].downcase)
     if @customer
       if @customer.valid_password?(params[:customer][:password]) && (@customer.active_for_authentication? == false)
-        flash[:error] = "退会済みです"
+        flash[:error] = "退会済みです。同一アカウントの再利用をご希望される場合には、お問い合わせ機能をご活用ください"
         redirect_to new_customer_session_path
       end
     else

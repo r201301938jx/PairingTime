@@ -1,6 +1,8 @@
 class Customer::CustomersController < ApplicationController
+
   before_action :authenticate_customer!
   before_action :ensure_correct_customer, only: [:edit, :update, :quit, :withdraw]
+  before_action :ensure_active_customer, only: [:show]
 
   def show
     @customer = Customer.find(params[:id])
@@ -28,6 +30,10 @@ class Customer::CustomersController < ApplicationController
   def withdraw
     @customer = Customer.find(params[:id])
     @customer.update(is_deleted: true)
+    @customer.pairs.destroy_all
+    @customer.likes.destroy_all
+    @customer.follower.destroy_all
+    @customer.followed.destroy_all
     reset_session
     flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
     redirect_to root_path
@@ -51,4 +57,13 @@ class Customer::CustomersController < ApplicationController
       redirect_to customer_path(current_customer)
     end
   end
+
+  def ensure_active_customer
+    @customer = Customer.find(params[:id])
+    unless @customer.is_deleted == false
+      flash[:error] = "有効な会員ではありません"
+      redirect_to customer_path(current_customer)
+    end
+  end
+
 end
