@@ -66,6 +66,9 @@
   <div class="col-sm-9">
     <% @pairs.each do |pair| %>
     <div class=col-sm-4>
+      <% if pair.created_at > 24.hours.ago %>
+      <span class="badge badge-primary new-badge">New</span>
+      <% end %>
       <%= link_to pair_path(pair) do %>
       <%= attachment_image_tag pair, :image, :fill, 260, 260, fallback: "no_image.jpg", size: "260x260", class: "pair-image" %>
       <h5 class="text-center"><%= pair.title %></h5>

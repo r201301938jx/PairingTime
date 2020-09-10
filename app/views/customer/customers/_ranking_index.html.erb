@@ -2,7 +2,7 @@
 <div class="col-sm-3 text-center">
   <h4><strong>第<%= i %>位</strong></h4>
   <%= link_to customer_path(customer) do %>
-  <%= attachment_image_tag customer, :profile_image, :fill, 240, 240, fallback: "no_customer_image.jpg", size: "240x240", class: "profile-image" %>
+  <%= attachment_image_tag customer, :profile_image, :fill, 250, 250, fallback: "no_customer_image.jpg", size: "250x250", class: "profile-image" %>
   <h5><%= customer.nickname %></h5>
   <% end %>
   <p>フォロワー数：<%= customer.followed.count %> / 投稿数：<%= customer.pairs.count %></p>

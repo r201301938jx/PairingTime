@@ -1,8 +1,11 @@
 <% pairs.each.with_index(1) do |pair, i| %>
 <div class="col-sm-4 text-center">
   <h4><strong>第<%= i %>位</strong></h4>
+  <% if pair.created_at > 24.hours.ago %>
+  <span class="badge badge-primary new-badge">New</span>
+  <% end %>
   <%= link_to pair_path(pair) do %>
-  <%= attachment_image_tag pair, :image, :fill, 240, 240, fallback: "no_image.jpg", size: "240x240", class: "pair-image" %>
+  <%= attachment_image_tag pair, :image, :fill, 250, 250, fallback: "no_image.jpg", size: "250x250", class: "pair-image" %>
   <h5><%= pair.title %></h5>
   <% if customer_signed_in? %>
   <div>

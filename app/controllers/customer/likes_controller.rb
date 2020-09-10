@@ -20,6 +20,6 @@ class Customer::LikesController < ApplicationController
   end
 
   def index
-    @like_pairs = current_customer.like_pairs.page(params[:page]).per(12)
+    @like_pairs = current_customer.like_pairs.order(created_at: :DESC).page(params[:page]).per(12)
   end
 end
