@@ -15,7 +15,7 @@
   </div>
 
   <% if customer_signed_in? %>
-  <div class="col-sm-offset-3 col-sm-6">
+  <div class="col-sm-offset-4 col-sm-4">
     <h2 class="ranking-title text-center"><strong><i class="fas fa-crown"></i> ランキング</strong></h2>
   </div>
 
@@ -41,16 +41,16 @@
   <div class="row text-center link-button">
     <div class="col-sm-6">
       <%= link_to new_contact_path do %>
-      <a class="btn btn- btn-lg btn-primary col-sm-12">
+      <p class="btn btn- btn-lg btn-primary col-sm-12">
         <i class="fas fa-paper-plane"> お問い合わせ</i>
-      </a>
+      </p>
       <% end %>
     </div>
     <div class="col-sm-6">
       <%= link_to pairs_path do %>
-      <a class="btn btn-lg  btn-success col-sm-12">
+      <p class="btn btn-lg  btn-success col-sm-12">
         <i class="fas fa-camera-retro"> 投稿をもっと見る</i>
-      </a>
+      </p>
       <% end %>
     </div>
   </div>

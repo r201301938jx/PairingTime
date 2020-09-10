@@ -3,7 +3,7 @@
   <% if @notifications.exists? %>
   <div class="col-sm-2">
     <%= link_to notifications_path, method: :DELETE do %>
-    <h5 class="btn btn-danger btn-block pull-left">全削除</h5>
+    <h5 class="btn btn-danger btn-block pull-left"><i class="fas fa-trash-alt"></i> 全削除</h5>
     <% end %>
   </div>
   <div>

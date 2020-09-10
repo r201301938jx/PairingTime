@@ -46,11 +46,11 @@
           <td>
             <% if @pair.liked_by?(current_customer) %>
             <%= link_to pair_likes_path(@pair), method: :DELETE do %>
-            <i class="fas fa-heart fa-lg red-heart"><span><%= @pair.likes.count %></span></i>
+            <i class="fas fa-heart fa-lg red-heart"> <span><%= @pair.likes.count %></span></i>
             <% end %>
             <% else %>
             <%= link_to pair_likes_path(@pair), method: :POST do %>
-            <i class="far fa-heart fa-lg"><%= @pair.likes.count %></i>
+            <i class="far fa-heart fa-lg"> <%= @pair.likes.count %></i>
             <% end %>
             <% end %>
           </td>
@@ -59,15 +59,23 @@
     </table>
     <% if @pair.customer == current_customer %>
     <div class="text-center">
-      <%= link_to "編集", edit_pair_path(@pair), class: "btn btn-success btn-block" %>
-      <%= link_to "削除", pair_path(@pair), method: :DELETE, class: "btn btn-danger btn-block" %>
+      <%= link_to edit_pair_path(@pair) do %>
+      <p class="btn btn-success btn-block">
+        <i class="fas fa-edit"> 編集</i>
+      </p>
+      <% end %>
+      <%= link_to pair_path(@pair), method: :DELETE do %>
+      <p class="btn btn-danger btn-block">
+        <i class="fas fa-trash-alt"> 削除</i>
+      </p>
+      <% end %>
     </div>
     <% end %>
   </div>
 
   <div class="col-sm-12 comment-section">
     <div class="col-sm-3 label label-primary">
-      <h3 class="comment-title">コメント<span class="badge comment-badge"><%= @pair.comments.count %></span></h3>
+      <h3 class="comment-title"><i class="fas fa-comment"></i> コメント<span class="badge comment-badge"><%= @pair.comments.count %></span></h3>
     </div>
 
     <div class="comment-form col-sm-9">
@@ -92,7 +100,11 @@
           </td>
           <% if comment.customer == current_customer %>
           <td>
-            <%= link_to "削除", pair_comment_path(@pair, comment), method: :DELETE, class: "btn btn-sm btn-danger" %>
+            <%= link_to pair_comment_path(@pair, comment), method: :DELETE do %>
+            <p class="btn btn-sm btn-danger">
+              <i class="fas fa-trash-alt"> 削除</i>
+            </p>
+            <% end %>
           </td>
           <% end %>
         </tr>

@@ -5,7 +5,7 @@
 
   <h2 class="heading text-center">会員詳細</h2>
 
-  <div class="col-sm-2 text-center">
+  <div class="col-sm-3 text-center">
     <h4><strong>会員情報</strong></h4>
 
     <table class="table table-borderless">
@@ -25,13 +25,25 @@
 
     <% if @customer == current_customer %>
     <div class="link-button">
-      <%= link_to "お気に入り一覧", like_pairs_path, class: "btn btn-warning btn-lg btn-block" %>
+      <%= link_to like_pairs_path do %>
+      <p class="btn btn-warning btn-lg btn-block">
+        <i class="fas fa-heart"> お気に入り一覧</i>
+      </p>
+      <% end %>
     </div>
     <div class="link-button">
-      <%= link_to "登録情報編集", edit_customer_path(@customer), class: "btn btn-success btn-lg btn-block" %>
+      <%= link_to edit_customer_path(@customer) do %>
+      <p class="btn btn-success btn-lg btn-block">
+        <i class="fas fa-user-edit"> 登録情報編集</i>
+      </p>
+      <% end%>
     </div>
     <div class="link-button">
-      <%= link_to "パスワード変更", edit_customer_registration_path(@customer), class: "btn btn-primary btn-lg btn-block" %>
+      <%= link_to edit_customer_registration_path(@customer) do %>
+      <p class="btn btn-primary btn-lg btn-block">
+        <i class="fas fa-key"> パスワード変更</i>
+      </p>
+      <% end %>
     </div>
     <% else %>
     <div class="link-button">
@@ -42,12 +54,16 @@
       <% end %>
     </div>
     <div class="link-button">
-      <%= link_to "チャットを始める", chat_path(@customer.id), class: "btn btn-primary btn-lg btn-block" %>
+      <%= link_to chat_path(@customer.id) do %>
+      <p class="btn btn-primary btn-lg btn-block">
+        <i class="fas fa-comments"> チャットを始める</i>
+      </p>
+      <% end %>
     </div>
     <% end %>
   </div>
 
-  <div class="col-sm-offset-1 col-sm-9">
+  <div class="col-sm-9">
     <% @pairs.each do |pair| %>
     <div class=col-sm-4>
       <%= link_to pair_path(pair) do %>
@@ -57,14 +73,14 @@
       <div class="text-center">
         <% if pair.liked_by?(current_customer) %>
         <%= link_to pair_likes_path(pair), method: :DELETE do %>
-        <i class="fas fa-heart red-heart"><span><%= pair.likes.count %></span></i>
+        <i class="fas fa-heart red-heart"> <span><%= pair.likes.count %></span></i>
         <% end %>
         <% else %>
         <%= link_to pair_likes_path(pair), method: :POST do %>
-        <i class="far fa-heart"><%= pair.likes.count %></i>
+        <i class="far fa-heart"> <%= pair.likes.count %></i>
         <% end %>
         <% end %>
-        <span>/ コメント数：<%= pair.comments.count %></span>
+        <span> / <i class="fas fa-comment-alt"></i> <%= pair.comments.count %></span>
       </div>
       <% end %>
       <% end %>

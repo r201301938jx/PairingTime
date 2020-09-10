@@ -65,7 +65,11 @@
       </tbody>
     </table>
     <div class="text-center">
-      <%= link_to "会員情報を編集", edit_admin_customer_path, class: "btn btn-primary btn-block" %>
+      <%= link_to edit_admin_customer_path do %>
+      <p class="btn btn-primary btn-block">
+        <i class="fas fa-user-edit"> 会員情報を編集</i>
+      </p>
+      <% end %>
     </div>
   </div>
 
