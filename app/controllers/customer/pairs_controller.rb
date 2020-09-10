@@ -56,7 +56,7 @@ class Customer::PairsController < ApplicationController
 
   #タイトル、説明検索
   def search
-    @content = params["search"]["content"]
+    @content = params[:search][:content]
     @records = search_for(@content)
   end
 
@@ -88,23 +88,6 @@ class Customer::PairsController < ApplicationController
 
   def search_for(content)
     Pair.where('title LIKE ?', '%'+content+'%').page(params[:page]).per(9)
-  end
-
-  def sort(selection)
-    case selection
-    when 'new'
-      return all.order(created_at: :DESC)
-    when 'old'
-      return all.order(created_at: :ASC)
-    when 'likes'
-      return find(Like.group(:pair_id).order(Arel.sql('count(pair_id) desc')).pluck(:pair_id))
-    when 'dislikes'
-      return find(Like.group(:pair_id).order(Arel.sql('count(pair_id) asc')).pluck(:pair_id))
-    when 'many_comments'
-      return find(Comment.group(:pair_id).order(Arel.sql('count(pair_id) desc')).pluck(:pair_id))
-    when 'few_comments'
-      return find(Comment.group(:pair_id).order(Arel.sql('count(pair_id) asc')).pluck(:pair_id))
-    end
   end
 
 end
