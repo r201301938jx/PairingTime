@@ -10,24 +10,77 @@
       <ul class="nav navbar-nav navbar-right">
         <% if customer_signed_in? %>
         <li class="badge badge-success login-message"><%= current_customer.nickname %>さん</li>
-        <li><%= link_to "マイページ", customer_path(current_customer), class:"btn" %></li>
-        <li><%= link_to "投稿一覧", pairs_path, class:"btn" %></li>
-        <li><%= link_to "新規投稿", new_pair_path, class:"btn" %></li>
-        <li>
-          <%= link_to "通知一覧", notifications_path, class:"btn" %>
+        <li class="btn">
+          <%= link_to customer_path(current_customer) do %>
+            <i class="fas fa-home"> マイページ</i>
+          <% end %>
         </li>
-        <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"btn" %></li>
+        <li class="btn">
+          <%= link_to pairs_path do %>
+            <i class="fas fa-camera-retro"> 投稿一覧</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to new_pair_path do %>
+            <i class="fas fa-plus-square"> 新規投稿</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to notifications_path do
+           %>
+            <i class="fas fa-bell"> 通知一覧</i>
+          <% end %>
+        </li>
+        <li class="btn"><%= link_to  destroy_customer_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"> ログアウト</i>
+          <% end %>
+        </li>
         <% elsif admin_signed_in? %>
-        <li><%= link_to "トップ", admin_root_path, class:"btn" %></li>
-        <li><%= link_to "会員一覧", admin_customers_path, class:"btn" %></li>
-        <li><%= link_to "投稿一覧", admin_pairs_path, class:"btn" %></li>
-        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn" %></li>
+        <li class="btn">
+          <%= link_to admin_root_path do %>
+            <i class="fas fa-home"> トップ</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to  admin_customers_path do %>
+            <i class="fas fa-users"> 会員一覧</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to  admin_pairs_path do %>
+            <i class="fas fa-camera-retro"> 投稿一覧</i>
+          <% end %>
+        </li>
+        <li class="btn"><%= link_to  destroy_admin_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"> ログアウト</i>
+          <% end %>
+        </li>
         <% else %>
-        <li><%= link_to "概要", about_path, class:"btn" %></li>
-        <li><%= link_to "投稿一覧", pairs_path, class:"btn" %></li>
-        <li><%= link_to "新規登録", new_customer_registration_path, class:"btn" %></li>
-        <li><%= link_to "ログイン", new_customer_session_path, class:"btn" %></li>
-        <li><%= link_to "管理者ログイン", new_admin_session_path, class:"btn" %></li>
+        <li class="btn">
+          <%= link_to about_path do %>
+            <i class="fas fa-clipboard"> 概要</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to pairs_path do %>
+            <i class="fas fa-camera-retro"> 投稿一覧</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to new_customer_registration_path do %>
+            <i class="fas fa-user-plus"> 新規登録</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to new_customer_session_path do %>
+            <i class="fas fa-sign-in-alt"> ログイン</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to new_admin_session_path do %>
+            <i class="fas fa-toolbox"> 管理者ログイン</i>
+          <% end %>
+        </li>
         <% end %>
       </ul>
     </nav>

@@ -124,7 +124,7 @@ footer {
 /* トップ */
 
 .top-heading {
-  margin-bottom: 5px;
+  margin: 10px;
 }
 
 .top-title {
@@ -133,6 +133,7 @@ footer {
 
 .top-description {
   font-size: 26px;
+  margin-bottom: 10px;
 }
 
 .link-button {
@@ -141,9 +142,9 @@ footer {
 
 .ranking-title {
   margin: 25px 0;
-  border: 3px solid black;
   border-radius: 10px;
   background-color: orange;
+  color: #fff;
 }
 
 .ranking-heading {
