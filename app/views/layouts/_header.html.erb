@@ -1,7 +1,6 @@
 <header class="header navbar navbar-fixed-top">
   <div class="container">
     <nav class="nav navbar-nav navbar-left">
-      <!-- 後程ロゴと差し替え予定 -->
       <%= link_to root_path do %>
         <img alt="logo" src="<%= asset_path "logo.png" %>" class="logo">
       <% end %>
@@ -84,5 +83,12 @@
         <% end %>
       </ul>
     </nav>
+    <div id="hm-icon">
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
   </div>
 </header>
