@@ -1,14 +1,14 @@
 <% provide(:title, "会員詳細") %>
 
-<div class="row col-sm-12 col-xs-12">
+<div class="row col-sm-12 col-12">
   <div id="error_explanation">
     <%= flash[:error] %>
   </div>
 
   <h2 class="heading text-center">会員詳細</h2>
 
-  <div class="col-sm-3 col-xs-12 text-center">
-    <div class="col-sm-12 col-xs-6">
+  <div class="col-sm-3 col-12 text-center">
+    <div class="col-sm-12 col-6">
     <h4><strong>会員情報</strong></h4>
 
     <table class="table table-borderless">
@@ -27,7 +27,7 @@
     </table>
   </div>
 
-  <div class="col-sm-12 col-xs-6">
+  <div class="col-sm-12 col-6">
     <% if @customer == current_customer %>
     <div class="link-button">
       <%= link_to like_pairs_path do %>
@@ -69,14 +69,14 @@
   </div>
   </div>
 
-  <div class="col-sm-9 col-xs-12">
+  <div class="col-sm-9 col-12">
     <% @pairs.each do |pair| %>
-    <div class="col-sm-4 col-xs-6">
+    <div class="col-sm-4 col-6">
       <% if pair.created_at > 24.hours.ago %>
       <span class="badge badge-primary new-badge">New</span>
       <% end %>
       <%= link_to pair_path(pair) do %>
-      <%= attachment_image_tag pair, :image, :fill, 260, 260, fallback: "no_image.jpg", size: "260x260", class: "pair-image" %>
+      <%= attachment_image_tag pair, :image, :fill, 250, 250, fallback: "no_image.jpg", size: "250x250", class: "pair-image" %>
       <h5 class="text-center"><%= pair.title %></h5>
       <% if customer_signed_in? %>
       <div class="text-center">
@@ -95,7 +95,7 @@
       <% end %>
     </div>
     <% end %>
-    <div class="text-center col-sm-12"><%= paginate @pairs %></div>
+    <div class="text-center col-sm-12 col-12"><%= paginate @pairs %></div>
   </div>
 
 </div>

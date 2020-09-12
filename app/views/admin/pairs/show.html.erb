@@ -2,14 +2,14 @@
 
 <%= render 'search_form' %>
 
-<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-12">
   <h2 class="heading text-center">投稿詳細</h2>
 
-  <div class="col-sm-4 col-xs-12 text-center">
+  <div class="col-sm-4 col-12 text-center">
     <%= attachment_image_tag @pair, :image, :fill, 250, 250, fallback: "no_image.jpg", size: "250x250", class: "pair-image"  %>
   </div>
 
-  <div class="col-sm-8 col-xs-12">
+  <div class="col-sm-8 col-12">
     <table class="table table-borderless">
       <tbody>
         <tr>
@@ -51,12 +51,12 @@
     </div>
   </div>
 
-  <div class="col-sm-12 col-xs-12 comment-section">
-    <div class="col-sm-12 col-xs-12 label label-brown">
+  <div class="col-sm-12 col-12 comment-section">
+    <div class="col-sm-12 col-12 label label-brown">
       <h3 class="comment-title"><i class="fas fa-comment-alt"></i> コメント<span class="badge comment-badge"><%= @pair.comments.count %></span></h3>
     </div>
 
-    <div class="comment-list col-sm-12 col-xs-12">
+    <div class="comment-list col-sm-12 col-12">
       <table>
         <% @comments.each do |comment| %>
         <tr class="comment">

@@ -1,13 +1,13 @@
 <% provide(:title, "登録情報編集") %>
 
-<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
+<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-12">
   <h2 class="heading text-center"><%= full_name(@customer)%>さんの登録情報編集</h2>
 
   <%= form_for(@customer, url: admin_customer_path(@customer), method: :PUT) do |f| %>
 
   <%= render 'layouts/errors', obj: @customer %>
 
-  <div class="col-sm-4 col-xs-12">
+  <div class="col-sm-4 col-12">
     <div class="form-group row text-center">
       <%= f.label :"プロフィール画像" %><br>
       <%= attachment_image_tag @customer, :profile_image, :fill, 250, 250, fallback: "no_customer_image.jpg", size: "250x250", class: "profile-image"  %>
@@ -15,61 +15,61 @@
     </div>
   </div>
 
-  <div class="col-sm-8 col-xs-12">
+  <div class="col-sm-8 col-12">
 
     <div class="form-group row">
-      <%= f.label :"会員ID", "会員ID", class: "col-sm-4 col-xs-4" %>
-      <%= f.label :"#{@customer.id}", class: "col-sm-8 col-xs-8" %>
+      <%= f.label :"会員ID", "会員ID", class: "col-sm-4 col-4" %>
+      <%= f.label :"#{@customer.id}", class: "col-sm-8 col-8" %>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"名前", class: "col-sm-4 col-xs-4" %>
-      <div class="col-sm-4 col-xs-4">
+      <%= f.label :"名前", class: "col-sm-4 col-4" %>
+      <div class="col-sm-4 col-4">
         <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
       </div>
-      <div class="col-sm-4 col-xs-4">
+      <div class="col-sm-4 col-4">
         <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"フリガナ", class: "col-sm-4 col-xs-4" %>
-      <div class="col-sm-4 col-xs-4">
+      <%= f.label :"フリガナ", class: "col-sm-4 col-4" %>
+      <div class="col-sm-4 col-4">
         <%= f.text_field :last_name_kana, autofocus: true, class: "form-control" %>
       </div>
-      <div class="col-sm-4 col-xs-4">
+      <div class="col-sm-4 col-4">
         <%= f.text_field :first_name_kana, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"電話番号", class: "col-sm-4 col-xs-4" %>
-      <div class="col-sm-8 col-xs-8">
+      <%= f.label :"電話番号", class: "col-sm-4 col-4" %>
+      <div class="col-sm-8 col-8">
         <%= f.text_field :"phone_number", autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"メールアドレス", class: "col-sm-4 col-xs-4" %>
-      <div class="col-sm-8 col-xs-8">
+      <%= f.label :"メールアドレス", class: "col-sm-4 col-4" %>
+      <div class="col-sm-8 col-8">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"ニックネーム", class: "col-sm-4 col-xs-4" %>
-      <div class="col-sm-8 col-xs-8">
+      <%= f.label :"ニックネーム", class: "col-sm-4 col-4" %>
+      <div class="col-sm-8 col-8">
         <%= f.text_field :nickname, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"ステータス", class: "col-sm-4 col-xs-4" %>
-      <div class="col-sm-4 col-xs-4 text-center">
+      <%= f.label :"ステータス", class: "col-sm-4 col-4" %>
+      <div class="col-sm-4 col-4 text-center">
         <%= f.radio_button :is_deleted, false %>
         <%= f.label :is_deleted, "有効", {value: :false, style: "display: inline-block;"} %>
       </div>
-      <div class="col-sm-4 col-xs-4 text-center">
+      <div class="col-sm-4 col-4 text-center">
         <%= f.radio_button :is_deleted, true %>
         <%= f.label :is_deleted, "退会済み", {value: :true, style: "display: inline-block;"} %>
       </div>

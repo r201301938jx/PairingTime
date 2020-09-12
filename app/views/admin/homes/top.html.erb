@@ -1,42 +1,42 @@
 <% provide(:title, "トップ") %>
 
-<div class="row col-sm-12">
+<div class="row col-sm-12 col-12">
   <h2 class="heading text-center">管理者トップ</h2>
 
   <div class="col-sm-6 text-center panel panel-success">
     <h1 class="panel-heading"><strong>総会員数</strong></h1>
     <h1 class="panel-body"><strong><%= link_to Customer.count, admin_customers_path %></strong></h1>
   </div>
-  <div class="col-sm-6 text-center panel panel-warning">
+  <div class="col-sm-6 col-12 text-center panel panel-warning">
     <h1 class="panel-heading"><strong>今日の新規会員総数</strong></h1>
     <h1 class="panel-body"><strong><%= @today_customers.count %></strong></h1>
   </div>
 
-  <div class="col-sm-6 text-center panel panel-info">
+  <div class="col-sm-6 col-12 text-center panel panel-info">
     <h1 class="panel-heading"><strong>総投稿数</strong></h1>
     <h1 class="panel-body"><strong><%= link_to Pair.count, admin_pairs_path %></strong></h1>
   </div>
 
-  <div class="col-sm-6 text-center panel panel-danger">
+  <div class="col-sm-6 col-12 text-center panel panel-danger">
     <h1 class="panel-heading"><strong>今日の新規投稿総数</strong></h1>
     <h1 class="panel-body"><strong><%= @today_pairs.count %></strong></h1>
   </div>
 
-  <div class="col-sm-6 text-center panel panel-success">
+  <div class="col-sm-6 col-12 text-center panel panel-success">
     <h1 class="panel-heading"><strong>お気に入り追加総数</strong></h1>
     <h1 class="panel-body"><strong><%= Like.count %></strong></h1>
   </div>
-  <div class="col-sm-6 text-center panel panel-warning">
+  <div class="col-sm-6 col-12 text-center panel panel-warning">
     <h1 class="panel-heading"><strong>今日のお気に入り追加総数</strong></h1>
     <h1 class="panel-body"><strong><%= @today_likes.count %></strong></h1>
   </div>
 
-  <div class="col-sm-6 text-center panel panel-info">
+  <div class="col-sm-6 col-12 text-center panel panel-info">
     <h1 class="panel-heading"><strong>総コメント数</strong></h1>
     <h1 class="panel-body"><strong><%= Comment.count %></strong></h1>
   </div>
 
-  <div class="col-sm-6 text-center panel panel-danger">
+  <div class="col-sm-6 col-12 text-center panel panel-danger">
     <h1 class="panel-heading"><strong>今日の新規コメント数</strong></h1>
     <h1 class="panel-body"><strong><%= @today_comments.count %></strong></h1>
   </div>

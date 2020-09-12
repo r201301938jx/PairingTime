@@ -1,5 +1,5 @@
 <% pairs.each.with_index(1) do |pair, i| %>
-<div class="col-sm-4 col-xs-12 text-center">
+<div class="col-sm-4 col-12 text-center">
   <h4><strong>第<%= i %>位</strong></h4>
   <% if pair.created_at > 24.hours.ago %>
   <span class="badge badge-primary new-badge">New</span>

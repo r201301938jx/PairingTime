@@ -1,6 +1,6 @@
 <% provide(:title, "フォロワー一覧") %>
 
-<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
+<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-12">
   <h2 class="heading text-center">フォロワー一覧</h2>
 
   <% if @customers.count > 0 %>
@@ -24,13 +24,13 @@
         <td><%= customer.followed.count %></td>
         <% if @customer == current_customer %>
         <td>
-          <%= link_to "チャットを始める", chat_path(customer.id), class: "btn btn-primary" %>
+          <%= link_to "チャットを始める", chat_path(customer.id), class: "btn btn-brown" %>
         </td>
         <td>
           <% if current_customer.following?(@customer) %>
           <%= link_to "フォローをやめる", customer_relationships_path(@customer.id), method: :DELETE, class: "btn btn-danger" %>
           <% else %>
-          <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :POST, class: "btn btn-success" %>
+          <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :POST, class: "btn btn-brown" %>
           <% end %>
         </td>
         <% end %>
