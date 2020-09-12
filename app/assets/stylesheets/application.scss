@@ -35,7 +35,11 @@ a:hover {
 /* ヘッダー */
 
 header {
-  background-color: #DEB887;
+  background-color: #3F250B;
+}
+
+header li i {
+  color: #fff;
 }
 
 .logo {
@@ -53,9 +57,10 @@ li:hover {
 /* フッター */
 
 footer {
-  background-color: #DEB887;
+  background-color: #3F250B;
   p {
     margin-top: 15px;
+    color: #fff;
   }
 }
 
@@ -101,13 +106,17 @@ footer {
   margin-top: 10px
 }
 
-/* バッジ */
+/* バッジ、ボタン、ラベル */
 .badge-danger {
   background-color: red;
 }
 
 .badge-success {
   background-color: green;
+}
+
+.badge-orange {
+  background-color: orange;
 }
 
 .badge-primary {
@@ -117,6 +126,15 @@ footer {
 .new-badge {
   position: absolute;
   margin: 40px 0 0 5px;
+}
+
+.btn-brown {
+  background-color: #CD853F;
+  color: #fff;
+}
+
+.label-brown {
+  background-color: #CD853F;
 }
 
 /* お気に入り */
@@ -151,12 +169,6 @@ footer {
 
 .link-button {
   margin-top: 30px;
-}
-
-.ranking-title {
-  margin: 25px 0;
-  border: 4px solid black;
-  border-radius: 10px;
 }
 
 .ranking-heading {
@@ -202,17 +214,22 @@ footer {
 }
 
 .pagination>.active>a {
-  background: orange;
+  background: #CD853F;
 }
 
 @media (max-width: 768px) {
+
+  .logo {
+    height: 45px;
+    padding-left: 25px;
+  }
 
   /* Hamburger menu */
 
   #hm-icon{
     position: fixed;
     right: 25px;
-    top: 25px;
+    top: 18px;
     z-index: 10;
   }
 
@@ -234,7 +251,7 @@ footer {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: black;
+    background-color: #fff;
     border-radius: 4px;
   }
 
@@ -268,7 +285,7 @@ footer {
     position: fixed;
     top: 0;
     right: 0;
-    background: #DEB887;
+    background: #3F250B;
     color: black;
     width: 25%;
     min-height: 100%;

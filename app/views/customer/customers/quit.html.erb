@@ -1,3 +1,5 @@
+<% provide(:title, "退会") %>
+
 <div class="row">
   <h2 class="heading text-center">退会</h2>
 
@@ -15,7 +17,7 @@
 
   <div class="text-center col-sm-offset-1 col-sm-10 col-sm-offset-1 link-button">
     <div class="col-sm-6">
-      <%= link_to "引き続き利用する", customer_path(@customer), class: "btn btn-lg btn-block btn-primary" %>
+      <%= link_to "引き続き利用する", customer_path(@customer), class: "btn btn-lg btn-block btn-brown" %>
     </div>
     <div class="col-sm-6">
       <%= link_to "退会する", withdraw_customer_path(@customer), method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"}, class: "btn btn-lg btn-block btn-danger" %>

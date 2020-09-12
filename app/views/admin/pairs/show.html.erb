@@ -1,3 +1,5 @@
+<% provide(:title, "投稿詳細") %>
+
 <%= render 'search_form' %>
 
 <div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
@@ -50,7 +52,7 @@
   </div>
 
   <div class="col-sm-12 comment-section">
-    <div class="col-sm-12 label label-primary">
+    <div class="col-sm-12 label label-brown">
       <h3 class="comment-title"><i class="fas fa-comment-alt"></i> コメント<span class="badge comment-badge"><%= @pair.comments.count %></span></h3>
     </div>
 

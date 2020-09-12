@@ -1,3 +1,5 @@
+<% provide(:title, "会員詳細") %>
+
 <div class="row">
   <div id="error_explanation">
     <%= flash[:error] %>
@@ -26,21 +28,21 @@
     <% if @customer == current_customer %>
     <div class="link-button">
       <%= link_to like_pairs_path do %>
-      <p class="btn btn-warning btn-lg btn-block">
+      <p class="btn btn-brown btn-lg btn-block">
         <i class="fas fa-heart"> お気に入り一覧</i>
       </p>
       <% end %>
     </div>
     <div class="link-button">
       <%= link_to edit_customer_path(@customer) do %>
-      <p class="btn btn-success btn-lg btn-block">
+      <p class="btn btn-brown btn-lg btn-block">
         <i class="fas fa-user-edit"> 登録情報編集</i>
       </p>
       <% end%>
     </div>
     <div class="link-button">
       <%= link_to edit_customer_registration_path(@customer) do %>
-      <p class="btn btn-primary btn-lg btn-block">
+      <p class="btn btn-brown btn-lg btn-block">
         <i class="fas fa-key"> パスワード変更</i>
       </p>
       <% end %>
@@ -50,12 +52,12 @@
       <% if current_customer.following?(@customer) %>
       <%= link_to "フォローをやめる", customer_relationships_path(@customer.id), method: :DELETE, class: "btn btn-danger btn-lg btn-block" %>
       <% else %>
-      <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :POST, class: "btn btn-success btn-lg btn-block" %>
+      <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :POST, class: "btn btn-brown btn-lg btn-block" %>
       <% end %>
     </div>
     <div class="link-button">
       <%= link_to chat_path(@customer.id) do %>
-      <p class="btn btn-primary btn-lg btn-block">
+      <p class="btn btn-brown btn-lg btn-block">
         <i class="fas fa-comments"> チャットを始める</i>
       </p>
       <% end %>

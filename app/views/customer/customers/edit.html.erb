@@ -1,3 +1,5 @@
+<% provide(:title, "登録情報編集") %>
+
 <div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
   <h2 class="heading text-center">登録情報編集</h2>
 
@@ -57,7 +59,7 @@
 
   </div>
   <div class="actions col-sm-12">
-    <%= f.submit "編集内容を保存", class: "btn btn-primary col-sm-offset-2 col-sm-8" %>
+    <%= f.submit "編集内容を保存", class: "btn btn-brown col-sm-offset-2 col-sm-8" %>
     <%= link_to "退会する", quit_customer_path(@customer), class: "btn btn-danger pull-right" %>
   </div>
 

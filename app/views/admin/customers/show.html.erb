@@ -1,3 +1,5 @@
+<% provide(:title, "会員詳細") %>
+
 <div class="row">
   <h2 class="heading text-center"><%= full_name(@customer)%>さんの会員詳細</h2>
 
@@ -66,7 +68,7 @@
     </table>
     <div class="text-center">
       <%= link_to edit_admin_customer_path do %>
-      <p class="btn btn-primary btn-block">
+      <p class="btn btn-brown btn-block">
         <i class="fas fa-user-edit"> 会員情報を編集</i>
       </p>
       <% end %>
