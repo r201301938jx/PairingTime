@@ -4,31 +4,36 @@
 
   <div class="col-sm-12">
     <div class="col-sm-9">
-      <h1><strong><u><i class="fas fa-file-alt"></i> サイト概要</u></strong></h1><br>
+      <h1><strong><u><i class="fas fa-file-alt"></i> About this website ~ サイト概要 ~</u></strong></h1><br>
+      <div class="about-description">
+        <h4>皆さんにはある特定のフードとドリンクなどのお勧めの組み合わせはございますか？</h4><br>
 
-      <h4>皆さんにはある特定のフードとドリンクなどのお勧めの組み合わせはございますか？</h4><br>
+      <h4>もちろんコーヒー単体でも、あるいはドーナツ単体でも楽しめることができますが、<br>コーヒーとドーナツを一緒に味わうことで、<br>お互いの良さを更に引き立てもっと美味しくいただけることがあります。</h4><br>
 
-      <h4>もちろんコーヒー単体でも、あるいはドーナツ単体でも楽しめることができますが、コーヒーとドーナツを一緒に味わうことで、お互いの良さを更に引き立てもっと美味しくいただけることがあります。</h4><br>
-
-      <h4>これは「フードペアリング」と呼ばれておりますが、「PairingTime」では皆さんが発見した相性が良い組み合わせを共有していただき、ユーザーの皆さんのほっと一息付く時間がもっと楽しく有意義な時間になったら嬉しく思います。</h4>
+      <h4>これは「<strong>フードペアリング</strong>」と呼ばれておりますが、<br>「<strong>PairingTime</strong>」では皆さんが発見した相性が良い組み合わせを共有していただき、<br>ユーザーの皆さんのほっと一息付く時間がもっと楽しく有意義な時間になったら嬉しく思います。</h4>
+      </div>
     </div>
     <div class="col-sm-3">
-      <%= image_tag 'no_image.jpg', :size => '300x300', class:"about-image" %>
+      <%= image_tag asset_path("about-image1.jpg"), :size => '320x320', class:"about-image" %>
     </div>
   </div>
 
   <div class="col-sm-12">
     <div class="col-sm-4">
-      <%= image_tag 'no_image.jpg', :size => '300x300', class:"about-image" %>
+      <%= image_tag asset_path("about-image2.jpg"), :size => '320x320', class:"about-image" %>
     </div>
     <div class="col-sm-8">
       <div class="col-sm-12">
-        <h1 class="pull-right"><strong><u><i class="fas fa-address-card"></i> 製作者紹介</u></strong></h1>
+        <h1 class="pull-right"><strong><u><i class="fas fa-file-alt"></i> How to use this website ~ 使い方 ~</u></strong></h1>
       </div><br>
-      <div class="col-sm-12">
-        <h3 class="pull-right">ニックネーム：ジョー</h3><br>
+      <div class="how-to-use">
+        <ul>
+        <li class="how-to-use-item"><h4>あなたのお勧めの組み合わせを投稿して、他のユーザーと共有しましょう！</h4></li>
+        <li class="how-to-use-item"><h4>他のユーザーが共有した組み合わせを試してみましょう！</h4></li>
+        <li class="how-to-use-item"><h4>コメントやチャットを利用して、他のユーザーと交流することも可能です！</h4></li>
+        <li class="how-to-use-item"><h4>要望やお困りなことなどあれば、お気軽に<%= link_to "お問い合わせフォーム", new_contact_path %> をご利用ください。</h4></li>
+      </ul>
       </div>
-      <h4>2020年7月からオンラインスクールでプログラミングを学習中です。<br>本サイトを閲覧いただき誠にありがとうございます！</h4>
     </div>
   </div>
 

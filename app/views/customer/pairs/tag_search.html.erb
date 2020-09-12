@@ -6,7 +6,7 @@
     <h2 class="text-center"><strong><u>タグリスト</strong></u></h2>
     <% @tag_list.each do |tag| %>
     <% if tag.pairs.count > 0 %>
-    <span class="label label-info"><%= link_to "#{tag.name}(#{tag.pairs.count})", tag_pairs_path(tag_id: tag.id) %></span>
+    <span class="label label-brown"><%= link_to "#{tag.name}(#{tag.pairs.count})", tag_pairs_path(tag_id: tag.id) %></span>
     <% end %>
     <% end %>
     <div class="text-center col-sm-12"><%= paginate @tag_list, :param_name => 'tag_page' %></div>

@@ -1,5 +1,5 @@
 <% tags.each.with_index(1) do |tag, i| %>
 <div class="col-sm-12">
-  <h5><strong>第<%= i %>位</strong>：<span class="label label-info"><%= link_to "#{tag.name}(#{tag.pairs.count})", tag_pairs_path(tag_id: tag.id) %></span></h5>
+  <h5><strong>第<%= i %>位</strong>：<span class="label label-brown"><%= link_to "#{tag.name}(#{tag.pairs.count})", tag_pairs_path(tag_id: tag.id) %></span></h5>
 </div>
 <% end %>

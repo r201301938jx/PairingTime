@@ -8,7 +8,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if customer_signed_in? %>
-        <li class="badge badge-orange login-message"><i class="fas fa-user"></i> <%= current_customer.nickname %>さん</li>
+        <li class="badge badge-brown login-message"><i class="fas fa-user"></i> <%= current_customer.nickname %>さん</li>
         <li class="btn">
           <%= link_to customer_path(current_customer) do %>
             <i class="fas fa-home"> マイページ</i>

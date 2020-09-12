@@ -31,7 +31,7 @@
           <td>タグ</td>
           <td>
             <% @pair.tags.each do |tag| %>
-            <span class="label label-info"><%= link_to tag.name, tag_pairs_path(tag_id: tag.id) %></span>
+            <span class="label label-brown"><%= link_to tag.name, tag_pairs_path(tag_id: tag.id) %></span>
             <% end %>
           </td>
         </tr>

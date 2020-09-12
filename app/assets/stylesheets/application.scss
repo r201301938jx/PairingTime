@@ -90,19 +90,19 @@ footer {
 /* 画像 */
 .about-image {
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid #CD853F;
   margin: 30px 0;
 }
 
 .profile-image {
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid #CD853F;
   margin-top: 5px;
 }
 
 .pair-image {
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid #CD853F;
   margin-top: 10px
 }
 
@@ -115,8 +115,8 @@ footer {
   background-color: green;
 }
 
-.badge-orange {
-  background-color: orange;
+.badge-brown {
+  background-color: #CD853F;
 }
 
 .badge-primary {
@@ -135,6 +135,10 @@ footer {
 
 .label-brown {
   background-color: #CD853F;
+}
+
+.label-brown a {
+  color: #fff;
 }
 
 /* お気に入り */
@@ -173,6 +177,28 @@ footer {
 
 .ranking-heading {
   margin: 25px 0;
+}
+
+/* 概要 */
+
+.about-description {
+  line-height: 1px;
+}
+
+.about-description h4 {
+  line-height: 30px;
+}
+
+.how-to-use {
+  margin-top: 80px;
+}
+
+.how-to-use-item {
+  padding-bottom: 10px;
+}
+
+.how-to-use ul li {
+  list-style: square;
 }
 
 /* コメント*/
