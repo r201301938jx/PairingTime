@@ -60,9 +60,15 @@ header li i {
 footer {
   background-color: #3F250B;
   p {
-    margin-top: 15px;
+    padding-top: 15px;
     color: #fff;
   }
+}
+
+.share-button {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 10px;
 }
 
 /* フラッシュメッセージ */
@@ -140,6 +146,11 @@ footer {
 
 .label-brown a {
   color: #fff;
+}
+
+/* アイコン */
+.fa-twitter-square {
+  color: #3399FF;
 }
 
 /* お気に入り */
