@@ -50,8 +50,9 @@ header li i {
   margin: 25px 25px 0 0;
 }
 
-li:hover {
+.navbar-nav li a:hover {
   text-decoration: none;
+  background-color: #3F250B;
 }
 
 /* フッター */
@@ -201,6 +202,20 @@ footer {
   list-style: square;
 }
 
+/* 退会 */
+
+.sp-none {
+  display: none;
+}
+
+.quit-description h4 {
+  line-height: 30px;
+}
+
+.quit-item {
+  margin-bottom: 5px;
+}
+
 /* コメント*/
 
 .comment-section {
@@ -333,6 +348,27 @@ footer {
     color: black;
     text-decoration: none;
     font-weight: bold;
+  }
+
+  /* トップ */
+
+  .top-heading {
+    margin: 2px;
+  }
+
+  .top-title {
+    font-size: 45px;
+  }
+
+  .top-description {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  /* 退会 */
+
+  .sp-none {
+    display: block;
   }
 
 }

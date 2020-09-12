@@ -7,59 +7,59 @@
 
   <%= render 'layouts/errors', obj: @customer %>
 
-  <div class="col-sm-4">
+  <div class="col-sm-4 col-xs-12">
     <div class="form-group row text-center">
-      <%= f.label :"プロフィール画像" %>
-      <%= attachment_image_tag @customer, :profile_image, :fill, 250, 250, fallback: "no_customer_image.jpg", size: "250x250", class: "profile-image"  %>
+      <%= f.label :"プロフィール画像" %><br>
+      <%= attachment_image_tag @customer, :profile_image, :fill, 350, 350, fallback: "no_customer_image.jpg", size: "350x350", class: "profile-image"  %>
       <%= f.attachment_field :profile_image %>
     </div>
   </div>
 
-  <div class="col-sm-8">
+  <div class="col-sm-8 col-xs-12">
     <div class="form-group row">
-      <%= f.label :"名前", class: "col-sm-4" %>
-      <div class="col-sm-4">
+      <%= f.label :"名前", class: "col-sm-4 col-xs-4" %>
+      <div class="col-sm-4 col-xs-4">
         <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-xs-4">
         <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"フリガナ", class: "col-sm-4" %>
-      <div class="col-sm-4">
+      <%= f.label :"フリガナ", class: "col-sm-4 col-xs-4" %>
+      <div class="col-sm-4 col-xs-4">
         <%= f.text_field :last_name_kana, autofocus: true, class: "form-control" %>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-xs-4">
         <%= f.text_field :first_name_kana, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"電話番号", class: "col-sm-4" %>
-      <div class="col-sm-8">
+      <%= f.label :"電話番号", class: "col-sm-4 col-xs-4" %>
+      <div class="col-sm-8 col-xs-8">
         <%= f.text_field :phone_number, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"メールアドレス", class: "col-sm-4" %>
-      <div class="col-sm-8">
+      <%= f.label :"メールアドレス", class: "col-sm-4 col-xs-4" %>
+      <div class="col-sm-8 col-xs-8">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"ニックネーム", class: "col-sm-4" %>
-      <div class="col-sm-8">
+      <%= f.label :"ニックネーム", class: "col-sm-4 col-xs-4" %>
+      <div class="col-sm-8 col-xs-8">
         <%= f.text_field :nickname, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
   </div>
-  <div class="actions col-sm-12">
-    <%= f.submit "編集内容を保存", class: "btn btn-brown col-sm-offset-2 col-sm-8" %>
+  <div class="actions col-sm-12 col-xs-12">
+    <%= f.submit "編集内容を保存", class: "btn btn-brown col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-8" %>
     <%= link_to "退会する", quit_customer_path(@customer), class: "btn btn-danger pull-right" %>
   </div>
 

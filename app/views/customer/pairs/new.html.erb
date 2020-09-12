@@ -1,13 +1,13 @@
 <% provide(:title, "新規投稿") %>
 
-<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
+<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
   <h2 class="heading text-center">新規投稿</h2>
 
   <%= form_for(@pair, url: pairs_path, method: :POST) do |f| %>
 
   <%= render 'layouts/errors', obj: @pair %>
 
-  <div class="col-sm-4">
+  <div class="col-sm-4 col-xs-12">
     <div class="form-group row text-center">
       <%= f.label :"画像" %><br>
       <%= attachment_image_tag @pair, :image, :fill, 250, 250, fallback: "no_image.jpg", size: "250x250", class: "pair-image"  %>
@@ -15,25 +15,25 @@
     </div>
   </div>
 
-  <div class="col-sm-8">
+  <div class="col-sm-8 col-xs-12">
 
     <div class="form-group row">
-      <%= f.label :"タイトル", class: "col-sm-4" %>
-      <div class="col-sm-8">
+      <%= f.label :"タイトル", class: "col-sm-4 col-xs-4" %>
+      <div class="col-sm-8 col-xs-8">
         <%= f.text_field :title, autofocus: true, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"説明", class: "col-sm-4" %>
-      <div class="col-sm-8">
+      <%= f.label :"説明", class: "col-sm-4 col-xs-12" %>
+      <div class="col-sm-8 col-xs-12">
         <%= f.text_area :caption, autofocus: true, class: "form-control", rows:"5" %>
       </div>
     </div>
 
     <div class="form-group row">
-      <%= f.label :"タグ", class: "col-sm-4" %>
-      <div class="col-sm-8">
+      <%= f.label :"タグ", class: "col-sm-4 col-xs-12" %>
+      <div class="col-sm-8 col-xs-12">
         <%= f.text_area :tag_ids, autofocus: true, class: "form-control", id: "tag_ids", value: "", placeholder: "複数タグを追加する場合にはカンマ（,） で区切ってください", rows:"5" %>
       </div>
     </div>

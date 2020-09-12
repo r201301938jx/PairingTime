@@ -1,25 +1,29 @@
 <% provide(:title, "退会") %>
 
-<div class="row">
+<div class="row col-sm-12 col-xs-12">
   <h2 class="heading text-center">退会</h2>
 
-  <div class="col-sm-12">
-    <h3 class="col-sm-12 text-center"><strong>本当に退会してもよろしいでしょうか？</strong></h3><br>
-    <h4 class="col-sm-12 text-center">退会した場合、投稿を含めて下記の情報が全て削除され、<br>こちらのアカウントに今後ログインすることができなくなります。</h4>
-    <ul class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
-      <li>こちらのアカウントの投稿</li>
-      <li>こちらのアカウントが追加したお気に入り</li>
-      <li>こちらのアカウントのフォローユーザー</li>
-      <li>こちらのアカウントのフォロワー</li>
+  <div class="col-sm-12 col-xs-12">
+    <h3 class="col-sm-12 col-xs-12 text-center"><strong>本当に退会してもよろしいでしょうか？</strong></h3><br>
+    <div class="quit-description">
+      <h4 class="col-sm-12 col-xs-12 text-center">退会した場合、<br class="sp-none">投稿を含めて下記の情報が全て削除され、<br>こちらのアカウントに<br class="sp-none">今後ログインすることができなくなります。</h4>
+    </div>
+    <ul class="col-sm-offset-4 col-sm-4 col-sm-offset-4 col-xs-offset-2 col-xs-8 col-xs-offset-2">
+      <li class="quit-item">こちらのアカウントの投稿</li>
+      <li class="quit-item">こちらのアカウントが追加したお気に入り</li>
+      <li class="quit-item">こちらのアカウントのフォローユーザー</li>
+      <li class="quit-item">こちらのアカウントのフォロワー</li>
     </ul>
-    <h4 class="col-sm-12 text-center">それでも退会をご希望される場合には、下記右の「退会する」をクリックしてください。</h4>
+    <div class="quit-description">
+    <h4 class="col-sm-12 col-xs-12 text-center">それでも退会をご希望される場合には、<br class="sp-none">下記右の「退会する」をクリックしてください。</h4>
+    </div>
   </div>
 
-  <div class="text-center col-sm-offset-1 col-sm-10 col-sm-offset-1 link-button">
-    <div class="col-sm-6">
+  <div class="text-center col-sm-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 link-button">
+    <div class="col-sm-6 col-xs-6">
       <%= link_to "引き続き利用する", customer_path(@customer), class: "btn btn-lg btn-block btn-brown" %>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-xs-6">
       <%= link_to "退会する", withdraw_customer_path(@customer), method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"}, class: "btn btn-lg btn-block btn-danger" %>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <% provide(:title, "通知一覧") %>
 
-<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1">
+<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-sm-12">
   <h2 class="heading text-center">通知一覧</h2>
   <% if @notifications.exists? %>
-  <div class="col-sm-2">
+  <div class="col-sm-2 col-xs-4">
     <%= link_to notifications_path, method: :DELETE do %>
     <h5 class="btn btn-danger btn-block pull-left"><i class="fas fa-trash-alt"></i> 全削除</h5>
     <% end %>
@@ -11,7 +11,7 @@
   <div>
     <%= render @notifications %>
   </div>
-  <div class="text-center col-sm-12"><%= paginate @notifications  %></div>
+  <div class="text-center col-sm-12 col-xs-12"><%= paginate @notifications  %></div>
   <% else %>
   <h4>通知はありません</h4>
   <% end %>

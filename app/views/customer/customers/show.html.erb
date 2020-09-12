@@ -1,13 +1,14 @@
 <% provide(:title, "会員詳細") %>
 
-<div class="row">
+<div class="row col-sm-12 col-xs-12">
   <div id="error_explanation">
     <%= flash[:error] %>
   </div>
 
   <h2 class="heading text-center">会員詳細</h2>
 
-  <div class="col-sm-3 text-center">
+  <div class="col-sm-3 col-xs-12 text-center">
+    <div class="col-sm-12 col-xs-6">
     <h4><strong>会員情報</strong></h4>
 
     <table class="table table-borderless">
@@ -24,7 +25,9 @@
         <th class="text-center">フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></th>
       </tr>
     </table>
+  </div>
 
+  <div class="col-sm-12 col-xs-6">
     <% if @customer == current_customer %>
     <div class="link-button">
       <%= link_to like_pairs_path do %>
@@ -64,10 +67,11 @@
     </div>
     <% end %>
   </div>
+  </div>
 
-  <div class="col-sm-9">
+  <div class="col-sm-9 col-xs-12">
     <% @pairs.each do |pair| %>
-    <div class=col-sm-4>
+    <div class="col-sm-4 col-xs-6">
       <% if pair.created_at > 24.hours.ago %>
       <span class="badge badge-primary new-badge">New</span>
       <% end %>
