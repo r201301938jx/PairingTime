@@ -290,6 +290,26 @@ footer {
   padding-top: 20px;
 }
 
+/* チャット */
+
+.my-message {
+  text-align: right;
+  border: 1px solid #CD853F;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-left: 300px;
+  padding-right: 10px;
+}
+
+.opponent-message {
+  text-align: left;
+  border: 1px solid #CD853F;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-right: 300px;
+  padding-left: 15px;
+}
+
 /* ページング */
 
 .pagination>li>a {

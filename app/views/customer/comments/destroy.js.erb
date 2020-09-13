@@ -1,2 +1,2 @@
-$('#comment_<%= @pair.id %>').html("<%= j(render 'comment', comments: @pair.comments) %>");
+$('#comment_<%= @pair.id %>').html("<%= j(render 'index', comments: @pair.comments) %>");
 $('#comment_count_<%= @pair.id %>').html("<%= j(render 'comment_count', pair: @pair) %>");
