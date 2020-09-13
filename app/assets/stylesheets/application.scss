@@ -32,6 +32,11 @@ a:hover {
   text-decoration: none;
 }
 
+.circle {
+  border-radius: 50%;
+  border: 2px solid #CD853F;
+}
+
 /* ヘッダー */
 
 header {
@@ -100,22 +105,44 @@ footer {
 }
 
 /* 画像 */
+
 .about-image {
-  border-radius: 50%;
-  border: 2px solid #CD853F;
+  height: 320px;
+  width: 320px;
   margin: 30px 0;
 }
 
 .profile-image {
-  border-radius: 50%;
-  border: 2px solid #CD853F;
+  height: 250px;
+  width: 250px;
   margin-top: 5px;
 }
 
 .pair-image {
-  border-radius: 50%;
-  border: 2px solid #CD853F;
+  height: 250px;
+  width: 250px;
   margin-top: 10px
+}
+
+.show-profile-image {
+  height: 160px;
+  width: 160px;
+  margin-top: 5px;
+}
+
+.comment-profile-image {
+  height: 40px;
+  width: 40px;
+}
+
+.chat-profile-image {
+  height: 120px;
+  width: 120px;
+}
+
+.notification-profile-image {
+  height: 60px;
+  width: 60px;
 }
 
 /* バッジ、ボタン、ラベル */
@@ -365,6 +392,47 @@ footer {
     font-weight: bold;
   }
 
+  /* 画像 */
+
+  .about-image {
+    height: 270px;
+    width: 270px;
+    margin: 30px 0;
+  }
+
+  .profile-image {
+    height: 200px;
+    width: 200px;
+    margin-top: 5px;
+  }
+
+  .pair-image {
+    height: 200px;
+    width: 200px;
+    margin-top: 10px
+  }
+
+  .show-profile-image {
+    height: 120px;
+    width: 120px;
+    margin-top: 5px;
+  }
+
+  .comment-profile-image {
+    height: 30px;
+    width: 30px;
+  }
+
+  .chat-profile-image {
+    height: 80px;
+    width: 80px;
+  }
+
+  .notification-profile-image {
+    height: 40px;
+    width: 40px;
+  }
+
   /* トップ */
 
   .top-heading {
@@ -410,6 +478,51 @@ footer {
 
   .sp-none {
     display: block;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  /* 画像 */
+
+  .about-image {
+    height: 220px;
+    width: 220px;
+    margin: 30px 0;
+  }
+
+  .profile-image {
+    height: 150px;
+    width: 150px;
+    margin-top: 5px;
+  }
+
+  .pair-image {
+    height: 150px;
+    width: 150px;
+    margin-top: 10px
+  }
+
+  .show-profile-image {
+    height: 80px;
+    width: 80px;
+    margin-top: 5px;
+  }
+
+  .comment-profile-image {
+    height: 20px;
+    width: 20px;
+  }
+
+  .chat-profile-image {
+    height: 40px;
+    width: 40px;
+  }
+
+  .notification-profile-image {
+    height: 20px;
+    width: 20px;
   }
 
 }

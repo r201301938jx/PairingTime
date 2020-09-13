@@ -14,7 +14,7 @@
 
   <div class="col-sm-5 col-12 text-center">
     <div class="col-sm-12">
-      <%= attachment_image_tag @pair, :image, :fill, 250, 250, fallback: "no_image.jpg", size: "250x250", class: "pair-image" %>
+      <%= attachment_image_tag @pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
     </div>
   </div>
 
@@ -99,7 +99,7 @@
         <tr>
           <td>
             <%= link_to customer_path(comment.customer) do %>
-            <%= attachment_image_tag comment.customer, :profile_image, :fill, 40, 40, fallback: "no_customer_image.jpg", size: "40x40", class: "profile-image"  %><br>
+            <%= attachment_image_tag comment.customer, :profile_image, fallback: "no_customer_image.jpg", class: "comment-profile-image circle"  %><br>
             <%= comment.customer.nickname %>
             <% end %>
           </td>

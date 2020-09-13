@@ -13,7 +13,7 @@
 
     <table class="table table-borderless">
       <tr>
-        <%= attachment_image_tag @customer, :profile_image, :fill, 160, 160, fallback: "no_customer_image.jpg", size: "160x160", class: "profile-image"  %>
+        <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "show-profile-image circle"  %>
       </tr>
       <tr>
         <th class="text-center"><p><strong><%= @customer.nickname %></strong></p></th>
@@ -76,7 +76,7 @@
       <span class="badge badge-primary new-badge">New</span>
       <% end %>
       <%= link_to pair_path(pair) do %>
-      <%= attachment_image_tag pair, :image, :fill, 250, 250, fallback: "no_image.jpg", size: "250x250", class: "pair-image" %>
+      <%= attachment_image_tag pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
       <h5 class="text-center"><%= pair.title %></h5>
       <% if customer_signed_in? %>
       <div class="text-center">

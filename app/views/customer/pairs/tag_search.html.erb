@@ -15,7 +15,7 @@
     <% @pairs.each do |pair| %>
     <div class="col-sm-4 col-6 text-center">
       <%= link_to pair_path(pair) do %>
-      <%= attachment_image_tag pair, :image, :fill, 240, 240, fallback: "no_image.jpg", size: "240x240", class: "pair-image" %>
+      <%= attachment_image_tag pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
       <h5><%= pair.title %></h5>
       <% if customer_signed_in? %>
       <div>

@@ -3,7 +3,7 @@
 <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_customer.id %>", class="heading text-center"><%= @customer.nickname %> さんとのチャットルーム</h2>
 
 <div class="col-sm-2 text-center">
-  <%= attachment_image_tag @customer, :profile_image, :fill, 120, 120, fallback: "no_customer_image.jpg", size: "120x120", class: "profile-image"  %>
+  <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "chat-profile-image circle"  %>
   <p><strong><%= @customer.nickname %></strong></p>
 </div>
 
@@ -18,7 +18,7 @@
 </div>
 
 <div class="col-sm-2 text-center">
-  <%= attachment_image_tag current_customer, :profile_image, :fill, 120, 120, fallback: "no_customer_image.jpg", size: "120x120", class: "profile-image"  %>
+  <%= attachment_image_tag current_customer, :profile_image, fallback: "no_customer_image.jpg", class: "chat-profile-image circle"  %>
   <p><strong><%= current_customer.nickname %></strong></p>
 </div>
 
