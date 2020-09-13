@@ -23,7 +23,13 @@
         <td><%= customer.follower.count %></td>
         <td><%= customer.followed.count %></td>
         <% if @customer == current_customer %>
-        <td><%= link_to "チャットを始める", chat_path(customer.id), class: "btn btn-brown" %></td>
+        <td>
+          <%= link_to chat_path(customer.id) do %>
+          <p class="btn btn-brown">
+            <i class="fas fa-comments"> チャットを始める</i>
+          </p>
+          <% end %>
+        <td>
         <td><%= link_to "フォローをやめる", customer_relationships_path(customer.id), method: :DELETE, class: "btn btn-danger" %></td>
         <% end %>
       </tr>

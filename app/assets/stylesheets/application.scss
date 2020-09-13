@@ -55,6 +55,11 @@ header li i {
   background-color: #3F250B;
 }
 
+.notification-mark {
+  position: absolute;
+  margin-top: 15px;
+}
+
 /* フッター */
 
 footer {
@@ -130,6 +135,10 @@ footer {
   background-color: #337ab7;
 }
 
+.badge-warning {
+  background-color: red;
+}
+
 .new-badge {
   position: absolute;
   margin: 40px 0 0 5px;
@@ -146,11 +155,6 @@ footer {
 
 .label-brown a {
   color: #fff;
-}
-
-/* アイコン */
-.fa-twitter-square {
-  color: #3399FF;
 }
 
 /* お気に入り */
