@@ -6,17 +6,13 @@ class Customer::LikesController < ApplicationController
     @pair = Pair.find(params[:pair_id])
     like = current_customer.likes.new(pair_id: @pair.id)
     like.save
-    flash[:notice] = "お気に入りに追加しました"
     @pair.create_notification_like!(current_customer)
-    redirect_to request.referer
   end
 
   def destroy
     @pair = Pair.find(params[:pair_id])
     like = current_customer.likes.find_by(pair_id: @pair.id)
     like.destroy
-    flash[:notice] = "お気に入りから削除しました"
-    redirect_to request.referer
   end
 
   def index

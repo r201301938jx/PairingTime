@@ -9,17 +9,8 @@
     <%= pair.title %>
   </h5>
   <% if customer_signed_in? %>
-  <div>
-    <% if pair.liked_by?(current_customer) %>
-    <%= link_to pair_likes_path(pair), method: :DELETE do %>
-    <i class="fas fa-heart red-heart"> <span><%= pair.likes.count %></span></i>
-    <% end %>
-    <% else %>
-    <%= link_to pair_likes_path(pair), method: :POST do %>
-    <i class="far fa-heart"> <%= pair.likes.count %></i>
-    <% end %>
-    <% end %>
-    <span> / <i class="fas fa-comment-alt"></i> <%= pair.comments.count %></span>
+  <div id="index_like_button_<%= pair.id %>">
+    <%= render 'customer/likes/like_index', pair: pair %>
   </div>
   <% end %>
   <% end %>

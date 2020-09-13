@@ -1,0 +1,2 @@
+$('#index_like_button_<%= @pair.id %>').html("<%= j(render 'customer/likes/like_index', pair: @pair) %>");
+$('#show_like_button_<%= @pair.id %>').html("<%= j(render 'customer/likes/like_show', pair: @pair) %>");

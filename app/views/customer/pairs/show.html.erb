@@ -16,6 +16,10 @@
     <div class="col-sm-12">
       <%= attachment_image_tag @pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
     </div>
+    <!-- ツイート -->
+    <div class="col-sm-12">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
   </div>
 
   <div class="col-sm-7 col-12">
@@ -47,20 +51,8 @@
         </tr>
         <tr>
           <td>お気に入り追加数</td>
-          <td>
-            <% if @pair.liked_by?(current_customer) %>
-            <%= link_to pair_likes_path(@pair), method: :DELETE do %>
-            <i class="fas fa-heart fa-lg red-heart"> <span><%= @pair.likes.count %></span></i>
-            <% end %>
-            <% else %>
-            <%= link_to pair_likes_path(@pair), method: :POST do %>
-            <i class="far fa-heart fa-lg"> <%= @pair.likes.count %></i>
-            <% end %>
-            <% end %>
-            <!-- ツイート -->
-            <div class="pull-right">
-              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
+          <td id="show_like_button_<%= @pair.id %>">
+            <%= render 'customer/likes/like_show', pair: @pair %>
           </td>
         </tr>
       </tbody>

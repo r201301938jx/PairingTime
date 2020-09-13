@@ -1,0 +1,9 @@
+<% if pair.liked_by?(current_customer) %>
+<%= link_to pair_likes_path(pair), method: :DELETE, remote: true do %>
+<i class="fas fa-heart fa-lg red-heart"> <span><%= @pair.likes.count %></span></i>
+<% end %>
+<% else %>
+<%= link_to pair_likes_path(pair), method: :POST, remote: true do %>
+<i class="far fa-heart fa-lg"> <%= pair.likes.count %></i>
+<% end %>
+<% end %>
