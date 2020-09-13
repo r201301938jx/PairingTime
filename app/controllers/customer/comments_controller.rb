@@ -9,10 +9,8 @@ class Customer::CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = "投稿にコメントしました"
       @pair.create_notification_comment!(current_customer, @comment.id)
-      redirect_to request.referer
     else
       flash[:error] = "1~50文字のコメントを入力してください"
-      redirect_to request.referer
     end
   end
 
@@ -21,7 +19,6 @@ class Customer::CommentsController < ApplicationController
     comment = current_customer.comments.find_by(id: params[:id], pair_id: @pair.id)
     comment.destroy
     flash[:notice] = "コメントを削除しました"
-    redirect_to request.referer
   end
 
   private

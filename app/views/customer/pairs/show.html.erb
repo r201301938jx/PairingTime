@@ -74,41 +74,20 @@
   </div>
 
   <div class="col-sm-12 col-12 comment-section">
-    <div class="col-sm-3 col-12 label label-brown">
-      <h3 class="comment-title"><i class="fas fa-comment"></i> コメント<span class="badge comment-badge"><%= @pair.comments.count %></span></h3>
+    <div class="col-sm-3 col-12 label label-brown" id="comment_count_<%= @pair.id %>">
+      <%= render 'customer/comments/comment_count', pair: @pair %>
     </div>
 
     <div class="comment-form col-sm-9 col-12">
-      <%= form_for [@pair, @comment] do |f| %>
+      <%= form_with(model: [@pair, @comment], remote: true) do |f| %>
       <%= f.text_area :text, size: "70x3", placeholder: "コメントを入力してください", class: "col-sm-12 col-12" %>
       <%= f.submit "送信", class: "btn-sm btn-brown pull-right" %>
       <% end %>
     </div>
 
     <div class="comment-list col-sm-12 col-12">
-      <table>
-        <% @comments.each do |comment| %>
-        <tr>
-          <td>
-            <%= link_to customer_path(comment.customer) do %>
-            <%= attachment_image_tag comment.customer, :profile_image, fallback: "no_customer_image.jpg", class: "comment-profile-image circle"  %><br>
-            <%= comment.customer.nickname %>
-            <% end %>
-          </td>
-          <td class="list-group">
-            <div class="list-group-item"><%= comment.text %></div>
-          </td>
-          <% if comment.customer == current_customer %>
-          <td>
-            <%= link_to pair_comment_path(@pair, comment), method: :DELETE do %>
-            <p class="btn btn-sm btn-danger">
-              <i class="fas fa-trash-alt"> 削除</i>
-            </p>
-            <% end %>
-          </td>
-          <% end %>
-        </tr>
-        <% end %>
+      <table id="comment_<%= @pair.id %>">
+        <%= render 'customer/comments/comment', comments: @comments, pair: @pair %>
       </table>
     </div>
 
