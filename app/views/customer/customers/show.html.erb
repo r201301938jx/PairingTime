@@ -1,14 +1,14 @@
 <% provide(:title, "会員詳細") %>
 
-<div class="row col-sm-12 col-12">
+<div class="col-12 col-xs-12 col-sm-12">
   <div id="error_explanation">
     <%= flash[:error] %>
   </div>
 
   <h2 class="heading text-center">会員詳細</h2>
 
-  <div class="col-sm-3 col-12 text-center">
-    <div class="col-sm-12 col-6">
+  <div class="col-12 col-xs-12 col-sm-3 text-center">
+    <div class="col-6 col-xs-6 col-sm-12">
       <h4><strong>会員情報</strong></h4>
 
       <table class="table table-borderless">
@@ -27,7 +27,7 @@
       </table>
     </div>
 
-    <div class="col-sm-12 col-6">
+    <div class="col-6 col-xs-6 col-sm-12">
       <% if @customer == current_customer %>
       <div class="link-button">
         <%= link_to like_pairs_path do %>
@@ -69,9 +69,9 @@
     </div>
   </div>
 
-  <div class="col-sm-9 col-12">
+  <div class="col-12 col-xs-12 col-sm-9">
     <% @pairs.each do |pair| %>
-    <div class="col-sm-4 col-6 text-center">
+    <div class="col-6 col-xs-6 col-sm-4 text-center">
       <% if pair.created_at > 24.hours.ago %>
   　　<span class="badge badge-primary new-badge">New</span>
   　　<% end %>
@@ -86,7 +86,7 @@
       <% end %>
     </div>
     <% end %>
-    <div class="text-center col-sm-12 col-12"><%= paginate @pairs %></div>
+    <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @pairs %></div>
   </div>
 
 </div>

@@ -2,12 +2,12 @@
 
 <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_customer.id %>", class="heading text-center"><%= @customer.nickname %> さんとのチャットルーム</h2>
 
-<div class="col-sm-2 text-center">
+<div class="col-1 col-xs-1 col-sm-2 text-center">
   <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "chat-profile-image circle"  %>
   <p><strong><%= @customer.nickname %></strong></p>
 </div>
 
-<div class="message col-sm-8">
+<div class="message col-10 col-xs-10 col-sm-8">
   <% @chats.each do |chat| %>
     <% if chat.customer_id == current_customer.id %>
       <p class="my-message"><%= chat.message %></p>
@@ -17,13 +17,13 @@
   <% end %>
 </div>
 
-<div class="col-sm-2 text-center">
+<div class="col-1 col-xs-1 col-sm-2 text-center">
   <%= attachment_image_tag current_customer, :profile_image, fallback: "no_customer_image.jpg", class: "chat-profile-image circle"  %>
   <p><strong><%= current_customer.nickname %></strong></p>
 </div>
 
 <%= form_with model: @chat, data: {remote: true} do |f| %>
-  <div class="col-sm-offset-3 col-sm-6">
+  <div class="col-12 col-xs-12 col-sm-offset-3 col-sm-6">
     <%= f.text_field :message, class: "form-control" %>
   </div>
   <%= f.hidden_field :room_id %>

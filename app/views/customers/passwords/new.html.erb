@@ -1,14 +1,14 @@
 <% provide(:title, "パスワード再発行") %>
 
-<div class="row col-sm-offset-3 col-sm-6 col-sm-offset-3 col-12">
+<div class="row col-12 col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3">
   <h2 class="heading text-center">パスワードをお忘れの方</h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "customers/shared/error_messages", resource: resource %>
 
   <div class="form-group row">
-    <%= f.label :"メールアドレス", class: "col-sm-4 col-4" %>
-    <div class="col-sm-8 col-8">
+    <%= f.label :"メールアドレス", class: "col-4 col-xs-4 col-sm-4" %>
+    <div class="col-8 col-xs-8 col-sm-8">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
     </div>
   </div>

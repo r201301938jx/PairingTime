@@ -38,6 +38,7 @@
           <% end %>
         </li>
         <% elsif admin_signed_in? %>
+        <li class="badge badge-brown login-message"><i class="fas fa-house-user"></i> 管理者ユーザー</li>
         <li class="btn">
           <%= link_to admin_root_path do %>
             <i class="fas fa-home"> トップ</i>
@@ -78,22 +79,16 @@
             <i class="fas fa-sign-in-alt"> ログイン</i>
           <% end %>
         </li>
-        <li class="btn dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button">
-          <i class="fas fa-toolbox"> その他ログイン <span class="caret"></span></i>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-          <li class="btn">
-            <%= link_to customers_guest_sign_in_path, method: :POST do %>
-              <i class="fas fa-sign-in-alt"> ゲストログイン（閲覧用）</i>
-            <% end %>
-          </li>
-          <li class="btn">
-            <%= link_to new_admin_session_path do %>
-              <i class="fas fa-sign-in-alt"> 管理者ログイン</i>
-            <% end %>
-          </li>
-        </ul>
+        <li class="btn">
+          <%= link_to customers_guest_sign_in_path, method: :POST do %>
+            <i class="fas fa-user-circle"> ゲストログイン（閲覧用）</i>
+          <% end %>
+        </li>
+        <li class="btn">
+          <%= link_to new_admin_session_path do %>
+            <i class="fas fa-house-user"> 管理者ログイン</i>
+          <% end %>
+        </li>
         <% end %>
       </ul>
     </nav>

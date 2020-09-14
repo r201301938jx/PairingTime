@@ -4,7 +4,7 @@
   <%= render 'search_form' %>
 </div>
 
-<div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-12">
+<div class="col-12 col-xs-12 col-sm-offset-1 col-sm-10 col-sm-offset-1">
 
   <div id="error_explanation">
     <%= flash[:error] %>
@@ -12,17 +12,17 @@
 
   <h2 class="heading text-center">投稿詳細</h2>
 
-  <div class="col-sm-5 col-12 text-center">
-    <div class="col-sm-12">
+  <div class="col-12 col-xs-12 col-sm-5 text-center">
+    <div class="col-12 col-xs-12 col-sm-12">
       <%= attachment_image_tag @pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
     </div>
     <!-- ツイート -->
-    <div class="col-sm-12">
+    <div class="col-12 col-xs-12 col-sm-12">
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>
 
-  <div class="col-sm-7 col-12">
+  <div class="col-12 col-xs-12 col-sm-7">
     <table class="table table-borderless">
       <tbody>
         <tr>
@@ -73,19 +73,19 @@
     <% end %>
   </div>
 
-  <div class="col-sm-12 col-12 comment-section">
-    <div class="col-sm-3 col-12 label label-brown" id="comment_count_<%= @pair.id %>">
+  <div class="col-12 col-xs-12 col-sm-12 comment-section">
+    <div class="col-12 col-xs-12 col-sm-3 label label-brown" id="comment_count_<%= @pair.id %>">
       <%= render 'customer/comments/comment_count', pair: @pair %>
     </div>
 
-    <div class="comment-form col-sm-9 col-12">
+    <div class="comment-form col-12 col-xs-12 col-sm-9">
       <%= form_with(model: [@pair, @comment], remote: true) do |f| %>
-      <%= f.text_area :text, size: "70x3", placeholder: "コメントを入力してください", class: "col-sm-12 col-12" %>
+      <%= f.text_area :text, size: "70x3", placeholder: "コメントを入力してください", class: "col-12 col-xs-12 col-sm-12" %>
       <%= f.submit "送信", class: "btn-sm btn-brown pull-right" %>
       <% end %>
     </div>
 
-    <div class="comment-list col-sm-12 col-12">
+    <div class="comment-list col-12 col-xs-12 col-sm-12">
       <table id="comment_<%= @pair.id %>">
         <%= render 'customer/comments/index', comments: @comments, pair: @pair %>
       </table>

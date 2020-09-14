@@ -18,7 +18,7 @@
  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
 body {
-  padding: 65px;
+  padding: 65px 0;
   font-family: 'Noto Sans JP', sans-serif;
   background-color: #F5DEB3;
 }
@@ -123,19 +123,19 @@ footer {
 .profile-image {
   height: 250px;
   width: 250px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .pair-image {
   height: 250px;
   width: 250px;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
 .show-profile-image {
   height: 160px;
   width: 160px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .comment-profile-image {
@@ -398,7 +398,7 @@ footer {
     right: 0;
     background: #3F250B;
     color: black;
-    width: 25%;
+    width: 50%;
     min-height: 100%;
     display: none;
     z-index: 9;
@@ -518,6 +518,10 @@ footer {
   }
 
   h2 {
+    font-size: 22px;
+  }
+
+  h3 {
     font-size: 18px;
   }
 
@@ -526,10 +530,6 @@ footer {
   }
 
   p {
-    font-size: 7px;
-  }
-
-  i {
     font-size: 10px;
   }
 
@@ -571,14 +571,14 @@ footer {
   }
 
   .profile-image {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     margin-top: 5px;
   }
 
   .pair-image {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     margin-top: 10px
   }
 
@@ -599,8 +599,8 @@ footer {
   }
 
   .notification-profile-image {
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
   }
 
   /* トップ */
@@ -610,12 +610,22 @@ footer {
   }
 
   .top-title {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .top-description {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 2px;
+  }
+
+  /* チャット */
+
+  .my-message {
+    margin-left: 100px;
+  }
+
+  .opponent-message {
+    margin-right: 100px;
   }
 
 }

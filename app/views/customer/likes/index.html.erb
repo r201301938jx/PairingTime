@@ -2,6 +2,6 @@
   <h2 class="heading text-center">お気に入り一覧（全<%= @like_pairs.count %>件）</h2>
 
   <%= render 'customer/pairs/index', pairs: @like_pairs %>
-  <div class="text-center col-sm-12 col-12"><%= paginate @like_pairs %></div>
+  <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @like_pairs %></div>
 
 </div>
