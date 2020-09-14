@@ -1,15 +1,17 @@
 <% provide(:title, "トップ") %>
 
+<h2 class="heading text-center">管理者トップ</h2>
+
 <div class="col-12 col-xs-12 col-sm-12">
-  <h2 class="heading text-center">管理者トップ</h2>
 
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
     <h1 class="panel-heading"><strong>総会員数</strong></h1>
     <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= link_to Customer.count, admin_customers_path %></strong></h1>
   </div>
+
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
     <h1 class="panel-heading"><strong>今日の新規会員総数</strong></h1>
-    <h1 class="panel-body"><strong>+ <%= @today_customers.count %></strong></h1>
+    <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= @today_customers.count %></strong></h1>
   </div>
 
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
@@ -19,7 +21,7 @@
 
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-danger">
     <h1 class="panel-heading"><strong>今日の新規投稿総数</strong></h1>
-    <h1 class="panel-body"><strong>+ <%= @today_pairs.count %></strong></h1>
+    <h1 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @today_pairs.count %></strong></h1>
   </div>
 
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
@@ -28,7 +30,7 @@
   </div>
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
     <h1 class="panel-heading"><strong>今日のお気に入り追加総数</strong></h1>
-    <h1 class="panel-body"><strong>+ <%= @today_likes.count %></strong></h1>
+    <h1 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @today_likes.count %></strong></h1>
   </div>
 
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
@@ -38,7 +40,8 @@
 
   <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-danger">
     <h1 class="panel-heading"><strong>今日の新規コメント数</strong></h1>
-    <h1 class="panel-body"><strong>+ <%= @today_comments.count %></strong></h1>
+    <h1 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @today_comments.count %></strong></h1>
   </div>
 
+</div>
 </div>
