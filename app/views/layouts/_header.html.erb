@@ -79,6 +79,11 @@
           <% end %>
         </li>
         <li class="btn">
+          <%= link_to customers_guest_sign_in_path, method: :POST do %>
+            <i class="fas fa-sign-in-alt"> ゲストログイン（閲覧用）</i>
+          <% end %>
+        </li>
+        <li class="btn">
           <%= link_to new_admin_session_path do %>
             <i class="fas fa-toolbox"> 管理者ログイン</i>
           <% end %>

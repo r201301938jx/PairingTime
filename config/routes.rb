@@ -36,6 +36,10 @@ Rails.application.routes.draw do
     passwords: 'customers/passwords',
   }
 
+  devise_scope :customer do
+    post 'customers/guest_sign_in' => 'customers/sessions#new_guest'
+  end
+
   scope module: :customer do
     root 'homes#top'
     get 'about' => 'homes#about'

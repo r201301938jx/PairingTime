@@ -39,6 +39,19 @@ class Customer < ApplicationRecord
 
   attachment :profile_image
 
+  #ゲストログイン機能
+  def self.guest
+    find_or_create_by!(email: "guest@test.com") do |customer|
+      customer.password = SecureRandom.urlsafe_base64
+      customer.last_name = "ゲスト"
+      customer.first_name = "ユーザー"
+      customer.last_name_kana = "ゲスト"
+      customer.first_name_kana = "ユーザー"
+      customer.nickname = "ゲストユーザー"
+      customer.phone_number = "09000001111"
+    end
+  end
+
   # 退会機能
   def active_for_authentication?
     super && (is_deleted == false)
