@@ -37,6 +37,10 @@ a:hover {
   border: 2px solid #CD853F;
 }
 
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #3F250B;
+}
+
 /* ヘッダー */
 
 header {
@@ -63,6 +67,10 @@ header li i {
 .notification-mark {
   position: absolute;
   margin-top: 15px;
+}
+
+.dropdown-menu {
+  background-color: #3F250B;
 }
 
 /* フッター */
