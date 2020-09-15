@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations',
     sessions: 'customers/sessions',
     passwords: 'customers/passwords',
+    omniauth_callbacks: 'customers/omniauth_callbacks'
   }
 
   devise_scope :customer do

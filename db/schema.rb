@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_025644) do
+ActiveRecord::Schema.define(version: 2020_09_14_150505) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -116,6 +116,15 @@ ActiveRecord::Schema.define(version: 2020_09_07_025644) do
   create_table "rooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.integer "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_sns_credentials_on_customer_id"
   end
 
   create_table "taggings", force: :cascade do |t|

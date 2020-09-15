@@ -8,6 +8,14 @@ class Customers::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
   # def twitter
   # end
 
+  def google_oauth2
+    callback_for(:google)
+  end
+
+  def facebook
+    callback_for(:facebook)
+  end
+
   # More info at:
   # https://github.com/heartcombo/devise#omniauth
 
@@ -17,9 +25,23 @@ class Customers::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
   # end
 
   # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
+
+  def callback_for(provider)
+    @omniauth = request.env['omniauth.auth']
+    info = Customer.find_oauth(@omniauth)
+    @customer = info[:customer]
+    if @customer.persisted?
+      sign_in_and_redirect @customer, event: :authentication
+      set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
+    else
+      @sns = info[:sns]
+      render template: "customers/registrations/new"
+    end
+  end
+
+  def failure
+    redirect_to root_path and return
+  end
 
   # protected
 

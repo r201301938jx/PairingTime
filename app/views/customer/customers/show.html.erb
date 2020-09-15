@@ -1,6 +1,5 @@
 <% provide(:title, "会員詳細") %>
 
-<div class="col-12 col-xs-12 col-sm-12">
   <div id="error_explanation">
     <%= flash[:error] %>
   </div>
@@ -19,10 +18,10 @@
           <th class="text-center"><p><strong><%= @customer.nickname %></strong></p></th>
         </tr>
         <tr>
-          <th class="text-center">フォロー数：<%= link_to @customer.follower.count, customer_follows_path(@customer) %></th>
+          <th class="text-center"><p>フォロー数：<%= link_to @customer.follower.count, customer_follows_path(@customer) %></p></th>
         </tr>
         <tr>
-          <th class="text-center">フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></th>
+          <th class="text-center"><p>フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></p></th>
         </tr>
       </table>
     </div>
@@ -32,21 +31,21 @@
       <div class="link-button">
         <%= link_to like_pairs_path do %>
         <p class="btn btn-brown btn-lg btn-block">
-          <i class="fas fa-heart"> お気に入り一覧</i>
+          <i class="fas fa-heart"></i> お気に入り一覧
         </p>
         <% end %>
       </div>
       <div class="link-button">
         <%= link_to edit_customer_path(@customer) do %>
         <p class="btn btn-brown btn-lg btn-block">
-          <i class="fas fa-user-edit"> 登録情報編集</i>
+          <i class="fas fa-user-edit"></i> 登録情報編集
         </p>
         <% end%>
       </div>
       <div class="link-button">
         <%= link_to edit_customer_registration_path(@customer) do %>
         <p class="btn btn-brown btn-lg btn-block">
-          <i class="fas fa-key"> パスワード変更</i>
+          <i class="fas fa-key"></i> パスワード変更
         </p>
         <% end %>
       </div>
@@ -88,5 +87,3 @@
     <% end %>
     <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @pairs %></div>
   </div>
-
-</div>

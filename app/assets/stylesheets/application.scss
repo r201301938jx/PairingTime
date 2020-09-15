@@ -121,20 +121,20 @@ footer {
 }
 
 .profile-image {
-  height: 250px;
-  width: 250px;
+  height: 270px;
+  width: 270px;
   margin-top: 10px;
 }
 
 .pair-image {
-  height: 250px;
-  width: 250px;
+  height: 270px;
+  width: 270px;
   margin-top: 10px;
 }
 
 .show-profile-image {
-  height: 160px;
-  width: 160px;
+  height: 180px;
+  width: 180px;
   margin-top: 10px;
 }
 
@@ -181,6 +181,11 @@ footer {
 
 .btn-brown {
   background-color: #CD853F;
+  color: #fff;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
   color: #fff;
 }
 
@@ -506,6 +511,7 @@ footer {
 
   .sp-none {
     display: block;
+    padding-top: 10px;
   }
 
 }
@@ -518,18 +524,22 @@ footer {
   }
 
   h2 {
-    font-size: 22px;
-  }
-
-  h3 {
     font-size: 18px;
   }
 
+  h3 {
+    font-size: 14px;
+  }
+
   h5 {
-    font-size: 12px;
+    font-size: 8px;
   }
 
   p {
+    font-size: 10px;
+  }
+
+  .btn-lg {
     font-size: 10px;
   }
 
@@ -565,20 +575,20 @@ footer {
   /* 画像 */
 
   .about-image {
-    height: 220px;
-    width: 220px;
+    height: 200px;
+    width: 200px;
     margin: 30px 0;
   }
 
   .profile-image {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin-top: 5px;
   }
 
   .pair-image {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin-top: 10px
   }
 

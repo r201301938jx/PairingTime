@@ -33,6 +33,19 @@
   </div>
   <% end %>
 
+  <div>
+    <div class="col-12 col-xs-12 col-sm-6">
+      <%= link_to customer_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" do %>
+      <i class="fab fa-facebook-square"></i> Facebookアカウントでログイン
+      <% end %>
+    </div>
+    <div class="col-12 col-xs-12 col-sm-6">
+      <%= link_to customer_google_oauth2_omniauth_authorize_path, class: "btn btn-danger btn-block" do %>
+      <i class="fab fa-google"></i> Googleアカウントでログイン
+      <% end %>
+    </div>
+  </div>
+
   <div class="text-center">
     <p>登録がお済みでない方は<%= link_to "こちら", new_customer_registration_path %>から新規登録を行ってください。</p>
   </div>

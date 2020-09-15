@@ -77,6 +77,19 @@
 
   <% end %>
 
+  <div>
+    <div class="col-12 col-xs-12 col-sm-6">
+      <%= link_to customer_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" do %>
+      <i class="fab fa-facebook-square"></i> Facebookアカウントでログイン
+      <% end %>
+    </div>
+    <div class="col-12 col-xs-12 col-sm-6">
+      <%= link_to customer_google_oauth2_omniauth_authorize_path, class: "btn btn-danger btn-block" do %>
+      <i class="fab fa-google"></i> Googleアカウントでログイン
+      <% end %>
+    </div>
+  </div>
+
 </div>
 
 <!-- 画像プレビュー機能 -->

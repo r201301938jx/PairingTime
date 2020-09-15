@@ -34,6 +34,7 @@ ja:
             nickname:
               blank: "が入力されていません。"
               too_long: "は%{count}文字以下で入力してください。"
+              taken: "は既に使用されています。"
             phone_number:
               blank: "が入力されていません。"
               not_a_number: "は数字で入力してください"
