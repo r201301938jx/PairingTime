@@ -1,4 +1,5 @@
 class Pair < ApplicationRecord
+
   belongs_to :customer
 
   has_many :likes, dependent: :destroy

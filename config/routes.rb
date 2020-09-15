@@ -44,7 +44,6 @@ Rails.application.routes.draw do
   scope module: :customer do
     root 'homes#top'
     get 'about' => 'homes#about'
-    get 'chat/:id' => 'chats#show', as: 'chat'
     get 'like_pairs' => 'likes#index'
     resources :customers, only: [:show, :edit, :update] do
       member do
@@ -66,7 +65,7 @@ Rails.application.routes.draw do
     resources :tags do
       get 'pairs' => 'pairs#tag_search'
     end
-    resources :chats, only: [:create]
+    resources :chats, only: [:show, :create]
     resources :contacts, only: [:new, :create]
     resources :notifications, only: [:index, :destroy] do
       collection do

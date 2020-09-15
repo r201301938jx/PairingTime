@@ -19,10 +19,6 @@ class Customer::ChatsController < ApplicationController
     @chat = Chat.new(room_id: @room.id)
   end
 
-  def index
-    @rooms = current_customer.rooms
-  end
-
   def create
     @chat = current_customer.chats.new(chat_params)
     @chat.save
