@@ -4,12 +4,16 @@
       <% unless admin_signed_in? %>
       <div class="share-button">
         <!-- Facebook共有 -->
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v8.0" nonce="utEHjNdi"></script>
-        <div class="fb-share-button" data-href="http://52.197.185.160/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F52.197.185.160%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
+        <%= link_to "http://www.facebook.com/share.php?u=http://52.197.185.160/", class: "btn btn-xs btn-white" do %>
+        <i class="fab fa-facebook-square fa-2x"></i>
+        <% end %>
         <!-- Line共有 -->
-        <div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" data-url="http://52.197.185.160/" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
-        <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+        <%= link_to "https://social-plugins.line.me/lineit/share?url=http://52.197.185.160/&text=PairingTime", class: "btn btn-xs btn-white" do %><i class="fab fa-line fa-2x"></i>
+        <% end %>
+        <!-- Twitter共有 -->
+        <%= link_to "http://twitter.com/share?url=http://52.197.185.160/&text=PairingTime", rel:"nofollow", class: "btn btn-xs btn-white" do %>
+        <i class="fab fa-twitter-square fa-2x"></i>
+        <% end %>
       </div>
       <% end %>
       <div class="pull-right">

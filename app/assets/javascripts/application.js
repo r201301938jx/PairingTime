@@ -17,51 +17,55 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-/* ハンバーガーメニュー  */
+document.addEventListener("turbolinks:load", function() {
 
-$(function() {
-  $('.menu-trigger').on('click', function(event) {
-    $(this).toggleClass('active');
-    $('.navbar-right').fadeToggle();
-    event.preventDefault();
+  /* ハンバーガーメニュー  */
+
+  $(function() {
+    $('.menu-trigger').on('click', function(event) {
+      $(this).toggleClass('active');
+      $('.navbar-right').fadeToggle();
+      event.preventDefault();
+    });
   });
-});
 
-/* スライドショー */
+  /* スライドショー */
 
-$(document).ready(function () {
-  $("#slideshow").skippr({
-    transition : 'slide',
-    speed : 1000,
-    easing : 'easeOutQuart',
-    navType : 'bubble',
-    childrenElementType : 'div',
-    arrows : false,
-    autoPlay : true,
-    autoPlayDuration : 3000,
-    keyboardOnAlways : true,
-    hidePrevious : false
+  $(document).ready(function () {
+    $("#slideshow").skippr({
+      transition : 'slide',
+      speed : 1000,
+      easing : 'easeOutQuart',
+      navType : 'bubble',
+      childrenElementType : 'div',
+      arrows : false,
+      autoPlay : true,
+      autoPlayDuration : 3000,
+      keyboardOnAlways : true,
+      hidePrevious : false
+    });
   });
-});
 
-/* トップに戻る */
+  /* トップに戻る */
 
-$(function() {
-  $("#back-to-top").hide();
+  $(function() {
+    $("#back-to-top").hide();
 
-  $(window).scroll(function(){
-    $('#pos').text($(this).scrollTop());
-    if ($(this).scrollTop() > 60){
-      $("#back-to-top").fadeIn();
-    }else{
-      $("#back-to-top").fadeOut();
-    }
+    $(window).scroll(function(){
+      $('#pos').text($(this).scrollTop());
+      if ($(this).scrollTop() > 60){
+        $("#back-to-top").fadeIn();
+      }else{
+        $("#back-to-top").fadeOut();
+      }
+    })
+
+    $('#back-to-top a').click(function() {
+      $('html, body').animate({
+        scrollTop:0
+      }, 800);
+      return false;
+    })
   })
 
-  $('#back-to-top a').click(function() {
-    $('html, body').animate({
-      scrollTop:0
-    }, 800);
-    return false;
-  })
 })
