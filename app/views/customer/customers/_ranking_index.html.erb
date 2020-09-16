@@ -3,8 +3,8 @@
   <h4><strong>第<%= i %>位</strong></h4>
   <%= link_to customer_path(customer) do %>
   <%= attachment_image_tag customer, :profile_image,  fallback: "no_customer_image.jpg", class: "profile-image circle" %>
-  <h5><%= customer.nickname %></h5>
+  <h6><%= customer.nickname %></h6>
   <% end %>
-  <p>フォロワー数：<%= customer.followed.count %> / 投稿数：<%= customer.pairs.count %></p>
+  <h6>フォロワー数：<%= customer.followed.count %> / 投稿数：<%= customer.pairs.count %></h6>
 </div>
 <% end %>

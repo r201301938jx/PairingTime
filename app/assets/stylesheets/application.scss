@@ -67,10 +67,7 @@ header li i {
 .notification-mark {
   position: absolute;
   margin-top: 15px;
-}
-
-.dropdown-menu {
-  background-color: #3F250B;
+  z-index: 1;
 }
 
 /* フッター */
@@ -155,11 +152,11 @@ footer {
 
 /* バッジ、ボタン、ラベル */
 .badge-danger {
-  background-color: red;
+  background-color: #dc3545;
 }
 
 .badge-success {
-  background-color: green;
+  background-color: #28a745;
 }
 
 .badge-brown {
@@ -171,7 +168,7 @@ footer {
 }
 
 .badge-warning {
-  background-color: red;
+  background-color: #ffc107;
 }
 
 .new-badge {
@@ -533,6 +530,10 @@ footer {
 
   h5 {
     font-size: 8px;
+  }
+
+  h6 {
+    font-size: 5px;
   }
 
   p {

@@ -1,5 +1,7 @@
 <% provide(:title, "会員詳細") %>
 
+<div class="row">
+
   <div id="error_explanation">
     <%= flash[:error] %>
   </div>
@@ -72,11 +74,11 @@
     <% @pairs.each do |pair| %>
     <div class="col-6 col-xs-6 col-sm-4 text-center">
       <% if pair.created_at > 24.hours.ago %>
-  　　<span class="badge badge-primary new-badge">New</span>
-  　　<% end %>
+      <span class="badge badge-danger new-badge">New</span>
+      <% end %>
       <%= link_to pair_path(pair) do %>
       <%= attachment_image_tag pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
-      <h5><%= pair.title %></h5>
+      <h6><%= pair.title %></h6>
       <% if customer_signed_in? %>
       <div id="index_like_button_<%= pair.id %>">
         <%= render 'customer/likes/like_index', pair: pair %>
@@ -87,3 +89,5 @@
     <% end %>
     <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @pairs %></div>
   </div>
+
+</div>

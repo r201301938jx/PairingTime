@@ -6,10 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#管理者
+
 Admin.create!(
   email: 'admin@test.com',
   password: 'password'
 )
+
+#会員4名
 
 Customer.create!(
   last_name: "鈴木",
@@ -58,6 +62,8 @@ Customer.create!(
   email: "4@test.com",
   password: "password"
 )
+
+#ペア8個
 
 Pair.create!(
   customer_id: 1,
@@ -115,6 +121,8 @@ Pair.create!(
   caption: "チョコクロワッサンとアイスラテ",
 )
 
+#タグ11個
+
 Tag.create!(
   name: "チョコレート"
 )
@@ -158,6 +166,8 @@ Tag.create!(
 Tag.create!(
   name: "ケーキ"
 )
+
+#タグ紐づけ
 
 Tagging.create!(
   tag_id: 1,
@@ -254,6 +264,8 @@ Tagging.create!(
   pair_id: 5
 )
 
+#お気に入り
+
 Like.create!(
   customer_id: 1,
   pair_id: 7
@@ -294,6 +306,8 @@ Like.create!(
   pair_id: 8
 )
 
+# フォロー
+
 Relationship.create!(
   followed_id: 1,
   follower_id: 2
@@ -332,4 +346,78 @@ Relationship.create!(
 Relationship.create!(
   followed_id: 4,
   follower_id: 1
+)
+
+#コメント
+
+Comment.create!(
+  customer_id: 1,
+  pair_id: 3,
+  text: "とてもいいですね！"
+)
+
+Comment.create!(
+  customer_id: 1,
+  pair_id: 5,
+  text: "試してみたいと思います！"
+)
+
+Comment.create!(
+  customer_id: 1,
+  pair_id: 7,
+  text: "これは美味しい組み合わせですよね！"
+)
+
+Comment.create!(
+  customer_id: 2,
+  pair_id: 2,
+  text: "これは美味しい組み合わせですよね！"
+)
+
+Comment.create!(
+  customer_id: 2,
+  pair_id: 6,
+  text: "とてもいいですね！"
+)
+
+Comment.create!(
+  customer_id: 2,
+  pair_id: 8,
+  text: "試してみたいと思います！"
+)
+
+Comment.create!(
+  customer_id: 3,
+  pair_id: 1,
+  text: "試してみたいと思います！"
+)
+
+Comment.create!(
+  customer_id: 3,
+  pair_id: 3,
+  text: "これは美味しい組み合わせですよね！"
+)
+
+Comment.create!(
+  customer_id: 3,
+  pair_id: 7,
+  text: "とてもいいですね！"
+)
+
+Comment.create!(
+  customer_id: 4,
+  pair_id: 2,
+  text: "試してみたいと思います！"
+)
+
+Comment.create!(
+  customer_id: 4,
+  pair_id: 4,
+  text: "とてもいいですね！"
+)
+
+Comment.create!(
+  customer_id: 4,
+  pair_id: 6,
+  text: "これは美味しい組み合わせですよね！"
 )

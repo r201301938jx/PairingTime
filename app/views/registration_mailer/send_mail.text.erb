@@ -1,0 +1,15 @@
+<%= full_name(@customer) %> 様
+
+下記の情報での会員登録が完了いたしました。
+
+氏名：<%= full_name(@customer) %>
+
+フリガナ：<%= full_name_kana(@customer) %>
+
+ニックネーム：<%= @customer.nickname %>
+
+電話番号：<%= @customer.phone_number %>
+
+メールアドレス：<%= @customer.email %>
+
+この度はご登録いただき誠にありがとうございます。
