@@ -3,24 +3,29 @@
 <div class="row about-page">
 
   <div class="col-sm-12">
-    <div class="col-12 col-xs-12 col-sm-9">
+    <div class="col-12 col-xs-12 col-sm-8">
       <h1><strong><u><i class="fas fa-file-alt"></i> About this website ~ サイト概要 ~</u></strong></h1><br>
       <div class="about-description">
         <h4>皆さんにはある特定のフードとドリンクなどのお勧めの組み合わせはございますか？</h4><br>
 
       <h4>もちろんコーヒー単体でも、あるいはドーナツ単体でも楽しめることができますが、<br>コーヒーとドーナツを一緒に味わうことで、<br>お互いの良さを更に引き立てもっと美味しくいただけることがあります。</h4><br>
 
-      <h4>これは「<strong>フードペアリング</strong>」と呼ばれておりますが、<br>「<strong>PairingTime</strong>」では皆さんが発見した相性が良い組み合わせを共有していただき、<br>ユーザーの皆さんのほっと一息付く時間がもっと楽しく有意義な時間になったら嬉しく思います。</h4>
+      <h4>これは「<strong>フードペアリング</strong>」と呼ばれておりますが、<br>「<strong>PairingTime</strong>」では皆さんが発見した相性が良い組み合わせを共有していただき、<br>ユーザーの皆さんのほっと一息付く時間がより有意義な時間になったら嬉しく思います。</h4>
       </div>
     </div>
-    <div class="col-6 col-xs-6 col-sm-3">
-      <%= image_tag asset_path("about-image1.jpg"), class:"about-image circle" %>
+    <div class="col-6 col-xs-6 col-sm-4">
+      <div id="slideshow" class="about-image circle">
+        <div class="image1"></div>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image4"></div>
+      </div>
     </div>
   </div>
 
   <div class="col-sm-12">
     <div class="col-6 col-xs-6 col-sm-4">
-      <%= image_tag asset_path("about-image2.jpg"), class:"about-image circle" %>
+      <%= image_tag asset_path("about-animation.gif"), class:"about-image circle" %>
     </div>
     <div class="col-12 col-xs-12 col-sm-8">
       <div class="col-12 col-xs-12 col-sm-12">

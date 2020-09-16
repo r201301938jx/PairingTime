@@ -254,6 +254,20 @@ footer {
   list-style: square;
 }
 
+.image1 {
+  background-image: url(about-image1.jpg);
+}
+.image2 {
+  background-image: url(about-image2.jpg);
+}
+
+.image3 {
+  background-image: url(about-image3.jpg);
+}
+.image4 {
+  background-image: url(about-image4.jpg);
+}
+
 /* 退会 */
 
 .sp-none {
@@ -521,11 +535,11 @@ footer {
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   h3 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   h5 {
@@ -533,7 +547,7 @@ footer {
   }
 
   h6 {
-    font-size: 5px;
+    font-size: 6px;
   }
 
   p {

@@ -17,10 +17,29 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+/* ハンバーガーメニュー  */
+
 $(function() {
   $('.menu-trigger').on('click', function(event) {
     $(this).toggleClass('active');
     $('.navbar-right').fadeToggle();
     event.preventDefault();
+  });
+});
+
+/* スライドショー */
+
+$(document).ready(function () {
+  $("#slideshow").skippr({
+    transition : 'slide',
+    speed : 1000,
+    easing : 'easeOutQuart',
+    navType : 'bubble',
+    childrenElementType : 'div',
+    arrows : false,
+    autoPlay : true,
+    autoPlayDuration : 3000,
+    keyboardOnAlways : true,
+    hidePrevious : false
   });
 });
