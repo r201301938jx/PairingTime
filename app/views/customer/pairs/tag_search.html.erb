@@ -22,7 +22,7 @@
       <% end %>
       <%= link_to pair_path(pair) do %>
       <%= attachment_image_tag pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
-      <h6><%= pair.title %></h6>
+      <h6 class="sp-non-title"><%= pair.title %></h6>
       <% if customer_signed_in? %>
       <div id="index_like_button_<%= pair.id %>">
         <%= render 'customer/likes/like_index', pair: pair %>
