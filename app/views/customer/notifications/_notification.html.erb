@@ -9,7 +9,7 @@
   </div>
   <div class="notification-message">
     <div class="col-8 col-xs-8 col-sm-10">
-    <%= notification_form(notification) %><span><%= "(#{time_ago_in_words(notification.created_at)}前)" %></span>
+    <%= notification_form(notification) %> <span><%= "(#{time_ago_in_words(notification.created_at)}前)" %></span>
   </div>
   <div class="col-2 col-xs-2 col-sm-1">
     <%= link_to notification_path(notification), method: :DELETE do %>
