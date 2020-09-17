@@ -239,11 +239,11 @@ footer {
 /* トップ */
 
 .top-heading {
-  margin: 10px;
+  margin-top: 10px;
 }
 
 .top-title {
-  font-size: 90px;
+  font-size: 100px;
 }
 
 .top-description {
@@ -507,11 +507,11 @@ footer {
   /* トップ */
 
   .top-heading {
-    margin: 2px;
+    margin-top: 5px;
   }
 
   .top-title {
-    font-size: 45px;
+    font-size: 55px;
   }
 
   .top-description {
@@ -651,7 +651,7 @@ footer {
   .pair-image {
     height: 150px;
     width: 150px;
-    margin-top: 10px
+    margin: 5px
   }
 
   .show-profile-image {
@@ -675,18 +675,24 @@ footer {
     width: 40px;
   }
 
+  /* バッジ */
+
+  .new-badge {
+    margin: 25px 0 0 5px;
+  }
+
   /* トップ */
 
   .top-heading {
-    margin: 0;
+    margin: 0px;
   }
 
   .top-title {
-    font-size: 46px;
+    font-size: 32px;
   }
 
   .top-description {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 2px;
   }
 

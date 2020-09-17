@@ -11,17 +11,17 @@
         <li class="badge badge-brown login-message"><i class="fas fa-user"></i> <%= current_customer.nickname %>さん</li>
         <li class="btn">
           <%= link_to customer_path(current_customer) do %>
-            <i class="fas fa-home"> マイページ</i>
+            <i class="fas fa-home faa-tada animated-hover"> マイページ</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to pairs_path do %>
-            <i class="fas fa-camera-retro"> 投稿一覧</i>
+            <i class="fas fa-camera-retro faa-tada animated-hover"> 投稿一覧</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to new_pair_path do %>
-            <i class="fas fa-plus-square"> 新規投稿</i>
+            <i class="fas fa-plus-square faa-tada animated-hover"> 新規投稿</i>
           <% end %>
         </li>
         <% if unchecked_notifications.any? %>
@@ -30,63 +30,63 @@
         <li class="btn">
           <%= link_to notifications_path do
            %>
-            <i class="fas fa-bell"> 通知一覧</i>
+            <i class="fas fa-bell faa-tada animated-hover"> 通知一覧</i>
           <% end %>
         </li>
         <li class="btn"><%= link_to  destroy_customer_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"> ログアウト</i>
+            <i class="fas fa-sign-out-alt faa-tada animated-hover"> ログアウト</i>
           <% end %>
         </li>
         <% elsif admin_signed_in? %>
         <li class="badge badge-brown login-message"><i class="fas fa-house-user"></i> 管理者ユーザー</li>
         <li class="btn">
           <%= link_to admin_root_path do %>
-            <i class="fas fa-home"> トップ</i>
+            <i class="fas fa-home faa-tada animated-hover"> トップ</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to  admin_customers_path do %>
-            <i class="fas fa-users"> 会員一覧</i>
+            <i class="fas fa-users faa-tada animated-hover"> 会員一覧</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to  admin_pairs_path do %>
-            <i class="fas fa-camera-retro"> 投稿一覧</i>
+            <i class="fas fa-camera-retro faa-tada animated-hover"> 投稿一覧</i>
           <% end %>
         </li>
         <li class="btn"><%= link_to  destroy_admin_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"> ログアウト</i>
+            <i class="fas fa-sign-out-alt faa-tada animated-hover"> ログアウト</i>
           <% end %>
         </li>
         <% else %>
         <li class="btn">
           <%= link_to about_path do %>
-            <i class="fas fa-clipboard"> 概要</i>
+            <i class="fas fa-clipboard faa-tada animated-hover"> 概要</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to pairs_path do %>
-            <i class="fas fa-camera-retro"> 投稿一覧</i>
+            <i class="fas fa-camera-retro faa-tada animated-hover"> 投稿一覧</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to new_customer_registration_path do %>
-            <i class="fas fa-user-plus"> 新規登録</i>
+            <i class="fas fa-user-plus faa-tada animated-hover"> 新規登録</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to new_customer_session_path do %>
-            <i class="fas fa-sign-in-alt"> ログイン</i>
+            <i class="fas fa-sign-in-alt faa-tada animated-hover"> ログイン</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to customers_guest_sign_in_path, method: :POST do %>
-            <i class="fas fa-user-circle"> ゲストログイン（閲覧用）</i>
+            <i class="fas fa-user-circle faa-tada animated-hover"> ゲストログイン（閲覧用）</i>
           <% end %>
         </li>
         <li class="btn">
           <%= link_to new_admin_session_path do %>
-            <i class="fas fa-house-user"> 管理者ログイン</i>
+            <i class="fas fa-house-user faa-tada animated-hover"> 管理者ログイン</i>
           <% end %>
         </li>
         <% end %>
