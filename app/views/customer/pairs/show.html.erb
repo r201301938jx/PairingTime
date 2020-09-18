@@ -89,6 +89,7 @@
       <table id="comment_<%= @pair.id %>">
         <%= render 'customer/comments/index', comments: @comments, pair: @pair %>
       </table>
+      <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @comments %></div>
     </div>
 
   </div>

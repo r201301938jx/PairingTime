@@ -33,7 +33,7 @@ document.addEventListener("turbolinks:load", function() {
 
   $(document).ready(function () {
     $("#slideshow").skippr({
-      transition : 'slide',
+      transition : 'fade',
       speed : 1000,
       easing : 'easeOutQuart',
       navType : 'bubble',
