@@ -32,19 +32,27 @@
     <%= f.submit "ログイン", class: "btn btn-brown btn-block" %>
   </div>
   <% end %>
+</div>
 
-  <div>
-    <div class="col-12 col-xs-12 col-sm-6">
+  <div class="col-12 col-xs-12 col-sm-offset-1 col-sm-10 col-sm-offset-1">
+    <div class="col-12 col-xs-12 col-sm-4">
       <%= link_to customer_facebook_omniauth_authorize_path, class: "btn btn-facebook btn-block" do %>
       <i class="fab fa-facebook"></i> Facebookアカウントでログイン
       <% end %>
     </div>
-    <div class="col-12 col-xs-12 col-sm-6">
+    <div class="col-12 col-xs-12 col-sm-4">
       <%= link_to customer_google_oauth2_omniauth_authorize_path, class: "btn btn-danger btn-block" do %>
       <i class="fab fa-google"></i> Googleアカウントでログイン
       <% end %>
     </div>
+    <div class="col-12 col-xs-12 col-sm-4">
+      <%= link_to customer_twitter_omniauth_authorize_path, class: "btn btn-twitter btn-block" do %>
+      <i class="fab fa-twitter"></i> Twitterアカウントでログイン
+      <% end %>
+    </div>
   </div>
+
+  <div class="col-12 col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3">
 
   <div class="text-center">
     <p>登録がお済みでない方は<u><%= link_to "こちら", new_customer_registration_path %></u>から新規登録を行ってください。</p>

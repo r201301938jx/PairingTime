@@ -16,6 +16,10 @@ class Customers::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
     callback_for(:facebook)
   end
 
+  def twitter
+    callback_for(:twitter)
+  end
+
   # More info at:
   # https://github.com/heartcombo/devise#omniauth
 

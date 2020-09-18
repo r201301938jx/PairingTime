@@ -32,22 +32,22 @@
       <% if @customer == current_customer %>
       <div class="link-button">
         <%= link_to like_pairs_path do %>
-        <p class="btn btn-brown btn-lg btn-block">
-          <i class="fas fa-heart"></i> お気に入り一覧
+        <p class="btn btn-brown btn-lg btn-block faa-parent animated-hover">
+          <i class="fas fa-heart faa-wrench"></i> お気に入り一覧
         </p>
         <% end %>
       </div>
       <div class="link-button">
         <%= link_to edit_customer_path(@customer) do %>
-        <p class="btn btn-brown btn-lg btn-block">
-          <i class="fas fa-user-edit"></i> 登録情報編集
+        <p class="btn btn-brown btn-lg btn-block faa-parent animated-hover">
+          <i class="fas fa-user-edit faa-wrench"></i> 登録情報編集
         </p>
         <% end%>
       </div>
       <div class="link-button">
         <%= link_to edit_customer_registration_path(@customer) do %>
-        <p class="btn btn-brown btn-lg btn-block">
-          <i class="fas fa-key"></i> パスワード変更
+        <p class="btn btn-brown btn-lg btn-block faa-parent animated-hover">
+          <i class="fas fa-key faa-wrench"></i> パスワード変更
         </p>
         <% end %>
       </div>
@@ -61,8 +61,8 @@
       </div>
       <div class="link-button">
         <%= link_to chat_path(@customer.id) do %>
-        <p class="btn btn-brown btn-lg btn-block">
-          <i class="fas fa-comments"> チャットを始める</i>
+        <p class="btn btn-brown btn-lg btn-block faa-parent animated-hover">
+          <i class="fas fa-comments faa-wrench"> チャットを始める</i>
         </p>
         <% end %>
       </div>
