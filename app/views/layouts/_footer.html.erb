@@ -4,14 +4,14 @@
       <% unless admin_signed_in? %>
       <div class="share-button">
         <!-- Facebook共有 -->
-        <%= link_to "http://www.facebook.com/share.php?u=http://52.197.185.160/", class: "btn btn-xs btn-white" do %>
+        <%= link_to "http://www.facebook.com/share.php?u=https://pairingtime.work/", target: :_blank, class: "btn btn-xs btn-white" do %>
         <i class="fab fa-facebook-square fa-2x faa-tada animated-hover"></i>
         <% end %>
         <!-- Line共有 -->
-        <%= link_to "https://social-plugins.line.me/lineit/share?url=http://52.197.185.160/&text=PairingTime", class: "btn btn-xs btn-white" do %><i class="fab fa-line fa-2x faa-tada animated-hover"></i>
+        <%= link_to "https://social-plugins.line.me/lineit/share?url=https://pairingtime.work/&text=PairingTime", target: :_blank, class: "btn btn-xs btn-white" do %><i class="fab fa-line fa-2x faa-tada animated-hover"></i>
         <% end %>
         <!-- Twitter共有 -->
-        <%= link_to "http://twitter.com/share?url=http://52.197.185.160/&text=PairingTime", rel:"nofollow", class: "btn btn-xs btn-white" do %>
+        <%= link_to "http://twitter.com/share?url=https://pairingtime.work/&text=PairingTime", target: :_blank, rel:"nofollow", class: "btn btn-xs btn-white" do %>
         <i class="fab fa-twitter-square fa-2x faa-tada animated-hover"></i>
         <% end %>
       </div>

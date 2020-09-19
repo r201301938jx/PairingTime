@@ -6,7 +6,7 @@
 </div>
 
 <div class="col-12 col-xs-12 col-sm-12">
-  <h2 class="heading text-center">会員一覧（全<%= @customers.count %>件）</h2>
+  <h2 class="heading text-center">会員一覧（全<%= Customer.count %>件）</h2>
 
   <%= render 'index', customers: @customers %>
 

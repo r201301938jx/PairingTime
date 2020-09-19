@@ -13,7 +13,7 @@ Admin.create!(
   password: 'password'
 )
 
-#会員4名
+#会員10名
 
 Customer.create!(
   last_name: "鈴木",
@@ -63,7 +63,79 @@ Customer.create!(
   password: "password"
 )
 
-#ペア8個
+Customer.create!(
+  last_name: "坂本",
+  first_name: "次郎",
+  last_name_kana: "サカモト",
+  first_name_kana: "ジロウ",
+  nickname: "ジロー",
+  profile_image: open("./app/assets/images/customer5.jpg") ,
+  phone_number: "09011112222",
+  email: "5@test.com",
+  password: "password"
+)
+
+Customer.create!(
+  last_name: "大谷",
+  first_name: "文子",
+  last_name_kana: "オオタニ",
+  first_name_kana: "フミコ",
+  nickname: "フミ",
+  profile_image: open("./app/assets/images/customer6.jpg") ,
+  phone_number: "09011112222",
+  email: "6@test.com",
+  password: "password"
+)
+
+Customer.create!(
+  last_name: "中田",
+  first_name: "圭介",
+  last_name_kana: "ナカタ",
+  first_name_kana: "ケイスケ",
+  nickname: "ケイスケ",
+  profile_image: open("./app/assets/images/customer7.jpg") ,
+  phone_number: "09011112222",
+  email: "7@test.com",
+  password: "password"
+)
+
+Customer.create!(
+  last_name: "岡本",
+  first_name: "智美",
+  last_name_kana: "オカモト",
+  first_name_kana: "トモミ",
+  nickname: "トモちゃん",
+  profile_image: open("./app/assets/images/customer8.jpg") ,
+  phone_number: "09011112222",
+  email: "8@test.com",
+  password: "password"
+)
+
+Customer.create!(
+  last_name: "石井",
+  first_name: "卓郎",
+  last_name_kana: "イシイ",
+  first_name_kana: "タクロウ",
+  nickname: "イッシー",
+  profile_image: open("./app/assets/images/customer9.jpg") ,
+  phone_number: "09011112222",
+  email: "9@test.com",
+  password: "password"
+)
+
+Customer.create!(
+  last_name: "大田",
+  first_name: "巧",
+  last_name_kana: "オオタ",
+  first_name_kana: "タクミ",
+  nickname: "タックー",
+  profile_image: open("./app/assets/images/customer10.jpg") ,
+  phone_number: "09011112222",
+  email: "10@test.com",
+  password: "password"
+)
+
+#ペア15個
 
 Pair.create!(
   customer_id: 1,
@@ -121,7 +193,56 @@ Pair.create!(
   caption: "チョコクロワッサンとアイスラテ",
 )
 
-#タグ11個
+Pair.create!(
+  customer_id: 4,
+  title: "板チョコとコーヒー",
+  image: open("./app/assets/images/pair9.jpg"),
+  caption: "板チョコとコーヒー",
+)
+
+Pair.create!(
+  customer_id: 4,
+  title: "アップルパイとアールグレイティー",
+  image: open("./app/assets/images/pair10.jpg"),
+  caption: "アップルパイとアールグレイティー",
+)
+
+Pair.create!(
+  customer_id: 5,
+  title: "チョコクッキーとココア",
+  image: open("./app/assets/images/pair11.jpg"),
+  caption: "チョコクッキーとココア",
+)
+
+Pair.create!(
+  customer_id: 5,
+  title: "バタークッキーとココア",
+  image: open("./app/assets/images/pair12.jpg"),
+  caption: "バタークッキーとココア",
+)
+
+Pair.create!(
+  customer_id: 6,
+  title: "ブルーベリーマフィンとカフェラテ",
+  image: open("./app/assets/images/pair13.jpg"),
+  caption: "ブルーベリーマフィンとカフェラテ",
+)
+
+Pair.create!(
+  customer_id: 7,
+  title: "ビスケットとルイボスティー",
+  image: open("./app/assets/images/pair14.jpg"),
+  caption: "ビスケットとルイボスティー",
+)
+
+Pair.create!(
+  customer_id: 8,
+  title: "バナナパンケーキとホットティー",
+  image: open("./app/assets/images/pair15.jpg"),
+  caption: "バナナパンケーキとホットティー",
+)
+
+#タグ24個
 
 Tag.create!(
   name: "チョコレート"
@@ -167,6 +288,58 @@ Tag.create!(
   name: "ケーキ"
 )
 
+Tag.create!(
+  name: "板チョコ"
+)
+
+Tag.create!(
+  name: "ティー"
+)
+
+Tag.create!(
+  name: "アップルパイ"
+)
+
+Tag.create!(
+  name: "リンゴ"
+)
+
+Tag.create!(
+  name: "アールグレイ"
+)
+
+Tag.create!(
+  name: "ココア"
+)
+
+Tag.create!(
+  name: "バター"
+)
+
+Tag.create!(
+  name: "マフィン"
+)
+
+Tag.create!(
+  name: "ルイボスティー"
+)
+
+Tag.create!(
+  name: "ビスケット"
+)
+
+Tag.create!(
+  name: "パンケーキ"
+)
+
+Tag.create!(
+  name: "ハニー"
+)
+
+Tag.create!(
+  name: "バナナ"
+)
+
 #タグ紐づけ
 
 Tagging.create!(
@@ -185,8 +358,28 @@ Tagging.create!(
 )
 
 Tagging.create!(
+  tag_id: 1,
+  pair_id: 9
+)
+
+Tagging.create!(
+  tag_id: 1,
+  pair_id: 11
+)
+
+Tagging.create!(
   tag_id: 2,
   pair_id: 1
+)
+
+Tagging.create!(
+  tag_id: 2,
+  pair_id: 11
+)
+
+Tagging.create!(
+  tag_id: 2,
+  pair_id: 12
 )
 
 Tagging.create!(
@@ -230,6 +423,11 @@ Tagging.create!(
 )
 
 Tagging.create!(
+  tag_id: 7,
+  pair_id: 9
+)
+
+Tagging.create!(
   tag_id: 8,
   pair_id: 4
 )
@@ -255,8 +453,18 @@ Tagging.create!(
 )
 
 Tagging.create!(
+  tag_id: 9,
+  pair_id: 13
+)
+
+Tagging.create!(
   tag_id: 10,
   pair_id: 5
+)
+
+Tagging.create!(
+  tag_id: 10,
+  pair_id: 13
 )
 
 Tagging.create!(
@@ -264,7 +472,97 @@ Tagging.create!(
   pair_id: 5
 )
 
+Tagging.create!(
+  tag_id: 12,
+  pair_id: 9
+)
+
+Tagging.create!(
+  tag_id: 13,
+  pair_id: 10
+)
+
+Tagging.create!(
+  tag_id: 13,
+  pair_id: 14
+)
+
+Tagging.create!(
+  tag_id: 13,
+  pair_id: 15
+)
+
+Tagging.create!(
+  tag_id: 14,
+  pair_id: 10
+)
+
+Tagging.create!(
+  tag_id: 15,
+  pair_id: 10
+)
+
+Tagging.create!(
+  tag_id: 16,
+  pair_id: 11
+)
+
+Tagging.create!(
+  tag_id: 16,
+  pair_id: 12
+)
+
+Tagging.create!(
+  tag_id: 17,
+  pair_id: 12
+)
+
+Tagging.create!(
+  tag_id: 18,
+  pair_id: 13
+)
+
+Tagging.create!(
+  tag_id: 19,
+  pair_id: 14
+)
+
+Tagging.create!(
+  tag_id: 20,
+  pair_id: 14
+)
+
+Tagging.create!(
+  tag_id: 21,
+  pair_id: 14
+)
+
+Tagging.create!(
+  tag_id: 22,
+  pair_id: 15
+)
+
+Tagging.create!(
+  tag_id: 23,
+  pair_id: 15
+)
+
+Tagging.create!(
+  tag_id: 24,
+  pair_id: 15
+)
+
 #お気に入り
+
+Like.create!(
+  customer_id: 1,
+  pair_id: 2
+)
+
+Like.create!(
+  customer_id: 1,
+  pair_id: 4
+)
 
 Like.create!(
   customer_id: 1,
@@ -272,8 +570,8 @@ Like.create!(
 )
 
 Like.create!(
-  customer_id: 1,
-  pair_id: 4
+  customer_id: 2,
+  pair_id: 1
 )
 
 Like.create!(
@@ -288,7 +586,7 @@ Like.create!(
 
 Like.create!(
   customer_id: 3,
-  pair_id: 4
+  pair_id: 1
 )
 
 Like.create!(
@@ -297,12 +595,177 @@ Like.create!(
 )
 
 Like.create!(
+  customer_id: 3,
+  pair_id: 4
+)
+
+Like.create!(
   customer_id: 4,
   pair_id: 5
 )
 
 Like.create!(
   customer_id: 4,
+  pair_id: 8
+)
+
+Like.create!(
+  customer_id: 5,
+  pair_id: 1
+)
+
+Like.create!(
+  customer_id: 5,
+  pair_id: 3
+)
+
+Like.create!(
+  customer_id: 5,
+  pair_id: 5
+)
+
+Like.create!(
+  customer_id: 5,
+  pair_id: 7
+)
+
+Like.create!(
+  customer_id: 6,
+  pair_id: 1
+)
+
+Like.create!(
+  customer_id: 6,
+  pair_id: 2
+)
+
+Like.create!(
+  customer_id: 6,
+  pair_id: 4
+)
+
+Like.create!(
+  customer_id: 6,
+  pair_id: 6
+)
+
+Like.create!(
+  customer_id: 6,
+  pair_id: 8
+)
+
+Like.create!(
+  customer_id: 7,
+  pair_id: 1
+)
+
+Like.create!(
+  customer_id: 7,
+  pair_id: 2
+)
+
+Like.create!(
+  customer_id: 7,
+  pair_id: 3
+)
+
+Like.create!(
+  customer_id: 7,
+  pair_id: 5
+)
+
+Like.create!(
+  customer_id: 7,
+  pair_id: 7
+)
+
+Like.create!(
+  customer_id: 8,
+  pair_id: 1
+)
+
+Like.create!(
+  customer_id: 8,
+  pair_id: 2
+)
+
+Like.create!(
+  customer_id: 8,
+  pair_id: 3
+)
+
+Like.create!(
+  customer_id: 8,
+  pair_id: 4
+)
+
+Like.create!(
+  customer_id: 8,
+  pair_id: 6
+)
+
+Like.create!(
+  customer_id: 8,
+  pair_id: 8
+)
+
+Like.create!(
+  customer_id: 9,
+  pair_id: 1
+)
+
+Like.create!(
+  customer_id: 9,
+  pair_id: 2
+)
+
+Like.create!(
+  customer_id: 9,
+  pair_id: 3
+)
+
+Like.create!(
+  customer_id: 9,
+  pair_id: 5
+)
+
+Like.create!(
+  customer_id: 9,
+  pair_id: 7
+)
+
+Like.create!(
+  customer_id: 9,
+  pair_id: 9
+)
+
+Like.create!(
+  customer_id: 10,
+  pair_id: 1
+)
+
+Like.create!(
+  customer_id: 10,
+  pair_id: 2
+)
+
+Like.create!(
+  customer_id: 10,
+  pair_id: 3
+)
+
+Like.create!(
+  customer_id: 10,
+  pair_id: 4
+)
+
+Like.create!(
+  customer_id: 10,
+  pair_id: 6
+)
+
+Like.create!(
+  customer_id: 10,
   pair_id: 8
 )
 
@@ -324,6 +787,31 @@ Relationship.create!(
 )
 
 Relationship.create!(
+  followed_id: 1,
+  follower_id: 6
+)
+
+Relationship.create!(
+  followed_id: 1,
+  follower_id: 7
+)
+
+Relationship.create!(
+  followed_id: 1,
+  follower_id: 8
+)
+
+Relationship.create!(
+  followed_id: 1,
+  follower_id: 9
+)
+
+Relationship.create!(
+  followed_id: 1,
+  follower_id: 10
+)
+
+Relationship.create!(
   followed_id: 2,
   follower_id: 1
 )
@@ -340,12 +828,147 @@ Relationship.create!(
 
 Relationship.create!(
   followed_id: 3,
+  follower_id: 2
+)
+
+Relationship.create!(
+  followed_id: 3,
   follower_id: 4
+)
+
+Relationship.create!(
+  followed_id: 3,
+  follower_id: 5
+)
+
+Relationship.create!(
+  followed_id: 3,
+  follower_id: 6
+)
+
+Relationship.create!(
+  followed_id: 3,
+  follower_id: 7
 )
 
 Relationship.create!(
   followed_id: 4,
   follower_id: 1
+)
+
+Relationship.create!(
+  followed_id: 5,
+  follower_id: 1
+)
+
+Relationship.create!(
+  followed_id: 5,
+  follower_id: 4
+)
+
+Relationship.create!(
+  followed_id: 5,
+  follower_id: 7
+)
+
+Relationship.create!(
+  followed_id: 6,
+  follower_id: 1
+)
+
+Relationship.create!(
+  followed_id: 6,
+  follower_id: 2
+)
+
+Relationship.create!(
+  followed_id: 6,
+  follower_id: 3
+)
+
+Relationship.create!(
+  followed_id: 6,
+  follower_id: 5
+)
+
+Relationship.create!(
+  followed_id: 7,
+  follower_id: 1
+)
+
+Relationship.create!(
+  followed_id: 7,
+  follower_id: 2
+)
+
+Relationship.create!(
+  followed_id: 7,
+  follower_id: 5
+)
+
+Relationship.create!(
+  followed_id: 7,
+  follower_id: 8
+)
+
+Relationship.create!(
+  followed_id: 8,
+  follower_id: 1
+)
+
+Relationship.create!(
+  followed_id: 8,
+  follower_id: 3
+)
+
+Relationship.create!(
+  followed_id: 8,
+  follower_id: 5
+)
+
+Relationship.create!(
+  followed_id: 8,
+  follower_id: 9
+)
+
+Relationship.create!(
+  followed_id: 9,
+  follower_id: 1
+)
+
+Relationship.create!(
+  followed_id: 9,
+  follower_id: 2
+)
+
+Relationship.create!(
+  followed_id: 9,
+  follower_id: 3
+)
+
+Relationship.create!(
+  followed_id: 9,
+  follower_id: 5
+)
+
+Relationship.create!(
+  followed_id: 9,
+  follower_id: 8
+)
+
+Relationship.create!(
+  followed_id: 10,
+  follower_id: 1
+)
+
+Relationship.create!(
+  followed_id: 10,
+  follower_id: 4
+)
+
+Relationship.create!(
+  followed_id: 10,
+  follower_id: 9
 )
 
 #コメント
