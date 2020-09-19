@@ -128,6 +128,7 @@ footer {
 }
 
 /* フォーム */
+
 .form-group {
   margin: 20px 0;
 }
@@ -178,6 +179,7 @@ footer {
 }
 
 /* バッジ、ボタン、ラベル */
+
 .badge-danger {
   background-color: #dc3545;
 }
@@ -208,12 +210,27 @@ footer {
   color: #fff;
 }
 
+.btn-brown:hover {
+  background-color: #8B4513;
+  color: #fff;
+}
+
 .btn-facebook {
+  background-color: #6277a1;
+  color: #fff;
+}
+
+.btn-facebook:hover {
   background-color: #3b5998;
   color: #fff;
 }
 
 .btn-twitter {
+  background-color: #6aafca;
+  color: #fff;
+}
+
+.btn-twitter:hover {
   background-color: #55acee;
   color: #fff;
 }

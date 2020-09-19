@@ -149,4 +149,16 @@ class Customer < ApplicationRecord
     end
     { customer: customer, sns: sns }
   end
+
+  #パスワード再発行
+  def create_reset_digest
+    self.reset_token = Customer.new_token
+    update_attribute(:reset_digest, Customer.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  def send_password_reset_email
+    CustomerMailer.password_reset(self).deliver_now
+  end
+
 end

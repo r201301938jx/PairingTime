@@ -1,25 +1,30 @@
-<h2>Change your password</h2>
+<% provide(:title, "パスワード変更") %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<div class="col-12 col-xs-12 col-sm-offset-2 col-sm-8 col-sm-offset-2">
+
+  <h2 class="heading text-center">パスワード変更</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "customers/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+  <div class="form-group row">
+    <%= f.label :"新しいパスワード", class: "col-5 col-xs-5 col-sm-4" %>
+    <div class="col-7 col-xs-7 col-sm-8">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上で入力してください", class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-group row">
+    <%= f.label :"新しいパスワードの確認", class: "col-5 col-xs-5 col-sm-4" %>
+    <div class="col-7 col-xs-7 col-sm-8">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "同じパスワードを入力してください", class: "form-control" %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "Change my password" %>
+    <%= f.submit "パスワードを変更", class: "btn btn-brown btn-block" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= render "customers/shared/links" %>
+</div>
