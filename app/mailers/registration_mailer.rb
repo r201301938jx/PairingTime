@@ -5,5 +5,4 @@ class RegistrationMailer < ApplicationMailer
     @customer = customer
     mail to: customer.email, subject: "[PairingTime]会員新規登録完了のご連絡"
   end
-
 end

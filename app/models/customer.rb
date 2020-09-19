@@ -1,28 +1,27 @@
 class Customer < ApplicationRecord
-
   has_many :sns_credentials
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
+         :omniauthable, omniauth_providers: %i(facebook twitter google_oauth2)
 
   has_many :pairs
   has_many :likes
   has_many :like_pairs, through: :likes, source: 'pair'
   has_many :comments
 
-  #フォロー機能
+  # フォロー機能
   has_many :follower, class_name: "Relationship", foreign_key: "follower_id"
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id"
   has_many :following_customer, through: :follower, source: :followed
   has_many :follower_customer, through: :followed, source: :follower
 
-  #チャット機能
+  # チャット機能
   has_many :customer_rooms
   has_many :chats
   has_many :rooms, through: :customer_rooms
 
-  #通知機能
+  # 通知機能
   has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id"
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id"
 
@@ -31,17 +30,17 @@ class Customer < ApplicationRecord
             presence: true
   validates :email, :nickname, uniqueness: true
   validates :phone_number, numericality: { only_integer: true }
-  validates :last_name, :first_name, :last_name_kana, :first_name_kana, length: {maximum: 10}
-  validates :nickname, length: {maximum: 20}
+  validates :last_name, :first_name, :last_name_kana, :first_name_kana, length: { maximum: 10 }
+  validates :nickname, length: { maximum: 20 }
   validates :last_name_kana, :first_name_kana,
             format: {
               with: /\A[\p{katakana}\p{blank}ー－]+\z/,
-              message: "はカタカナで入力してください。"
+              message: "はカタカナで入力してください。",
             }
 
   attachment :profile_image
 
-  #ゲストログイン機能
+  # ゲストログイン機能
   def self.guest
     find_or_create_by!(email: "guest@test.com") do |customer|
       customer.password = SecureRandom.urlsafe_base64
@@ -71,23 +70,23 @@ class Customer < ApplicationRecord
     following_customer.include?(customer)
   end
 
-  #並び替え機能
+  # 並び替え機能
   def self.sort(selection)
     case selection
     when 'new'
-      return all.order(created_at: :DESC)
+      all.order(created_at: :DESC)
     when 'old'
-      return all.order(created_at: :ASC)
+      all.order(created_at: :ASC)
     when 'active'
-      return where(is_deleted: false)
+      where(is_deleted: false)
     when 'inactive'
-      return where(is_deleted: true)
+      where(is_deleted: true)
     when 'nickname'
-      return all.order(:nickname)
+      all.order(:nickname)
     end
   end
 
-  #通知機能
+  # 通知機能
   def create_notification_follow!(current_customer)
     temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ?", current_customer.id, id, "follow"])
     if temp.blank?
@@ -99,7 +98,7 @@ class Customer < ApplicationRecord
     end
   end
 
-  #SNS認証機能
+  # SNS認証機能
   def self.without_sns_data(auth)
     customer = Customer.where(email: auth.info.email).first
 
@@ -119,12 +118,12 @@ class Customer < ApplicationRecord
         provider: auth.provider
       )
     end
-    return {customer: customer, sns: sns}
+    { customer: customer, sns: sns }
   end
 
   def self.with_sns_data(auth, snscredential)
     customer = Customer.where(id: snscredential.customer_id).first
-    unless customer.present?
+    if customer.blank?
       customer = Customer.new(
         nickname: auth.info.name,
         email: auth.info.email
@@ -134,7 +133,7 @@ class Customer < ApplicationRecord
         provider: auth.provider
       )
     end
-    return {customer: customer}
+    { customer: customer }
   end
 
   def self.find_oauth(auth)
@@ -148,7 +147,6 @@ class Customer < ApplicationRecord
       customer = without_sns_data(auth)[:customer]
       sns = without_sns_data(auth)[:sns]
     end
-    return {customer: customer, sns: sns}
+    { customer: customer, sns: sns }
   end
-
 end

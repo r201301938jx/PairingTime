@@ -1,5 +1,4 @@
 class Customer::CustomersController < ApplicationController
-
   before_action :authenticate_customer!
   before_action :ensure_correct_customer, only: [:edit, :update, :quit, :withdraw]
   before_action :ensure_active_customer, only: [:show]
@@ -66,5 +65,4 @@ class Customer::CustomersController < ApplicationController
       redirect_to customer_path(current_customer)
     end
   end
-
 end

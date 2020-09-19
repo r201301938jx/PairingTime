@@ -1,5 +1,4 @@
 class Pair < ApplicationRecord
-
   belongs_to :customer
 
   has_many :likes, dependent: :destroy
@@ -10,51 +9,51 @@ class Pair < ApplicationRecord
   has_many :notifications, dependent: :destroy
 
   validates :customer_id, :title, :image, presence: true
-  validates :title, length: {maximum: 30}
-  validates :caption, length: {maximum: 200}
+  validates :title, length: { maximum: 30 }
+  validates :caption, length: { maximum: 200 }
 
   attachment :image
 
-  #タグ機能
+  # タグ機能
   def save_tags(save_pair_tags)
-    current_tags = self.tags.pluck(:name) unless self.tags.nil?
+    current_tags = tags.pluck(:name) unless tags.nil?
     old_tags = current_tags - save_pair_tags
     new_tags = save_pair_tags - current_tags
 
     old_tags.each do |old_name|
-      self.tags.delete Tag.find_by(name: old_name)
+      tags.delete Tag.find_by(name: old_name)
     end
 
     new_tags.each do |new_name|
       pair_tag = Tag.find_or_create_by(name: new_name)
-      self.tags << pair_tag
+      tags << pair_tag
     end
   end
 
-  #お気に入り機能
+  # お気に入り機能
   def liked_by?(customer)
     likes.where(customer_id: customer.id).exists?
   end
 
-  #並び替え機能
+  # 並び替え機能
   def self.sort(selection)
     case selection
     when 'new'
-      return all.order(created_at: :DESC)
+      all.order(created_at: :DESC)
     when 'old'
-      return all.order(created_at: :ASC)
+      all.order(created_at: :ASC)
     when 'likes'
-      return find(Like.group(:pair_id).order(Arel.sql('count(pair_id) desc')).pluck(:pair_id))
+      find(Like.group(:pair_id).order(Arel.sql('count(pair_id) desc')).pluck(:pair_id))
     when 'dislikes'
-      return find(Like.group(:pair_id).order(Arel.sql('count(pair_id) asc')).pluck(:pair_id))
+      find(Like.group(:pair_id).order(Arel.sql('count(pair_id) asc')).pluck(:pair_id))
     when 'many_comments'
-      return find(Comment.group(:pair_id).order(Arel.sql('count(pair_id) desc')).pluck(:pair_id))
+      find(Comment.group(:pair_id).order(Arel.sql('count(pair_id) desc')).pluck(:pair_id))
     when 'few_comments'
-      return find(Comment.group(:pair_id).order(Arel.sql('count(pair_id) asc')).pluck(:pair_id))
+      find(Comment.group(:pair_id).order(Arel.sql('count(pair_id) asc')).pluck(:pair_id))
     end
   end
 
-  #通知機能
+  # 通知機能
   def create_notification_like!(current_customer)
     temp = Notification.where(["visiter_id = ? and visited_id = ? and pair_id = ? and action = ?", current_customer.id, customer_id, id, "like"])
     if temp.blank?
@@ -90,5 +89,4 @@ class Pair < ApplicationRecord
     end
     notification.save if notification.valid?
   end
-
 end

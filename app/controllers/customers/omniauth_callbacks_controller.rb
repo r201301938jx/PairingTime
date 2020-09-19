@@ -44,7 +44,7 @@ class Customers::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
   end
 
   def failure
-    redirect_to root_path and return
+    redirect_to(root_path) && return
   end
 
   # protected

@@ -1,5 +1,4 @@
 class Customer::LikesController < ApplicationController
-
   before_action :authenticate_customer!
 
   def create

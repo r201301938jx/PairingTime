@@ -1,5 +1,4 @@
 class Customer::ChatsController < ApplicationController
-
   before_action :authenticate_customer!
 
   def show
@@ -7,13 +6,13 @@ class Customer::ChatsController < ApplicationController
     rooms = current_customer.customer_rooms.pluck(:room_id)
     customer_rooms = CustomerRoom.find_by(customer_id: @customer.id, room_id: rooms)
 
-    unless customer_rooms.nil?
-      @room = customer_rooms.room
-    else
+    if customer_rooms.nil?
       @room = Room.new
       @room.save
       CustomerRoom.create(customer_id: current_customer.id, room_id: @room.id)
       CustomerRoom.create(customer_id: @customer.id, room_id: @room.id)
+    else
+      @room = customer_rooms.room
     end
     @chats = @room.chats
     @chat = Chat.new(room_id: @room.id)
@@ -29,5 +28,4 @@ class Customer::ChatsController < ApplicationController
   def chat_params
     params.require(:chat).permit(:message, :room_id)
   end
-
 end

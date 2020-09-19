@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def full_title(title = "")
     base_title = "PairingTime"
     if admin_signed_in?
@@ -16,5 +15,4 @@ module ApplicationHelper
   def full_name_kana(customer)
     "#{customer.last_name_kana} #{customer.first_name_kana}"
   end
-
 end

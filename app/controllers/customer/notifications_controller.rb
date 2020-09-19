@@ -1,5 +1,4 @@
 class Customer::NotificationsController < ApplicationController
-
   before_action :authenticate_customer!
 
   def index
@@ -20,5 +19,4 @@ class Customer::NotificationsController < ApplicationController
     @notifications.destroy_all
     redirect_to notifications_path
   end
-
 end
