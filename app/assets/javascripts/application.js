@@ -16,6 +16,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+//= require chartkick
+//= require Chart.bundle
 
 document.addEventListener("turbolinks:load", function() {
 
