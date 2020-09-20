@@ -4,64 +4,86 @@
 
 <div class="col-12 col-xs-12 col-sm-12">
 
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-    <h1 class="panel-heading"><strong>総会員数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= link_to Customer.count, admin_customers_path %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
-    <h1 class="panel-heading"><strong>今日の新規会員総数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= @today_customers.count %></strong></h1>
-  </div>
-　<div class="col-12 col-xs-12 col-sm-12">
-    <%= column_chart @customer_data, ytitle: "新規会員数" %>
-  </div>
+  <ul id="tab-menu" class="clearfix">
+    <li><a href="#tab1" class="active">会員</a></li>
+    <li><a href="#tab2" class="">投稿</a></li>
+    <li><a href="#tab3" class="">お気に入り</a></li>
+    <li><a href="#tab4" class="">コメント</a></li>
+    <li><a href="#tab5" class="">タブ</a></li>
+  </ul>
 
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
-    <h1 class="panel-heading"><strong>総投稿数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= link_to Pair.count, admin_pairs_path %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-danger">
-    <h1 class="panel-heading"><strong>今日の新規投稿総数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @today_pairs.count %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-12">
-    <%= column_chart @pair_data, ytitle: "新規投稿数" %>
-  </div>
+  <div id="tab-contents" class="clearfix">
 
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-    <h1 class="panel-heading"><strong>お気に入り追加総数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-heart"></i> <%= Like.count %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
-    <h1 class="panel-heading"><strong>今日のお気に入り追加総数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @today_likes.count %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-12">
-    <%= column_chart @like_data, ytitle: "新規お気に入り追加数" %>
-  </div>
+    <div id="tab1" class="tab">
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
+        <h1 class="panel-heading"><strong>総会員数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= link_to Customer.count, admin_customers_path %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
+        <h1 class="panel-heading"><strong>今日の新規会員総数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= @today_customers.count %></strong></h1>
+      </div>
+      　<div class="col-12 col-xs-12 col-sm-12">
+        <%= column_chart @customer_data, ytitle: "新規会員数" %>
+      </div>
+    </div>
 
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
-    <h1 class="panel-heading"><strong>総コメント数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-comment"></i> <%= Comment.count %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-danger">
-    <h1 class="panel-heading"><strong>今日の新規コメント数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @today_comments.count %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-12">
-    <%= column_chart @comment_data, ytitle: "新規コメント数" %>
-  </div>
+    <div id="tab2" class="tab">
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
+        <h1 class="panel-heading"><strong>総投稿数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= link_to Pair.count, admin_pairs_path %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-danger">
+        <h1 class="panel-heading"><strong>今日の新規投稿総数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @today_pairs.count %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-12">
+        <%= column_chart @pair_data, ytitle: "新規投稿数" %>
+      </div>
+    </div>
 
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-    <h1 class="panel-heading"><strong>総タグ数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tag.count %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
-    <h1 class="panel-heading"><strong>投稿とタグ紐付き数</strong></h1>
-    <h1 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tagging.count %></strong></h1>
-  </div>
-  <div class="col-12 col-xs-12 col-sm-12">
-    <%= column_chart @tag_data, name: tag.name, ytitle: "投稿数" %>
+    <div id="tab3" class="tab">
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
+        <h1 class="panel-heading"><strong>お気に入り追加総数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-heart"></i> <%= Like.count %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
+        <h1 class="panel-heading"><strong>今日のお気に入り追加総数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @today_likes.count %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-12">
+        <%= column_chart @like_data, ytitle: "新規お気に入り追加数" %>
+      </div>
+    </div>
+
+    <div id="tab4" class="tab">
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
+        <h1 class="panel-heading"><strong>総コメント数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-comment"></i> <%= Comment.count %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-danger">
+        <h1 class="panel-heading"><strong>今日の新規コメント数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @today_comments.count %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-12">
+        <%= column_chart @comment_data, ytitle: "新規コメント数" %>
+      </div>
+    </div>
+
+    <div id="tab5" class="tab">
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
+        <h1 class="panel-heading"><strong>総タグ数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tag.count %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-warning">
+        <h1 class="panel-heading"><strong>投稿とタグ紐付き数</strong></h1>
+        <h1 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tagging.count %></strong></h1>
+      </div>
+      <div class="col-12 col-xs-12 col-sm-12">
+        <%= column_chart @tag_data, name: tag.name, ytitle: "投稿数" %>
+      </div>
+    </div>
+
   </div>
 
 </div>
