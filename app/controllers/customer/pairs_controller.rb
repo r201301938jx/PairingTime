@@ -56,7 +56,8 @@ class Customer::PairsController < ApplicationController
   # タイトル、説明検索
   def search
     @content = params[:search][:content]
-    @records = search_for(@content)
+    @records = search_for(@content).page(params[:page]).per(12)
+
   end
 
   # タグ検索
@@ -70,6 +71,7 @@ class Customer::PairsController < ApplicationController
   def sort
     selection = params[:keyward]
     @pairs = Pair.sort(selection)
+    @pairs = Kaminari.paginate_array(@pairs).page(params[:page]).per(12)
   end
 
   private
