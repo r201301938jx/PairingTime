@@ -17,6 +17,18 @@
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
 body {
   padding: 65px 0;
   font-family: 'Noto Sans JP', sans-serif;

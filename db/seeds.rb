@@ -24,7 +24,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer1.jpg") ,
   phone_number: "09011112222",
   email: "1@test.com",
-  password: "password"
+  password: "password",
+  created_at: 10.days.ago
 )
 
 Customer.create!(
@@ -36,7 +37,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer2.jpg") ,
   phone_number: "08033334444",
   email: "2@test.com",
-  password: "password"
+  password: "password",
+  created_at: 10.days.ago
 )
 
 Customer.create!(
@@ -48,7 +50,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer3.jpg") ,
   phone_number: "09055556666",
   email: "3@test.com",
-  password: "password"
+  password: "password",
+  created_at: 15.days.ago
 )
 
 Customer.create!(
@@ -60,7 +63,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer4.jpg") ,
   phone_number: "09077778888",
   email: "4@test.com",
-  password: "password"
+  password: "password",
+  created_at: 15.days.ago
 )
 
 Customer.create!(
@@ -72,7 +76,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer5.jpg") ,
   phone_number: "09011112222",
   email: "5@test.com",
-  password: "password"
+  password: "password",
+  created_at: 14.days.ago
 )
 
 Customer.create!(
@@ -84,7 +89,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer6.jpg") ,
   phone_number: "09011112222",
   email: "6@test.com",
-  password: "password"
+  password: "password",
+  created_at: 13.days.ago
 )
 
 Customer.create!(
@@ -96,7 +102,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer7.jpg") ,
   phone_number: "09011112222",
   email: "7@test.com",
-  password: "password"
+  password: "password",
+  created_at: 13.days.ago
 )
 
 Customer.create!(
@@ -108,7 +115,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer8.jpg") ,
   phone_number: "09011112222",
   email: "8@test.com",
-  password: "password"
+  password: "password",
+  created_at: 12.days.ago
 )
 
 Customer.create!(
@@ -120,7 +128,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer9.jpg") ,
   phone_number: "09011112222",
   email: "9@test.com",
-  password: "password"
+  password: "password",
+  created_at: 11.days.ago
 )
 
 Customer.create!(
@@ -132,7 +141,8 @@ Customer.create!(
   profile_image: open("./app/assets/images/customer10.jpg") ,
   phone_number: "09011112222",
   email: "10@test.com",
-  password: "password"
+  password: "password",
+  created_at: 11.days.ago
 )
 
 #ペア15個
@@ -142,6 +152,7 @@ Pair.create!(
   title: "チョコレートクッキーとカプチーノ",
   image: open("./app/assets/images/pair1.jpg"),
   caption: "チョコレートクッキーとカプチーノ",
+  created_at: 10.days.ago
 )
 
 Pair.create!(
@@ -149,6 +160,7 @@ Pair.create!(
   title: "クロワッサンとエスプレッソ",
   image: open("./app/assets/images/pair2.jpg"),
   caption: "クロワッサンとエスプレッソ",
+  created_at: 10.days.ago
 )
 
 Pair.create!(
@@ -156,6 +168,7 @@ Pair.create!(
   title: "チョコレートマカロンとコーヒー",
   image: open("./app/assets/images/pair3.jpg"),
   caption: "チョコレートマカロンとコーヒー",
+  created_at: 9.days.ago
 )
 
 Pair.create!(
@@ -163,6 +176,7 @@ Pair.create!(
   title: "ハムサンドとアイスラテ",
   image: open("./app/assets/images/pair4.jpg"),
   caption: "ハムサンドとアイスラテ",
+  created_at: 8.days.ago
 )
 
 Pair.create!(
@@ -170,6 +184,7 @@ Pair.create!(
   title: "ブルーベリーケーキとカフェラテ",
   image: open("./app/assets/images/pair5.jpg"),
   caption: "ブルーベリーケーキとカフェラテ",
+  created_at: 9.days.ago
 )
 
 Pair.create!(
@@ -177,6 +192,7 @@ Pair.create!(
   title: "マカロンとコーヒー",
   image: open("./app/assets/images/pair6.jpg"),
   caption: "マカロンとコーヒー",
+  created_at: 7.days.ago
 )
 
 Pair.create!(
@@ -184,6 +200,7 @@ Pair.create!(
   title: "アボカドサンドとアイスラテ",
   image: open("./app/assets/images/pair7.jpg"),
   caption: "アボカドサンドとアイスラテ",
+  created_at: 6.days.ago
 )
 
 Pair.create!(
@@ -191,6 +208,7 @@ Pair.create!(
   title: "チョコクロワッサンとアイスラテ",
   image: open("./app/assets/images/pair8.jpg"),
   caption: "チョコクロワッサンとアイスラテ",
+  created_at: 7.days.ago
 )
 
 Pair.create!(
@@ -198,6 +216,7 @@ Pair.create!(
   title: "板チョコとコーヒー",
   image: open("./app/assets/images/pair9.jpg"),
   caption: "板チョコとコーヒー",
+  created_at: 8.days.ago
 )
 
 Pair.create!(
@@ -205,6 +224,7 @@ Pair.create!(
   title: "アップルパイとアールグレイティー",
   image: open("./app/assets/images/pair10.jpg"),
   caption: "アップルパイとアールグレイティー",
+  created_at: 9.days.ago
 )
 
 Pair.create!(
@@ -212,6 +232,7 @@ Pair.create!(
   title: "チョコクッキーとココア",
   image: open("./app/assets/images/pair11.jpg"),
   caption: "チョコクッキーとココア",
+  created_at: 8.days.ago
 )
 
 Pair.create!(
@@ -219,6 +240,7 @@ Pair.create!(
   title: "バタークッキーとココア",
   image: open("./app/assets/images/pair12.jpg"),
   caption: "バタークッキーとココア",
+  created_at: 7.days.ago
 )
 
 Pair.create!(
@@ -226,6 +248,7 @@ Pair.create!(
   title: "ブルーベリーマフィンとカフェラテ",
   image: open("./app/assets/images/pair13.jpg"),
   caption: "ブルーベリーマフィンとカフェラテ",
+  created_at: 8.days.ago
 )
 
 Pair.create!(
@@ -233,6 +256,7 @@ Pair.create!(
   title: "ビスケットとルイボスティー",
   image: open("./app/assets/images/pair14.jpg"),
   caption: "ビスケットとルイボスティー",
+  created_at: 9.days.ago
 )
 
 Pair.create!(
@@ -240,6 +264,7 @@ Pair.create!(
   title: "バナナパンケーキとホットティー",
   image: open("./app/assets/images/pair15.jpg"),
   caption: "バナナパンケーキとホットティー",
+  created_at: 6.days.ago
 )
 
 #タグ24個
@@ -556,217 +581,260 @@ Tagging.create!(
 
 Like.create!(
   customer_id: 1,
-  pair_id: 2
+  pair_id: 2,
+  created_at: 5.days.ago
 )
 
 Like.create!(
   customer_id: 1,
-  pair_id: 4
+  pair_id: 4,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 1,
-  pair_id: 7
+  pair_id: 7,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 2,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 2,
-  pair_id: 5
+  pair_id: 5,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 2,
-  pair_id: 4
+  pair_id: 4,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 3,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 3,
-  pair_id: 2
+  pair_id: 2,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 3,
-  pair_id: 4
+  pair_id: 4,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 4,
-  pair_id: 5
+  pair_id: 5,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 4,
-  pair_id: 8
+  pair_id: 8,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 5,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 5,
-  pair_id: 3
+  pair_id: 3,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 5,
-  pair_id: 5
+  pair_id: 5,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 5,
-  pair_id: 7
+  pair_id: 7,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 6,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 6,
-  pair_id: 2
+  pair_id: 2,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 6,
-  pair_id: 4
+  pair_id: 4,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 6,
-  pair_id: 6
+  pair_id: 6,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 6,
-  pair_id: 8
+  pair_id: 8,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 7,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 1.days.ago
 )
 
 Like.create!(
   customer_id: 7,
-  pair_id: 2
+  pair_id: 2,
+  created_at: 1.days.ago
 )
 
 Like.create!(
   customer_id: 7,
-  pair_id: 3
+  pair_id: 3,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 7,
-  pair_id: 5
+  pair_id: 5,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 7,
-  pair_id: 7
+  pair_id: 7,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 8,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 8,
-  pair_id: 2
+  pair_id: 2,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 8,
-  pair_id: 3
+  pair_id: 3,
+  created_at: 1.days.ago
 )
 
 Like.create!(
   customer_id: 8,
-  pair_id: 4
+  pair_id: 4,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 8,
-  pair_id: 6
+  pair_id: 6,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 8,
-  pair_id: 8
+  pair_id: 8,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 9,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 9,
-  pair_id: 2
+  pair_id: 2,
+  created_at: 1.days.ago
 )
 
 Like.create!(
   customer_id: 9,
-  pair_id: 3
+  pair_id: 3,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 9,
-  pair_id: 5
+  pair_id: 5,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 9,
-  pair_id: 7
+  pair_id: 7,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 9,
-  pair_id: 9
+  pair_id: 9,
+  created_at: 1.days.ago
 )
 
 Like.create!(
   customer_id: 10,
-  pair_id: 1
+  pair_id: 1,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 10,
-  pair_id: 2
+  pair_id: 2,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 10,
-  pair_id: 3
+  pair_id: 3,
+  created_at: 3.days.ago
 )
 
 Like.create!(
   customer_id: 10,
-  pair_id: 4
+  pair_id: 4,
+  created_at: 4.days.ago
 )
 
 Like.create!(
   customer_id: 10,
-  pair_id: 6
+  pair_id: 6,
+  created_at: 2.days.ago
 )
 
 Like.create!(
   customer_id: 10,
-  pair_id: 8
+  pair_id: 8,
+  created_at: 1.days.ago
 )
 
 # フォロー
@@ -976,71 +1044,83 @@ Relationship.create!(
 Comment.create!(
   customer_id: 1,
   pair_id: 3,
-  text: "とてもいいですね！"
+  text: "とてもいいですね！",
+  created_at: 4.days.ago
 )
 
 Comment.create!(
   customer_id: 1,
   pair_id: 5,
-  text: "試してみたいと思います！"
+  text: "試してみたいと思います！",
+  created_at: 3.days.ago
 )
 
 Comment.create!(
   customer_id: 1,
   pair_id: 7,
-  text: "これは美味しい組み合わせですよね！"
+  text: "これは美味しい組み合わせですよね！",
+  created_at: 2.days.ago
 )
 
 Comment.create!(
   customer_id: 2,
   pair_id: 2,
-  text: "これは美味しい組み合わせですよね！"
+  text: "これは美味しい組み合わせですよね！",
+  created_at: 3.days.ago
 )
 
 Comment.create!(
   customer_id: 2,
   pair_id: 6,
-  text: "とてもいいですね！"
+  text: "とてもいいですね！",
+  created_at: 4.days.ago
 )
 
 Comment.create!(
   customer_id: 2,
   pair_id: 8,
-  text: "試してみたいと思います！"
+  text: "試してみたいと思います！",
+  created_at: 4.days.ago
 )
 
 Comment.create!(
   customer_id: 3,
   pair_id: 1,
-  text: "試してみたいと思います！"
+  text: "試してみたいと思います！",
+  created_at: 2.days.ago
 )
 
 Comment.create!(
   customer_id: 3,
   pair_id: 3,
-  text: "これは美味しい組み合わせですよね！"
+  text: "これは美味しい組み合わせですよね！",
+  created_at: 1.days.ago
 )
 
 Comment.create!(
   customer_id: 3,
   pair_id: 7,
-  text: "とてもいいですね！"
+  text: "とてもいいですね！",
+  created_at: 3.days.ago
 )
 
 Comment.create!(
   customer_id: 4,
   pair_id: 2,
-  text: "試してみたいと思います！"
+  text: "試してみたいと思います！",
+  created_at: 4.days.ago
 )
 
 Comment.create!(
   customer_id: 4,
   pair_id: 4,
-  text: "とてもいいですね！"
+  text: "とてもいいですね！",
+  created_at: 3.days.ago
 )
 
 Comment.create!(
   customer_id: 4,
   pair_id: 6,
-  text: "これは美味しい組み合わせですよね！"
+  text: "これは美味しい組み合わせですよね！",
+  created_at: 2.days.ago
 )
