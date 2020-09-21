@@ -9,11 +9,11 @@
 
 <div class="message col-10 col-xs-10 col-sm-8">
   <% @chats.each do |chat| %>
-    <% if chat.customer_id == current_customer.id %>
-      <p class="my-message"><%= chat.message %></p>
-    <% else %>
-      <p class="opponent-message"><%= chat.message %></p>
-    <% end %>
+  <% if chat.customer_id == current_customer.id %>
+  <p class="my-message"><%= chat.message %></p>
+  <% else %>
+  <p class="opponent-message"><%= chat.message %></p>
+  <% end %>
   <% end %>
 </div>
 
@@ -23,8 +23,8 @@
 </div>
 
 <%= form_with model: @chat, data: {remote: true} do |f| %>
-  <div class="col-12 col-xs-12 col-sm-offset-3 col-sm-6">
-    <%= f.text_field :message, class: "form-control" %>
-  </div>
-  <%= f.hidden_field :room_id %>
+<div class="col-12 col-xs-12 col-sm-offset-3 col-sm-6">
+  <%= f.text_field :message, class: "form-control" %>
+</div>
+<%= f.hidden_field :room_id %>
 <% end %>

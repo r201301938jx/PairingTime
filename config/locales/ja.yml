@@ -19,6 +19,8 @@ ja:
             current_password:
               blank: "が入力されていません。"
               invalid: "は有効でありません。"
+            reset_password_token:
+              invalid: "は有効ではありません。"
             last_name:
               blank: "が入力されていません。"
               too_long: "は%{count}文字以下で入力してください。"
@@ -73,6 +75,7 @@ ja:
         first_name_kana: "フリガナ（メイ）"
         nickname: "ニックネーム"
         phone_number: "電話番号"
+        reset_password_token: "こちらのパスワード再発行ページ"
       admin:
         email: "メールアドレス"
         password: "パスワード"
@@ -97,10 +100,10 @@ ja:
         instruction: "次のリンクでメールアドレスの確認が完了します:"
       reset_password_instructions:
         action: "パスワード変更"
-        greeting: "こんにちは、%{recipient}さん!"
-        instruction: "誰かがパスワードの再設定を希望しました。次のリンクでパスワードの再設定が出来ます。"
-        instruction_2: "あなたが希望したのではないのなら、このメールは無視してください。"
-        instruction_3: "上のリンクにアクセスして新しいパスワードを設定するまで、パスワードは変更されません。"
+        greeting: "%{recipient}様、PairingTimeをご利用いただきありがとうございます!"
+        instruction: "パスワード再発行のリクエストを受け付けました。パスワードの再設定をご希望の場合は、以下URLをクリックし新しいパスワードをご登録ください。"
+        instruction_2: "パスワードリセットの申請に心当たりがない場合は、対応は不要となります。"
+        instruction_3: "上記のリンクにアクセスいただき新しいパスワードを設定するまでは、パスワードは変更されません。"
       unlock_instructions:
         action: "アカウントのロック解除"
         greeting: "こんにちは、%{recipient}さん!"

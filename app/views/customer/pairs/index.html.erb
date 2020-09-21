@@ -2,8 +2,11 @@
 
 <div class="row">
   <% if customer_signed_in? %>
+
   <%= render 'sort_form' %>
+
   <%= render 'search_form' %>
+
   <% end %>
 </div>
 
@@ -11,6 +14,7 @@
   <h2 class="heading text-center">投稿一覧（全<%= Pair.count %>件）</h2>
 
   <%= render 'index', pairs: @pairs %>
+
   <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @pairs %></div>
 
 </div>

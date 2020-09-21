@@ -7,6 +7,7 @@
     </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <!-- 会員メニュー -->
         <% if customer_signed_in? %>
         <li class="badge badge-brown login-message"><i class="fas fa-user"></i> <%= current_customer.nickname %>さん</li>
         <li class="btn">
@@ -37,6 +38,7 @@
             <i class="fas fa-sign-out-alt faa-tada animated-hover"> ログアウト</i>
           <% end %>
         </li>
+        <!-- 管理者メニュー -->
         <% elsif admin_signed_in? %>
         <li class="badge badge-brown login-message"><i class="fas fa-house-user"></i> 管理者ユーザー</li>
         <li class="btn">
@@ -58,6 +60,7 @@
             <i class="fas fa-sign-out-alt faa-tada animated-hover"> ログアウト</i>
           <% end %>
         </li>
+        <!-- その他メニュー -->
         <% else %>
         <li class="btn">
           <%= link_to about_path do %>
@@ -92,6 +95,7 @@
         <% end %>
       </ul>
     </nav>
+    <!-- ハンバーガーメニュー -->
     <div id="hm-icon">
       <a class="menu-trigger" href="#">
         <span></span>

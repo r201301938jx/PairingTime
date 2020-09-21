@@ -67,14 +67,15 @@
 
 </div>
 
+<!-- 画像プレビュー機能 -->
 <script>
-$(function(){
-  $('#customer_profile_image').on('change', function (e) {
-  var reader = new FileReader();
-  reader.onload = function (e) {
-    $(".profile_image").attr('src', e.target.result);
-  }
-  reader.readAsDataURL(e.target.files[0]); 
-});
-});
+  $(function(){
+    $('#customer_profile_image').on('change', function (e) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $(".profile_image").attr('src', e.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]); 
+    });
+  });
 </script>

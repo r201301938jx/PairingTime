@@ -25,7 +25,9 @@
       <h6 class="sp-non-title"><%= pair.title %></h6>
       <% if customer_signed_in? %>
       <div id="index_like_button_<%= pair.id %>">
+
         <%= render 'customer/likes/like_index', pair: pair %>
+
       </div>
       <% end %>
       <% end %>
