@@ -1,4 +1,5 @@
 class Customer::HomesController < ApplicationController
+
   def top
     @new_pairs = Pair.all.order(created_at: :DESC).limit(4)
     @like_ranks = Pair.find(Like.group(:pair_id).order('count(pair_id) desc').limit(3).pluck(:pair_id))
@@ -8,4 +9,5 @@ class Customer::HomesController < ApplicationController
 
   def about
   end
+
 end

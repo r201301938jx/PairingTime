@@ -1,4 +1,5 @@
 class Customer::PairsController < ApplicationController
+
   before_action :authenticate_customer!, except: [:index]
   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
 
@@ -90,4 +91,5 @@ class Customer::PairsController < ApplicationController
   def search_for(content)
     Pair.where('title LIKE ?', '%' + content + '%').page(params[:page]).per(9)
   end
+
 end

@@ -1,4 +1,5 @@
 class Customer::CommentsController < ApplicationController
+
   before_action :authenticate_customer!
 
   def create
@@ -25,4 +26,5 @@ class Customer::CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text)
   end
+
 end
