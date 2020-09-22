@@ -10,7 +10,9 @@
     ],
     {}, class: "form-control" %>
     <span class="input-group-btn">
-      <%= f.submit "並び替え", class: "btn btn-brown" %>
+      <%= button_tag type: "submit", class: "btn btn-brown" do %>
+      <i class="fas fa-filter"></i>
+      <% end %>
     </span>
   </div>
   <% end %>
