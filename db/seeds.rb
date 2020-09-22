@@ -529,12 +529,12 @@ Tagging.create!(
 
 Tagging.create!(
   tag_id: 16,
-  pair_id: 11
+  pair_id: 10
 )
 
 Tagging.create!(
-  tag_id: 16,
-  pair_id: 12
+  tag_id: 17,
+  pair_id: 11
 )
 
 Tagging.create!(
@@ -544,12 +544,12 @@ Tagging.create!(
 
 Tagging.create!(
   tag_id: 18,
-  pair_id: 13
+  pair_id: 12
 )
 
 Tagging.create!(
   tag_id: 19,
-  pair_id: 14
+  pair_id: 13
 )
 
 Tagging.create!(
