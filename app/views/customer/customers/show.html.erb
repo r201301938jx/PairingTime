@@ -8,27 +8,31 @@
 
   <h2 class="heading text-center">会員詳細</h2>
 
-  <div class="col-12 col-xs-12 col-sm-3 text-center">
-    <div class="col-6 col-xs-6 col-sm-12">
+  <div class="col-12 col-xs-12 col-sm-12 text-center customer-info">
+
+    <div class="col-6 col-xs-6 col-sm-7">
+    <div class="col-12 col-xs-12 col-sm-6">
       <h4><strong>会員情報</strong></h4>
 
-      <table class="table table-borderless">
-        <tr>
-          <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "show-profile-image circle"  %>
-        </tr>
-        <tr>
-          <th class="text-center"><p><strong><%= @customer.nickname %></strong></p></th>
-        </tr>
-        <tr>
-          <th class="text-center"><p>フォロー数：<%= link_to @customer.follower.count, customer_follows_path(@customer) %></p></th>
-        </tr>
-        <tr>
-          <th class="text-center"><p>フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></p></th>
-        </tr>
-      </table>
+      <div>
+        <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "show-profile-image circle"  %>
+      </div>
     </div>
 
-    <div class="col-6 col-xs-6 col-sm-12">
+    <div class="col-12 col-xs-12 col-sm-6 customer-info-data">
+      <div>
+        <p class="customer-info-text text-center"><strong><%= @customer.nickname %></strong></p>
+      </div>
+      <div>
+        <p class="customer-info-text text-center">フォロー数：<%= link_to @customer.follower.count, customer_follows_path(@customer) %></p>
+      </div>
+      <div>
+        <p class="customer-info-text text-center">フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></p>
+      </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-xs-6 col-sm-5">
       <% if @customer == current_customer %>
       <div class="link-button">
         <%= link_to like_pairs_path do %>
@@ -68,26 +72,90 @@
       </div>
       <% end %>
     </div>
+
   </div>
 
-  <div class="col-12 col-xs-12 col-sm-9">
-    <% @pairs.each do |pair| %>
-    <div class="col-6 col-xs-6 col-sm-4 text-center">
-      <% if pair.created_at > 24.hours.ago %>
-      <span class="badge badge-danger new-badge">New</span>
-      <% end %>
-      <%= link_to pair_path(pair) do %>
-      <%= attachment_image_tag pair, :image, fallback: "no_image.jpg", class: "pair-image circle" %>
-      <h6 class="sp-non-title"><%= pair.title %></h6>
-      <% if customer_signed_in? %>
-      <div id="index_like_button_<%= pair.id %>">
-        <%= render 'customer/likes/like_index', pair: pair %>
+  <div class="col-12 col-xs-12 col-sm-12">
+    <% if current_customer == @customer %>
+    <ul id="tab-menu" class="customer-tab-menu clearfix">
+      <li><a href="#tab1" class="active">投稿一覧</a></li>
+      <li><a href="#tab2" class="">投稿数</a></li>
+      <li><a href="#tab3" class="">お気に入り数</a></li>
+      <li><a href="#tab4" class="">コメント数</a></li>
+      <li><a href="#tab5" class="">フォロワー数</a></li>
+    </ul>
+
+    <div id="tab-contents" class="clearfix">
+
+      <div id="tab1" class="tab">
+
+        <%= render 'customer/pairs/index', pairs: @pairs %>
+
       </div>
-      <% end %>
-      <% end %>
+
+      <div id="tab2" class="tab">
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>あなたの投稿数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @pairs.count %></strong></h3>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>今日の新規投稿数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @today_pairs.count %></strong></h3>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12">
+          <%= column_chart @pair_data, ytitle: "新規投稿数", colors: ["#CD853F"] %>
+        </div>
+      </div>
+
+      <div id="tab3" class="tab">
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>お気に入りに追加された数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @likes.count %></strong></h3>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>今日お気に入りに追加された数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @today_likes.count %></strong></h3>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12">
+          <%= column_chart @like_data, ytitle: "新規お気に入り追加数", colors: ["#CD853F"] %>
+        </div>
+      </div>
+
+      <div id="tab4" class="tab">
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>あなたの投稿のコメント数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @comments.count %></strong></h3>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>あなたの投稿の新規コメント数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @today_comments.count %></strong></h3>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12">
+          <%= column_chart @comment_data, ytitle: "新規コメント数", colors: ["#CD853F"] %>
+        </div>
+      </div>
+
+      <div id="tab5" class="tab">
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>フォロワー数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-user"></i> <%= @customer.followed.count %></strong></h3>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+          <h3 class="panel-heading"><strong>今日のフォロワー数</strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-user"></i> <%= @today_followers.count %></strong></h3>
+        </div>
+        　<div class="col-12 col-xs-12 col-sm-12">
+          <%= column_chart @follower_data, ytitle: "新規フォロワー数", colors: ["#CD853F"] %>
+        </div>
+      </div>
+
     </div>
+
+    <% else %>
+
+    <%= render 'customer/pairs/index', pairs: @pairs %>
+
     <% end %>
-    <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @pairs %></div>
   </div>
 
 </div>

@@ -15,72 +15,72 @@
   <div id="tab-contents" class="clearfix">
 
     <div id="tab1" class="tab">
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
-        <h1 class="panel-heading"><strong>総会員数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= link_to Customer.count, admin_customers_path %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>総会員数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-user"></i> <%= link_to Customer.count, admin_customers_path %></strong></h2>
       </div>
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-        <h1 class="panel-heading"><strong>今日の新規会員総数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-user"></i> <%= @today_customers.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>今日の新規会員総数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-user"></i> <%= @today_customers.count %></strong></h2>
       </div>
       　<div class="col-12 col-xs-12 col-sm-12">
-        <%= column_chart @customer_data, ytitle: "新規会員数" %>
+        <%= column_chart @customer_data, ytitle: "新規会員数", colors: ["#CD853F"] %>
       </div>
     </div>
 
     <div id="tab2" class="tab">
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
-        <h1 class="panel-heading"><strong>総投稿数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= link_to Pair.count, admin_pairs_path %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>総投稿数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= link_to Pair.count, admin_pairs_path %></strong></h2>
       </div>
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-        <h1 class="panel-heading"><strong>今日の新規投稿総数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @today_pairs.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>今日の新規投稿総数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @today_pairs.count %></strong></h2>
       </div>
       <div class="col-12 col-xs-12 col-sm-12">
-        <%= column_chart @pair_data, ytitle: "新規投稿数" %>
+        <%= column_chart @pair_data, ytitle: "新規投稿数", colors: ["#CD853F"] %>
       </div>
     </div>
 
     <div id="tab3" class="tab">
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
-        <h1 class="panel-heading"><strong>お気に入り追加総数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-heart"></i> <%= Like.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>お気に入り追加総数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-heart"></i> <%= Like.count %></strong></h2>
       </div>
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-        <h1 class="panel-heading"><strong>今日のお気に入り追加総数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @today_likes.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>今日のお気に入り追加総数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @today_likes.count %></strong></h2>
       </div>
       <div class="col-12 col-xs-12 col-sm-12">
-        <%= column_chart @like_data, ytitle: "新規お気に入り追加数" %>
+        <%= column_chart @like_data, ytitle: "新規お気に入り追加数", colors: ["#CD853F"] %>
       </div>
     </div>
 
     <div id="tab4" class="tab">
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
-        <h1 class="panel-heading"><strong>総コメント数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-comment"></i> <%= Comment.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>総コメント数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-comment"></i> <%= Comment.count %></strong></h2>
       </div>
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-        <h1 class="panel-heading"><strong>今日の新規コメント数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @today_comments.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>今日の新規コメント数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @today_comments.count %></strong></h2>
       </div>
       <div class="col-12 col-xs-12 col-sm-12">
-        <%= column_chart @comment_data, ytitle: "新規コメント数" %>
+        <%= column_chart @comment_data, ytitle: "新規コメント数", colors: ["#CD853F"] %>
       </div>
     </div>
 
     <div id="tab5" class="tab">
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-info">
-        <h1 class="panel-heading"><strong>総タグ数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tag.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>総タグ数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tag.count %></strong></h2>
       </div>
-      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-success">
-        <h1 class="panel-heading"><strong>投稿とタグ紐付け総数</strong></h1>
-        <h1 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tagging.count %></strong></h1>
+      <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
+        <h2 class="panel-heading"><strong>投稿とタグ紐付け総数</strong></h2>
+        <h2 class="panel-body"><strong><i class="fas fa-tags"></i> <%= Tagging.count %></strong></h2>
       </div>
       <div class="col-12 col-xs-12 col-sm-12">
-        <%= column_chart @tag_data, name: tag.name, ytitle: "投稿数" %>
+        <%= column_chart @tag_data, name: tag.name, ytitle: "投稿数", colors: ["#CD853F"] %>
       </div>
     </div>
 

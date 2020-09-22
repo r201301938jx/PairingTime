@@ -9,7 +9,7 @@ module Customer::NotificationsHelper
     when "follow"
       tag.a(notification.visiter.nickname, href: customer_path(@visiter), style: "font-weight: bold;") + "さんがあなたをフォローしました"
     when "like"
-      tag.a(notification.visiter.nickname, href: customer_path(@visiter), style: "font-weight: bold;") + "さんが" + tag.a("あなたの投稿", href: pair_path(notification.pair_id), style: "font-weight: bold;") + "にいいねしました"
+      tag.a(notification.visiter.nickname, href: customer_path(@visiter), style: "font-weight: bold;") + "さんが" + tag.a("あなたの投稿", href: pair_path(notification.pair_id), style: "font-weight: bold;") + "をお気に入りに追加しました"
     when "comment" then
       @comment = Comment.find_by(id: @visiter_comment)&.text
       tag.a(@visiter.nickname, href: customer_path(@visiter), style: "font-weight: bold;") + "さんが" + tag.a("あなたの投稿", href: pair_path(notification.pair_id), style: "font-weight: bold;") + "にコメントしました"

@@ -7,7 +7,20 @@ class Customer::CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @pairs = @customer.pairs.order(created_at: :DESC)
-    @pairs = @pairs.page(params[:page]).per(9)
+    @pairs = @pairs.page(params[:page]).per(12)
+    @likes = Like.where(pair_id: @customer.pairs.ids)
+    @comments = Comment.where(pair_id: @customer.pairs.ids)
+    # 今日のデータ取得
+    @today_pairs = @customer.pairs.where(created_at: Time.zone.now.all_day)
+    @today_likes = @likes.where(created_at: Time.zone.now.all_day)
+    @today_comments = @comments.where(created_at: Time.zone.now.all_day)
+    @today_comments = @comments.where(created_at: Time.zone.now.all_day)
+    @today_followers = @customer.followed.where(created_at: Time.zone.now.all_day)
+    # グラフ用に日別のデータ取得
+    @pair_data = @customer.pairs.group("date(created_at)").count
+    @like_data = @likes.group("date(created_at)").count
+    @comment_data = @comments.group("date(created_at)").count
+    @follower_data = @customer.followed.group("date(created_at)").count
   end
 
   def edit

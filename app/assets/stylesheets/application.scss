@@ -190,7 +190,7 @@ footer {
   width: 60px;
 }
 
-/* バッジ、ボタン、ラベル */
+/* バッジ */
 
 .badge-danger {
   background-color: #dc3545;
@@ -216,6 +216,8 @@ footer {
   position: absolute;
   margin: 40px 0 0 5px;
 }
+
+/* ボタン */
 
 .btn-brown {
   background-color: #CD853F;
@@ -247,12 +249,26 @@ footer {
   color: #fff;
 }
 
+/* ラベル */
+
 .label-brown {
   background-color: #CD853F;
 }
 
 .label-brown a {
   color: #fff;
+}
+
+/* パネル */
+
+.panel-brown {
+  border-color: #CD853F;
+}
+
+.panel-brown > .panel-heading {
+  color: #fff;
+  background-color: #3F250B;
+  border-color: #CD853F;
 }
 
 /* お気に入り */
@@ -327,6 +343,27 @@ footer {
 }
 .image4 {
   background-image: image-url("about-image4.jpg");
+}
+
+/* 会員詳細 */
+
+.customer-info {
+  border: 5px double #3F250B;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.customer-info p {
+  font-size: 20px;
+}
+
+.customer-info-data {
+  padding: 30px 0;
+}
+
+.customer-info-text {
+  padding: 10px 0;
 }
 
 /* 退会 */
@@ -405,6 +442,10 @@ footer {
   background: #CD853F;
 }
 
+.pagination>.active>a:hover {
+  background: #3F250B;
+}
+
 /* タブメニュー */
 
 #tab-menu li {
@@ -429,7 +470,6 @@ footer {
   background: #3F250B;
   color: #fff;
 }
-
 
 @media screen and (max-width: 768px) {
 
@@ -610,6 +650,20 @@ footer {
   .sp-none {
     display: block;
     padding-top: 10px;
+  }
+
+  /* 会員詳細 */
+
+  .customer-info p {
+    font-size: 12px;
+  }
+
+  .customer-info-data {
+    padding: 0;
+  }
+
+  .customer-info-text {
+    padding: 0;
   }
 
 }
