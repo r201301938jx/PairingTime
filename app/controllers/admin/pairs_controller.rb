@@ -1,5 +1,4 @@
 class Admin::PairsController < ApplicationController
-
   before_action :authenticate_admin!
 
   def index
@@ -8,7 +7,7 @@ class Admin::PairsController < ApplicationController
 
   def show
     @pair = Pair.find(params[:id])
-    @comments = @pair.comments
+    @comments = @pair.comments.page(params[:page]).per(10)
   end
 
   def destroy
@@ -34,5 +33,4 @@ class Admin::PairsController < ApplicationController
   def search_for(content)
     Pair.where('title LIKE ? OR caption LIKE ?', '%' + content + '%', '%' + content + '%').page(params[:page]).per(10)
   end
-
 end

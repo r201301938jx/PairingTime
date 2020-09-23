@@ -2,7 +2,7 @@
 
 <div class="row">
 
-  <h2 class="heading text-center">タグが「<%= @tag.name %>」の投稿一覧（全<%= @pairs.count %>件）</h2>
+  <h2 class="heading text-center">タグが「<%= @tag.name %>」の投稿一覧（全<%= @tag.pairs.count %>件）</h2>
 
   <div class="col-12 col-xs-12 col-sm-3">
     <h2 class="text-center"><strong><u>タグリスト</strong></u></h2>
@@ -25,9 +25,7 @@
       <h6 class="sp-non-title"><%= pair.title %></h6>
       <% if customer_signed_in? %>
       <div id="index_like_button_<%= pair.id %>">
-
         <%= render 'customer/likes/like_index', pair: pair %>
-
       </div>
       <% end %>
       <% end %>
@@ -35,4 +33,5 @@
     <% end %>
     <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @pairs, :param_name => 'pair_page' %></div>
   </div>
+
 </div>

@@ -1,9 +1,7 @@
 <% provide(:title, "投稿詳細") %>
 
 <div class="row">
-
   <%= render 'search_form' %>
-
 </div>
 
 <div class="col-12 col-xs-12 col-sm-offset-1 col-sm-10 col-sm-offset-1">
@@ -77,27 +75,22 @@
 
   <div class="col-12 col-xs-12 col-sm-12 comment-section">
     <div class="col-12 col-xs-12 col-sm-3 label label-brown" id="comment_count_<%= @pair.id %>">
-
       <%= render 'customer/comments/comment_count', pair: @pair %>
-
     </div>
-
     <div class="comment-form col-12 col-xs-12 col-sm-9">
       <%= form_with(model: [@pair, @comment], remote: true) do |f| %>
       <%= f.text_area :text, size: "70x3", placeholder: "50文字以内のコメントを入力してください", class: "col-12 col-xs-12 col-sm-12", required: true %>
       <%= f.submit "送信", class: "btn-sm btn-brown pull-right" %>
       <% end %>
     </div>
-
-    <div class="comment-list col-12 col-xs-12 col-sm-12">
-      <table id="comment_<%= @pair.id %>">
-
-        <%= render 'customer/comments/index', comments: @comments, pair: @pair %>
-
-      </table>
-      <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @comments %></div>
+    <div id="jscroll">
+      <div class="comment-list col-12 col-xs-12 col-sm-12">
+        <table id="comment_<%= @pair.id %>">
+          <%= render 'customer/comments/index', comments: @comments, pair: @pair %>
+        </table>
+        <div><%= link_to_next_page @comments, '次のページ', class: "next" %></div>
+      </div>
     </div>
-
   </div>
 
 </div>

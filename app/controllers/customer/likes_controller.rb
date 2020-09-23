@@ -1,5 +1,4 @@
 class Customer::LikesController < ApplicationController
-
   before_action :authenticate_customer!
 
   def create
@@ -15,8 +14,8 @@ class Customer::LikesController < ApplicationController
     like.destroy
   end
 
+  # お気に入り一覧
   def index
     @like_pairs = current_customer.like_pairs.order(created_at: :DESC).page(params[:page]).per(12)
   end
-
 end

@@ -1,10 +1,10 @@
 <% provide(:title, "投稿編集") %>
 
 <div class="row col-sm-offset-1 col-sm-10 col-sm-offset-1 col-12">
+
   <h2 class="heading text-center">投稿編集</h2>
 
   <%= form_for(@pair, url: pair_path(@pair), method: :PUT) do |f| %>
-
   <%= render 'layouts/errors', obj: @pair %>
 
   <div class="col-12 col-xs-12 col-sm-4">

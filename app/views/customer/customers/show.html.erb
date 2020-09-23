@@ -11,25 +11,23 @@
   <div class="col-12 col-xs-12 col-sm-12 text-center customer-info">
 
     <div class="col-6 col-xs-6 col-sm-7">
-    <div class="col-12 col-xs-12 col-sm-6">
-      <h4><strong>会員情報</strong></h4>
-
-      <div>
-        <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "show-profile-image circle"  %>
+      <div class="col-12 col-xs-12 col-sm-6">
+        <h4><strong>会員情報</strong></h4>
+        <div>
+          <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "show-profile-image circle"  %>
+        </div>
       </div>
-    </div>
-
-    <div class="col-12 col-xs-12 col-sm-6 customer-info-data">
-      <div>
-        <p class="customer-info-text text-center"><strong><%= @customer.nickname %></strong></p>
+      <div class="col-12 col-xs-12 col-sm-6 customer-info-data">
+        <div>
+          <p class="customer-info-text text-center"><strong><%= @customer.nickname %></strong></p>
+        </div>
+        <div>
+          <p class="customer-info-text text-center">フォロー数：<%= link_to @customer.follower.count, customer_follows_path(@customer) %></p>
+        </div>
+        <div>
+          <p class="customer-info-text text-center">フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></p>
+        </div>
       </div>
-      <div>
-        <p class="customer-info-text text-center">フォロー数：<%= link_to @customer.follower.count, customer_follows_path(@customer) %></p>
-      </div>
-      <div>
-        <p class="customer-info-text text-center">フォロワー数：<%= link_to @customer.followed.count, customer_followers_path(@customer) %></p>
-      </div>
-    </div>
     </div>
 
     <div class="col-6 col-xs-6 col-sm-5">
@@ -76,6 +74,7 @@
   </div>
 
   <div class="col-12 col-xs-12 col-sm-12">
+
     <% if current_customer == @customer %>
     <ul id="tab-menu" class="customer-tab-menu clearfix">
       <li><a href="#tab1" class="active">投稿一覧</a></li>
@@ -89,7 +88,10 @@
 
       <div id="tab1" class="tab">
         <% if @pairs.exists? %>
-        <%= render 'customer/pairs/index', pairs: @pairs %>
+        <div id="jscroll">
+          <%= render 'customer/pairs/index', pairs: @pairs %>
+          <div><%= link_to_next_page @pairs, '次のページ', class: "next" %></div>
+        </div>
         <% else %>
         <h4>あなたの投稿はありません</h4>
         <% end %>
@@ -98,7 +100,7 @@
       <div id="tab2" class="tab">
         <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
           <h3 class="panel-heading"><strong>あなたの投稿数</strong></h3>
-          <h3 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @pairs.count %></strong></h3>
+          <h3 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @all_pairs.count %></strong></h3>
         </div>
         <div class="col-12 col-xs-12 col-sm-6 text-center panel panel-brown">
           <h3 class="panel-heading"><strong>今日の新規投稿数</strong></h3>
@@ -155,9 +157,13 @@
 
     <% else %>
 
-    <%= render 'customer/pairs/index', pairs: @pairs %>
+    <div id="jscroll">
+      <%= render 'customer/pairs/index', pairs: @pairs %>
+      <div><%= link_to_next_page @pairs, '次のページ', class: "next" %></div>
+    </div>
 
     <% end %>
+
   </div>
 
 </div>

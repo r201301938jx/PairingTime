@@ -1,16 +1,13 @@
 <% provide(:title, "検索結果") %>
 
 <div class="row">
-
   <%= render 'search_form' %>
-
 </div>
 
 <div class="row">
-  <h2 class="heading text-center">「<%= @content %>」と一致した投稿一覧（全<%= @records.count %>件）</h2>
-
-  <%= render 'index', pairs: @records %>
-
-  <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @records %></div>
-
+  <h2 class="heading text-center">「<%= @content %>」と一致した投稿一覧（全<%= @all_records.count %>件）</h2>
+  <div id="jscroll">
+    <%= render 'index', pairs: @records %>
+    <div><%= link_to_next_page @records, '次のページ', class: "next" %></div>
+  </div>
 </div>

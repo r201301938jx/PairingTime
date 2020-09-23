@@ -2,19 +2,15 @@
 
 <div class="row">
   <% if customer_signed_in? %>
-
   <%= render 'sort_form' %>
-
   <%= render 'search_form' %>
-
   <% end %>
 </div>
 
 <div class="row">
-  <h2 class="heading text-center">投稿一覧（全<%= @pairs.count %>件）</h2>
-
-  <%= render 'customer/pairs/index', pairs: @pairs %>
-
-  <div class="text-center col-12 col-xs-12 col-sm-12"><%= paginate @pairs %></div>
-
+  <h2 class="heading text-center">投稿一覧（全<%= @all_pairs.count %>件）</h2>
+  <div id="jscroll">
+    <%= render 'index', pairs: @pairs %>
+    <div><%= link_to_next_page @pairs, '次のページ', class: "next" %></div>
+  </div>
 </div>

@@ -13,7 +13,6 @@
   </div>
 
   <% if customer_signed_in? %>
-
   <div class="col-sm-12">
     <div class="col-6 col-xs-6 col-sm-9 ">
       <h2 class="text-center ranking-heading"><strong><i class="fas fa-heart faa-pulse animated"></i> お気に入り追加数</strong></h2>
@@ -24,12 +23,10 @@
       <%= render 'customer/pairs/tag_ranking_index', tags: @tag_ranks %>
     </div>
   </div>
-
   <div class="col-12 col-xs-12 col-sm-12">
     <h2 class="text-center ranking-heading"><strong><i class="fas fa-user-friends faa-float animated"></i> フォロワー数</strong></h2>
     <%= render 'customer/customers/ranking_index', customers: @follower_ranks %>
   </div>
-
   <% end %>
 
   <div class="col-12 col-xs-12 col-sm-12">

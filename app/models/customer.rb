@@ -149,5 +149,4 @@ class Customer < ApplicationRecord
     end
     { customer: customer, sns: sns }
   end
-
 end

@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require jquery.jscroll.min.js
 //= require bootstrap-sprockets
 //= require_tree .
 //= require chartkick
@@ -80,6 +81,20 @@ document.addEventListener("turbolinks:load", function() {
     $(this).addClass("active");
     $($(this).attr("href")).show();
     event.preventDefault();
+  });
+
+  /* 無限スクロール */
+
+  $(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+      $('#jscroll').jscroll({
+        contentSelector: '#jscroll',
+        nextSelector: 'a.next',
+        loadingHtml: '<i class="fas fa-2x fa-spinner faa-spin animated"></i> 読込中'
+      });
+    }
   });
 
 })

@@ -1,6 +1,7 @@
 <% provide(:title, "パスワード再発行") %>
 
 <div class="col-12 col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3">
+
   <h2 class="heading text-center">パスワードをお忘れの方</h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>

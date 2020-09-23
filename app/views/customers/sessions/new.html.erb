@@ -1,10 +1,10 @@
 <% provide(:title, "ログイン") %>
 
 <div class="col-12 col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3">
+
   <h2 class="heading text-center">ログイン</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
   <div id="error_explanation">
     <%= flash[:alert] %>
     <%= flash[:error] %>
@@ -32,6 +32,7 @@
     <%= f.submit "ログイン", class: "btn btn-brown btn-block" %>
   </div>
   <% end %>
+
 </div>
 
 <div class="col-12 col-xs-12 col-sm-offset-1 col-sm-10 col-sm-offset-1">
@@ -53,9 +54,7 @@
 </div>
 
 <div class="col-12 col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3">
-
   <div class="text-center">
     <p>登録がお済みでない方は<u><%= link_to "こちら", new_customer_registration_path %></u>から新規登録を行ってください。</p>
   </div>
-
 </div>

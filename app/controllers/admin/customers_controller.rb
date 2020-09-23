@@ -1,5 +1,4 @@
 class Admin::CustomersController < ApplicationController
-
   before_action :authenticate_admin!
 
   def index
@@ -44,5 +43,4 @@ class Admin::CustomersController < ApplicationController
   def search_for(content)
     Customer.where(['last_name LIKE ? OR first_name LIKE ? OR last_name_kana LIKE ? OR first_name_kana LIKE ? OR nickname LIKE ? OR email LIKE ?', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%']).page(params[:page]).per(10)
   end
-
 end

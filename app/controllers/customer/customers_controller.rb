@@ -1,13 +1,12 @@
 class Customer::CustomersController < ApplicationController
-
   before_action :authenticate_customer!
   before_action :ensure_correct_customer, only: [:edit, :update, :quit, :withdraw]
   before_action :ensure_active_customer, only: [:show]
 
   def show
     @customer = Customer.find(params[:id])
-    @pairs = @customer.pairs.order(created_at: :DESC)
-    @pairs = @pairs.page(params[:page]).per(12)
+    @all_pairs = @customer.pairs
+    @pairs = @all_pairs.order(created_at: :DESC).page(params[:page]).per(8)
     @likes = Like.where(pair_id: @customer.pairs.ids)
     @comments = Comment.where(pair_id: @customer.pairs.ids)
     # 今日のデータ取得
@@ -37,10 +36,12 @@ class Customer::CustomersController < ApplicationController
     end
   end
 
+  # 退会アクション
   def quit
     @customer = Customer.find(params[:id])
   end
 
+  # 退会ページ
   def withdraw
     @customer = Customer.find(params[:id])
     @customer.update(is_deleted: true)
@@ -53,9 +54,11 @@ class Customer::CustomersController < ApplicationController
     redirect_to root_path
   end
 
+  # フォローユーザー一覧
   def follows
   end
 
+  # フォロワー一覧
   def followers
   end
 
@@ -79,5 +82,4 @@ class Customer::CustomersController < ApplicationController
       redirect_to customer_path(current_customer)
     end
   end
-
 end

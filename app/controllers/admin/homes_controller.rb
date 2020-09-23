@@ -1,5 +1,4 @@
 class Admin::HomesController < ApplicationController
-
   before_action :authenticate_admin!
 
   def top
@@ -15,5 +14,4 @@ class Admin::HomesController < ApplicationController
     @comment_data = Comment.group("date(created_at)").count
     @tag_data = Tagging.eager_load(:tag).group(:'tags.name').count
   end
-
 end

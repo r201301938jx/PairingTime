@@ -435,6 +435,10 @@ footer {
 
 /* ページング */
 
+.next {
+  display: none;
+}
+
 .pagination>li>a {
   color: black;
 }

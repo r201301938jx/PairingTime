@@ -1,5 +1,4 @@
 class Customer::ChatsController < ApplicationController
-
   before_action :authenticate_customer!
 
   def show
@@ -29,5 +28,4 @@ class Customer::ChatsController < ApplicationController
   def chat_params
     params.require(:chat).permit(:message, :room_id)
   end
-
 end

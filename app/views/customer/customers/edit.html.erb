@@ -1,10 +1,10 @@
 <% provide(:title, "登録情報編集") %>
 
 <div class="col-12 col-xs-12 col-sm-offset-1 col-sm-10 col-sm-offset-1">
+
   <h2 class="heading text-center">登録情報編集</h2>
 
   <%= form_for(@customer, url: customer_path(@customer), method: :PUT) do |f| %>
-
   <%= render 'layouts/errors', obj: @customer %>
 
   <div class="col-12 col-xs-12 col-sm-4">
@@ -16,6 +16,7 @@
   </div>
 
   <div class="col-12 col-xs-12 col-sm-8">
+
     <div class="form-group row">
       <%= f.label :"氏名", class: "col-4 col-xs-4 col-sm-4" %>
       <div class="col-4 col-xs-4 col-sm-4">
@@ -58,6 +59,7 @@
     </div>
 
   </div>
+
   <div class="actions col-12 col-xs-12 col-sm-12">
     <%= f.submit "編集内容を保存", class: "btn btn-brown col-8 col-xs-8 col-sm-offset-2 col-sm-8 col-offset-1" %>
     <%= link_to "退会する", quit_customer_path(@customer), class: "btn btn-danger pull-right" %>
