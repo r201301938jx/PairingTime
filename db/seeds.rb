@@ -474,6 +474,11 @@ Tagging.create!(
 
 Tagging.create!(
   tag_id: 9,
+  pair_id: 7
+)
+
+Tagging.create!(
+  tag_id: 9,
   pair_id: 8
 )
 

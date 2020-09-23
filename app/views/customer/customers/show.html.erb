@@ -88,9 +88,11 @@
     <div id="tab-contents" class="clearfix">
 
       <div id="tab1" class="tab">
-
+        <% if @pairs.exists? %>
         <%= render 'customer/pairs/index', pairs: @pairs %>
-
+        <% else %>
+        <h4>あなたの投稿はありません</h4>
+        <% end %>
       </div>
 
       <div id="tab2" class="tab">
@@ -103,7 +105,7 @@
           <h3 class="panel-body"><strong><i class="fas fa-camera-retro"></i> <%= @today_pairs.count %></strong></h3>
         </div>
         <div class="col-12 col-xs-12 col-sm-12">
-          <%= column_chart @pair_data, ytitle: "新規投稿数", colors: ["#CD853F"] %>
+          <%= column_chart @pair_data, ytitle: "新規投稿数", colors: ["#8B4513"] %>
         </div>
       </div>
 
@@ -117,7 +119,7 @@
           <h3 class="panel-body"><strong><i class="fas fa-heart"></i> <%= @today_likes.count %></strong></h3>
         </div>
         <div class="col-12 col-xs-12 col-sm-12">
-          <%= column_chart @like_data, ytitle: "新規お気に入り追加数", colors: ["#CD853F"] %>
+          <%= column_chart @like_data, ytitle: "新規お気に入り追加数", colors: ["#8B4513"] %>
         </div>
       </div>
 
@@ -131,7 +133,7 @@
           <h3 class="panel-body"><strong><i class="fas fa-comment"></i> <%= @today_comments.count %></strong></h3>
         </div>
         <div class="col-12 col-xs-12 col-sm-12">
-          <%= column_chart @comment_data, ytitle: "新規コメント数", colors: ["#CD853F"] %>
+          <%= column_chart @comment_data, ytitle: "新規コメント数", colors: ["#8B4513"] %>
         </div>
       </div>
 
@@ -145,7 +147,7 @@
           <h3 class="panel-body"><strong><i class="fas fa-user"></i> <%= @today_followers.count %></strong></h3>
         </div>
         　<div class="col-12 col-xs-12 col-sm-12">
-          <%= column_chart @follower_data, ytitle: "新規フォロワー数", colors: ["#CD853F"] %>
+          <%= column_chart @follower_data, ytitle: "新規フォロワー数", colors: ["#8B4513"] %>
         </div>
       </div>
 

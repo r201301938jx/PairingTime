@@ -1,7 +1,7 @@
 <div class="search-form col-6 col-xs-6 col-sm-4 pull-right">
   <%= form_tag(search_pairs_path, method: :GET) do %>
   <div class="input-group">
-    <%= text_field_tag 'search[content]', "", class: "form-control", placeholder: "キーワードで検索" %>
+    <%= text_field_tag 'search[content]', "", class: "form-control", placeholder: "キーワードで検索", required: true %>
     <span class="input-group-btn">
       <%= button_tag type: "submit", class: "btn btn-brown" do %>
       <i class="fas fa-search"></i>

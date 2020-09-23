@@ -65,7 +65,7 @@ class Customer::PairsController < ApplicationController
   def tag_search
     @tag_list = Tag.all.page(params[:tag_page]).per(50)
     @tag = Tag.find(params[:tag_id])
-    @pairs = @tag.pairs.all.page(params[:pair_page]).per(9)
+    @pairs = @tag.pairs.all.order(created_at: :DESC).page(params[:pair_page]).per(9)
   end
 
   # 並び替え

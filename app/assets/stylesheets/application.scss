@@ -215,6 +215,7 @@ footer {
 .new-badge {
   position: absolute;
   margin: 40px 0 0 5px;
+  background-color: #8B4513;
 }
 
 /* ボタン */
@@ -267,7 +268,7 @@ footer {
 
 .panel-brown > .panel-heading {
   color: #fff;
-  background-color: #3F250B;
+  background-color: #8B4513;
   border-color: #CD853F;
 }
 
@@ -443,7 +444,7 @@ footer {
 }
 
 .pagination>.active>a:hover {
-  background: #3F250B;
+  background: #8B4513;
 }
 
 /* タブメニュー */
@@ -467,7 +468,7 @@ footer {
 }
 
 #tab-menu .active {
-  background: #3F250B;
+  background: #8B4513;
   color: #fff;
 }
 
