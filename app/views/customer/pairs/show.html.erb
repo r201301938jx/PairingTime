@@ -84,7 +84,7 @@
 
     <div class="comment-form col-12 col-xs-12 col-sm-9">
       <%= form_with(model: [@pair, @comment], remote: true) do |f| %>
-      <%= f.text_area :text, size: "70x3", placeholder: "50文字のコメントを入力してください", class: "col-12 col-xs-12 col-sm-12", required: true %>
+      <%= f.text_area :text, size: "70x3", placeholder: "50文字以内のコメントを入力してください", class: "col-12 col-xs-12 col-sm-12", required: true %>
       <%= f.submit "送信", class: "btn-sm btn-brown pull-right" %>
       <% end %>
     </div>
