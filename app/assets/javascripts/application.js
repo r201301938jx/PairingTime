@@ -92,7 +92,7 @@ document.addEventListener("turbolinks:load", function() {
       $('#jscroll').jscroll({
         contentSelector: '#jscroll',
         nextSelector: 'a.next',
-        loadingHtml: '<i class="fas fa-2x fa-spinner faa-spin animated"></i> 読込中'
+        loadingHtml: '<div class="text-center"><i class="fas fa-2x fa-spinner faa-spin animated"></i></div>'
       });
     }
   });

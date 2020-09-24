@@ -31,7 +31,7 @@
         </tr>
         <tr>
           <td>説明</td>
-          <td><%= @pair.caption %></td>
+          <td><%= text_url_to_link(h(@pair.caption)).html_safe %></td>
         </tr>
         <tr>
           <td>タグ</td>
