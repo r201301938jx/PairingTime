@@ -41,6 +41,6 @@ class Admin::CustomersController < ApplicationController
   end
 
   def search_for(content)
-    Customer.where(['last_name LIKE ? OR first_name LIKE ? OR last_name_kana LIKE ? OR first_name_kana LIKE ? OR nickname LIKE ? OR email LIKE ?', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%']).page(params[:page]).per(10)
+    Customer.where(['last_name LIKE ? OR first_name LIKE ? OR last_name_kana LIKE ? OR first_name_kana LIKE ? OR nickname LIKE ? OR email LIKE ?', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%', '%' + content + '%'])
   end
 end

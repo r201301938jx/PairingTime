@@ -22,17 +22,20 @@
 
 document.addEventListener("turbolinks:load", function() {
 
-  /* ハンバーガーメニュー  */
+  // ハンバーガーメニュー
 
   $(function() {
     $('.menu-trigger').on('click', function(event) {
+      // classの切り替え
       $(this).toggleClass('active');
+      // フェードインアウトの切り替え
       $('.navbar-right').fadeToggle();
+      // デフォルトの処理をキャンセル
       event.preventDefault();
     });
   });
 
-  /* スライドショー */
+  // スライドショー
 
   $(document).ready(function () {
     $("#slideshow").skippr({
@@ -49,13 +52,13 @@ document.addEventListener("turbolinks:load", function() {
     });
   });
 
-  /* トップに戻る */
+  // トップに戻る
 
   $(function() {
     $("#back-to-top").hide();
 
     $(window).scroll(function(){
-      $('#pos').text($(this).scrollTop());
+      // 60pxスクロールしたら表示
       if ($(this).scrollTop() > 60){
         $("#back-to-top").fadeIn();
       }else{
@@ -71,7 +74,7 @@ document.addEventListener("turbolinks:load", function() {
     })
   })
 
-  /* タブメニュー */
+  // タブメニュー
 
   $('#tab-contents .tab[id != "tab1"]').hide();
 
@@ -83,14 +86,16 @@ document.addEventListener("turbolinks:load", function() {
     event.preventDefault();
   });
 
-  /* 無限スクロール */
+  // 無限スクロール
 
   $(window).on('scroll', function() {
     scrollHeight = $(document).height();
     scrollPosition = $(window).height() + $(window).scrollTop();
     if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
       $('#jscroll').jscroll({
+        // 無限に追加する要素
         contentSelector: '#jscroll',
+        // 次のページを表示するためのリンク
         nextSelector: 'a.next',
         loadingHtml: '<div class="text-center"><i class="fas fa-2x fa-spinner faa-spin animated"></i></div>'
       });

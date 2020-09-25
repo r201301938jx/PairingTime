@@ -16,9 +16,9 @@ class Pair < ApplicationRecord
 
   # タグ機能
   def save_tags(save_pair_tags)
-    current_tags = tags.pluck(:name) unless tags.nil?
-    old_tags = current_tags - save_pair_tags
-    new_tags = save_pair_tags - current_tags
+    current_tags = tags.pluck(:name) unless tags.nil? #既存のタグ
+    old_tags = current_tags - save_pair_tags #消すタグ
+    new_tags = save_pair_tags - current_tags #新規追加タグ
 
     old_tags.each do |old_name|
       tags.delete Tag.find_by(name: old_name)
@@ -53,8 +53,9 @@ class Pair < ApplicationRecord
     end
   end
 
-  # 通知機能
+  # お気に入り通知機能
   def create_notification_like!(current_customer)
+  　# 既にお気に入りに追加されているかチェック
     temp = Notification.where(["visiter_id = ? and visited_id = ? and pair_id = ? and action = ?", current_customer.id, customer_id, id, "like"])
     if temp.blank?
       notification = current_customer.active_notifications.new(
@@ -69,11 +70,14 @@ class Pair < ApplicationRecord
     end
   end
 
+  # コメント通知機能
   def create_notification_comment!(current_customer, comment_id)
+    # 他にコメントしているユーザーをチェックし、全員に通知送信
     temp_ids = Comment.select(:customer_id).where(pair_id: id).where.not(customer_id: current_customer.id).distinct
     temp_ids.each do |temp_id|
       save_notification_comment!(current_customer, comment_id, temp_id["customer_id"])
     end
+    # 他にコメントしているユーザーがいなければ、投稿者のみに通知送信
     save_notification_comment!(current_customer, comment_id, customer_id) if temp_ids.blank?
   end
 

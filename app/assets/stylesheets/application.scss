@@ -277,11 +277,12 @@ footer {
 .red-heart {
   color: red;
   span {
-    color: black
+    color: #3F250B;
   }
 }
 
 /* タイトル */
+
 .heading {
   margin-bottom: 25px;
   font-weight: bold;
@@ -381,7 +382,7 @@ footer {
   margin-bottom: 5px;
 }
 
-/* コメント*/
+/* コメント */
 
 .comment-section {
   padding-top: 40px;
@@ -393,15 +394,15 @@ footer {
 
 .comment-badge {
   background-color: #fff;
-  color: black;
+  color: #3F250B;
   margin-left: 10px;
 }
 
 /* 通知 */
 
 .notification-box {
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid #3F250B;
+  border-bottom: 1px solid #3F250B;
 }
 
 .notification-message {
@@ -483,7 +484,7 @@ footer {
     padding-left: 25px;
   }
 
-  /* Hamburger menu */
+  /* ハンバーガーメニュー */
 
   #hm-icon{
     position: fixed;

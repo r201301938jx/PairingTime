@@ -11,8 +11,10 @@ class Customers::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    # Customer.new
     build_resource(sign_up_params)
 
+    # Customer.save
     resource.save
     yield resource if block_given?
     if resource.persisted?

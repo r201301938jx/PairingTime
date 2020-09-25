@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # Admin
+  # 管理者
 
   devise_for :admins,
              path: '',
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # Customer
+  # 会員
 
   devise_for :customers, controllers: {
     registrations: 'customers/registrations',

@@ -31,6 +31,6 @@ class Admin::PairsController < ApplicationController
   private
 
   def search_for(content)
-    Pair.where('title LIKE ? OR caption LIKE ?', '%' + content + '%', '%' + content + '%').page(params[:page]).per(10)
+    Pair.where('title LIKE ? OR caption LIKE ?', '%' + content + '%', '%' + content + '%')
   end
 end

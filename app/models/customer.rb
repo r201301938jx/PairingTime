@@ -58,6 +58,7 @@ class Customer < ApplicationRecord
     super && (is_deleted == false)
   end
 
+  #フォロー機能
   def follow(customer_id)
     follower.create(followed_id: customer_id)
   end
@@ -86,7 +87,7 @@ class Customer < ApplicationRecord
     end
   end
 
-  # 通知機能
+  # フォロー通知機能
   def create_notification_follow!(current_customer)
     temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ?", current_customer.id, id, "follow"])
     if temp.blank?
