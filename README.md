@@ -25,6 +25,10 @@ ER図、アプリケーション詳細設計書：https://docs.google.com/spread
 
 テーブル定義書：https://docs.google.com/spreadsheets/d/1k_vhU2BHgQPo2eFazeiR8GL36CBQk3PuT9J-mUqZbdE/edit?usp=sharing
 
+ワイヤーフレーム：
+（会員側）https://drive.google.com/file/d/1x28mu5u_n-L_ZfT6fcdqc8-QPAM3_au6/view?usp=sharing
+（管理者側）https://drive.google.com/file/d/1tJmj2NR6GsOZBj3nvCRfpAkOgcFC1XNZ/view?usp=sharing
+
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1KU_8Cq5TiVj5cE5JZSRSkuHohfVzfLfEkBF_tbpVNhY/edit?usp=sharing
 
