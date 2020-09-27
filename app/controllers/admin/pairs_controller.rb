@@ -19,13 +19,14 @@ class Admin::PairsController < ApplicationController
 
   def sort
     selection = params[:keyward]
-    @pairs = Pair.sort(selection)
-    @pairs = Kaminari.paginate_array(@pairs).page(params[:page]).per(10)
+    @all_pairs = Pair.sort(selection)
+    @pairs = Kaminari.paginate_array(@all_pairs).page(params[:page]).per(10)
   end
 
   def search
     @content = params[:search][:content]
-    @records = search_for(@content).page(params[:page]).per(10)
+    @all_records = search_for(@content)
+    @records = @all_records.page(params[:page]).per(10)
   end
 
   private

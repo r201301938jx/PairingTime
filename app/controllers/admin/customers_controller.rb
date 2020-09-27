@@ -25,13 +25,14 @@ class Admin::CustomersController < ApplicationController
 
   def search
     @content = params[:search][:content]
-    @records = search_for(@content).page(params[:page]).per(10)
+    @all_records = search_for(@content)
+    @records = @all_records.page(params[:page]).per(10)
   end
 
   def sort
     selection = params[:keyward]
-    @customers = Customer.sort(selection)
-    @customers = Kaminari.paginate_array(@customers).page(params[:page]).per(10)
+    @all_customers = Customer.sort(selection)
+    @customers = Kaminari.paginate_array(@all_customers).page(params[:page]).per(10)
   end
 
   private

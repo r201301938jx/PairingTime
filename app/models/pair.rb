@@ -55,7 +55,7 @@ class Pair < ApplicationRecord
 
   # お気に入り通知機能
   def create_notification_like!(current_customer)
-  　# 既にお気に入りに追加されているかチェック
+    # 既にお気に入りに追加されているかチェック
     temp = Notification.where(["visiter_id = ? and visited_id = ? and pair_id = ? and action = ?", current_customer.id, customer_id, id, "like"])
     if temp.blank?
       notification = current_customer.active_notifications.new(
