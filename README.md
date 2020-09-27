@@ -29,6 +29,8 @@ ER図、アプリケーション詳細設計書：https://docs.google.com/spread
 （会員側）https://drive.google.com/file/d/1x28mu5u_n-L_ZfT6fcdqc8-QPAM3_au6/view?usp=sharing
 （管理者側）https://drive.google.com/file/d/1tJmj2NR6GsOZBj3nvCRfpAkOgcFC1XNZ/view?usp=sharing
 
+UI Flows：https://drive.google.com/file/d/1UuS3AuAA9QJ6_ceKFSg9X37F-FaZHKVZ/view?usp=sharing
+
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1KU_8Cq5TiVj5cE5JZSRSkuHohfVzfLfEkBF_tbpVNhY/edit?usp=sharing
 
