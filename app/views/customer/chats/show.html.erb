@@ -2,14 +2,14 @@
 
 <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_customer.id %>", class="heading text-center"><%= @customer.nickname %> さんとのチャットルーム</h2>
 
-<div class="col-1 col-xs-1 col-sm-2 text-center">
+<div class="col-2 col-xs-2 col-sm-2 text-center">
   <%= link_to customer_path(@customer) do %>
   <%= attachment_image_tag @customer, :profile_image, fallback: "no_customer_image.jpg", class: "chat-profile-image circle"  %>
   <p><strong><%= @customer.nickname %></strong></p>
   <% end %>
 </div>
 
-<div class="message col-10 col-xs-10 col-sm-8">
+<div class="message col-8 col-xs-8 col-sm-8">
   <% @chats.each do |chat| %>
   <% if chat.customer_id == current_customer.id %>
   <p class="my-message"><%= chat.message %></p>
@@ -19,7 +19,7 @@
   <% end %>
 </div>
 
-<div class="col-1 col-xs-1 col-sm-2 text-center">
+<div class="col-2 col-xs-2 col-sm-2 text-center">
   <%= attachment_image_tag current_customer, :profile_image, fallback: "no_customer_image.jpg", class: "chat-profile-image circle"  %>
   <p><strong><%= current_customer.nickname %></strong></p>
 </div>

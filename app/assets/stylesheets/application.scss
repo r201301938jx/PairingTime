@@ -272,7 +272,7 @@ footer {
   border-color: #CD853F;
 }
 
-/* お気に入り */
+/* お気に入りアイコン */
 
 .red-heart {
   color: red;
@@ -288,7 +288,7 @@ footer {
   font-weight: bold;
 }
 
-/* トップ */
+/* トップページ */
 
 .top-heading {
   margin-top: 10px;
@@ -311,7 +311,7 @@ footer {
   margin: 25px 0;
 }
 
-/* 概要 */
+/* 概要ページ */
 
 .about-description {
   line-height: 1px;
@@ -347,7 +347,7 @@ footer {
   background-image: image-url("about-image4.jpg");
 }
 
-/* 会員詳細 */
+/* 会員詳細ページ */
 
 .customer-info {
   border: 5px double #3F250B;
@@ -368,7 +368,7 @@ footer {
   padding: 10px 0;
 }
 
-/* 退会 */
+/* 退会ページ */
 
 .sp-none {
   display: none;
@@ -398,7 +398,7 @@ footer {
   margin-left: 10px;
 }
 
-/* 通知 */
+/* 通知一覧ページ */
 
 .notification-box {
   border-top: 1px solid #3F250B;
@@ -414,7 +414,7 @@ footer {
   padding-top: 20px;
 }
 
-/* チャット */
+/* チャットページ */
 
 .my-message {
   text-align: right;
@@ -601,16 +601,16 @@ footer {
   }
 
   .chat-profile-image {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
   }
 
   .notification-profile-image {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
   }
 
-  /* トップ */
+  /* トップページ */
 
   .top-heading {
     margin-top: 5px;
@@ -625,7 +625,7 @@ footer {
     margin-bottom: 2px;
   }
 
-  /* 概要 */
+  /* 概要ページ */
 
   .about-page h1 {
     font-size: 12px;
@@ -651,14 +651,14 @@ footer {
     padding-bottom: 2px;
   }
 
-  /* 退会 */
+  /* 退会ページ */
 
   .sp-none {
     display: block;
     padding-top: 10px;
   }
 
-  /* 会員詳細 */
+  /* 会員詳細ページ */
 
   .customer-info p {
     font-size: 12px;
@@ -670,6 +670,22 @@ footer {
 
   .customer-info-text {
     padding: 0;
+  }
+
+  /* 通知一覧ページ */
+
+  .notification-message {
+    padding-top: 5px;
+  }
+
+  /* チャットページ */
+
+  .my-message {
+    margin-left: 100px;
+  }
+
+  .opponent-message {
+    margin-right: 100px;
   }
 
 }
@@ -786,8 +802,8 @@ footer {
   }
 
   .chat-profile-image {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
   }
 
   .notification-profile-image {
@@ -805,7 +821,7 @@ footer {
     margin: 25px 0 0 5px;
   }
 
-  /* トップ */
+  /* トップページ */
 
   .top-heading {
     margin: 0px;
@@ -820,14 +836,14 @@ footer {
     margin-bottom: 2px;
   }
 
-  /* チャット */
+  /* チャットページ */
 
   .my-message {
-    margin-left: 100px;
+    margin-left: 50px;
   }
 
   .opponent-message {
-    margin-right: 100px;
+    margin-right: 50px;
   }
 
 }
